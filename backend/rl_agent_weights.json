@@ -1,0 +1,51 @@
+{
+    "q_table": {
+        "Salary_Slip": {
+            "Extract_Math_Gross_Net": 9.999444667132746,
+            "Extract_Transactions": -4.68559,
+            "Extract_Tax_Calculations": -4.68559,
+            "Extract_Skills_Experience": -3.439,
+            "Extract_PII_Face": -2.71
+        },
+        "Bank_Statement": {
+            "Extract_Math_Gross_Net": -3.439,
+            "Extract_Transactions": 9.99870992992183,
+            "Extract_Tax_Calculations": -4.0951,
+            "Extract_Skills_Experience": -1.9,
+            "Extract_PII_Face": -1.9
+        },
+        "ITR": {
+            "Extract_Math_Gross_Net": -4.0951,
+            "Extract_Transactions": -1.9,
+            "Extract_Tax_Calculations": 9.994924712139436,
+            "Extract_Skills_Experience": -3.439,
+            "Extract_PII_Face": -3.439
+        },
+        "Resume": {
+            "Extract_Math_Gross_Net": -4.68559,
+            "Extract_Transactions": -4.68559,
+            "Extract_Tax_Calculations": -3.439,
+            "Extract_Skills_Experience": 9.998838936929648,
+            "Extract_PII_Face": -2.71
+        },
+        "Identity_Doc": {
+            "Extract_Math_Gross_Net": -2.71,
+            "Extract_Transactions": -1.0,
+            "Extract_Tax_Calculations": -5.217031,
+            "Extract_Skills_Experience": -1.9,
+            "Extract_PII_Face": 9.99870992992183
+        }
+    },
+    "optimal_policy": {
+        "Salary_Slip": "Extract_Math_Gross_Net",
+        "Bank_Statement": "Extract_Transactions",
+        "ITR": "Extract_Tax_Calculations",
+        "Resume": "Extract_Skills_Experience",
+        "Identity_Doc": "Extract_PII_Face"
+    },
+    "metadata": {
+        "algorithm": "Q-Learning",
+        "epochs": 500,
+        "convergence_status": "Successful"
+    }
+}

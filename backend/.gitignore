@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+backend/aegis.db
+backend/temp_page_*.png
+backend/temp_upload_*.pdf

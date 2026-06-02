@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-enterprise-900: #061c1e;
+  --color-enterprise-800: #092225;
+  --color-enterprise-700: #0f3438;
+  --color-action-orange: #d97706; /* Muted orange for a more professional look */
+  --color-verification-green: #10b981; /* Emerald green for passes */
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-syne: "Syne", sans-serif;
+  
+  --animate-scan: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+@layer base {
+  body {
+    @apply bg-enterprise-900 text-slate-200 font-sans antialiased;
+    background-color: #061c1e;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Removed extreme roundness and glowing shadows for a professional SaaS widget look */
+  .panel-glass {
+    @apply bg-enterprise-800 rounded-md shadow-sm border border-white/5;
+  }
+  
+  body {
+    @apply bg-[#04070D] text-slate-200 antialiased;
+  }
+
+  .data-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  /* Feature cards for the starting page */
+  .feature-card {
+    @apply bg-enterprise-800/80 backdrop-blur-sm border border-white/5 p-6 hover:border-verification-green/30 transition-all duration-300;
+  }
+}
