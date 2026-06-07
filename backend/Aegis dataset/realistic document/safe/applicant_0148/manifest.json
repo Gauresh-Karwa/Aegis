@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP95690303",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Eta Vala",
+  "pan": "BKNPQ1160F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 104427,
+  "salary_net": 59299,
+  "itr_total_income": 753250,
+  "land_value": 295234577,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

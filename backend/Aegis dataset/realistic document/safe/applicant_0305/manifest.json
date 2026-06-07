@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP95134149",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kala Shetty",
+  "pan": "GASGU9164V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 70189,
+  "salary_net": 41609,
+  "itr_total_income": 415998,
+  "land_value": 302338063,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

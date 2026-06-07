@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15445504",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Om Walia",
+  "pan": "KOUGL5652N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 132656,
+  "salary_net": 73884,
+  "itr_total_income": 952667,
+  "land_value": 895977940,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

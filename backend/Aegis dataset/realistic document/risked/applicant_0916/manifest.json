@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP38724081",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, pixel_artifact",
+  "name": "Om Nagar",
+  "pan": "UOJBE6914Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 56504,
+  "salary_net": 34537,
+  "itr_total_income": 298912,
+  "land_value": 640570866,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

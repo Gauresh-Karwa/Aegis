@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP98632121",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faris Raman",
+  "pan": "TFSCO1358V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 28315,
+  "salary_net": 26418,
+  "itr_total_income": 27146,
+  "land_value": 1441182211,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

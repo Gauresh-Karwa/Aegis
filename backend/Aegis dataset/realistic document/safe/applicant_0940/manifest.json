@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP26633253",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Benjamin Chaudhary",
+  "pan": "MJWGT4075R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 65521,
+  "salary_net": 39196,
+  "itr_total_income": 418336,
+  "land_value": 683129022,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

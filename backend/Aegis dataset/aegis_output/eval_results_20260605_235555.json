@@ -1,0 +1,12 @@
+{
+  "run_timestamp": "20260605_235555",
+  "test_accuracy": 1.0,
+  "test_auc_roc": 1.0,
+  "test_precision": 1.0,
+  "test_recall": 1.0,
+  "test_f1": 1.0,
+  "test_loss": 0.4662,
+  "total_params": 1116129,
+  "epochs_trained": 10,
+  "best_checkpoint": "aegis_output\\aegis_model_v1.keras"
+}

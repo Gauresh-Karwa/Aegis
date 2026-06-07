@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP95804775",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe",
+    "pixel_artifact",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe, pixel_artifact, math_mismatch",
+  "name": "Warda Acharya",
+  "pan": "IEJAC9657S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 100526,
+  "salary_net": 57283,
+  "itr_total_income": 702301,
+  "land_value": 152143186,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

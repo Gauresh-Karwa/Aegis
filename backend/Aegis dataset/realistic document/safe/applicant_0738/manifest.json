@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP22377097",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Sai Boase",
+  "pan": "ZXIPR1547F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 112762,
+  "salary_net": 63605,
+  "itr_total_income": 767766,
+  "land_value": 306693293,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

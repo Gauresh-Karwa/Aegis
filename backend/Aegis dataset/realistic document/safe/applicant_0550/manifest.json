@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP25627634",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ria Ghose",
+  "pan": "ONNLG6770R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 108673,
+  "salary_net": 61492,
+  "itr_total_income": 762202,
+  "land_value": 171249666,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

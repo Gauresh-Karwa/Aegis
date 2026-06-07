@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP43373453",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "math_mismatch",
+    "tilted_amount",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, math_mismatch, tilted_amount, blurred_edge",
+  "name": "Tarak Doshi",
+  "pan": "AWVGS1164J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 61209,
+  "salary_net": 36969,
+  "itr_total_income": 404997,
+  "land_value": 797557225,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

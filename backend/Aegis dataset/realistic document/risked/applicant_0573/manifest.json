@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP45666531",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, tilted_amount",
+  "name": "Anjali More",
+  "pan": "WHNGQ9632Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 118528,
+  "salary_net": 66584,
+  "itr_total_income": 849816,
+  "land_value": 524505408,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

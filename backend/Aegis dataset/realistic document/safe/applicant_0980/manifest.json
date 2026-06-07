@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP90005478",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Liam Narula",
+  "pan": "KTEJC8420B",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 34972,
+  "salary_net": 32631,
+  "itr_total_income": 79773,
+  "land_value": 472977648,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

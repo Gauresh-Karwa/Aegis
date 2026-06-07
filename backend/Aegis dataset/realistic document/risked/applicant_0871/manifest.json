@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP89810421",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, blurred_edge",
+  "name": "Amaira Sundaram",
+  "pan": "ZAQLX5377F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 63863,
+  "salary_net": 38340,
+  "itr_total_income": 375679,
+  "land_value": 539944741,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

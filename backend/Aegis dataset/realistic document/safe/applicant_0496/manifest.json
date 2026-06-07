@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP40145722",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Abhimanyu Pradhan",
+  "pan": "NSOFF9178A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 58895,
+  "salary_net": 35773,
+  "itr_total_income": 316012,
+  "land_value": 377306703,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP59173298",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Osha Borde",
+  "pan": "HUOAR9089C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 111468,
+  "salary_net": 62936,
+  "itr_total_income": 783155,
+  "land_value": 634119669,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

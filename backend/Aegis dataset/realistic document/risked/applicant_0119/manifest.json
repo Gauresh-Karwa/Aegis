@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP70846992",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "pixel_artifact",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, pixel_artifact, noise_stripe",
+  "name": "Daksh Shere",
+  "pan": "RRXHS0507W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 83464,
+  "salary_net": 48467,
+  "itr_total_income": 569049,
+  "land_value": 344839131,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

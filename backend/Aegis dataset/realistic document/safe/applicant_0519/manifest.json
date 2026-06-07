@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP99525576",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chameli Bath",
+  "pan": "XVGCY3222Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 92228,
+  "salary_net": 52996,
+  "itr_total_income": 655855,
+  "land_value": 1821861889,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

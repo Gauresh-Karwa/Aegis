@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP70260530",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch, blurred_edge",
+  "name": "Yagnesh Viswanathan",
+  "pan": "WPJHE7893P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 47352,
+  "salary_net": 29810,
+  "itr_total_income": 284404,
+  "land_value": 289394095,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

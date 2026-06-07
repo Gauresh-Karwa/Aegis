@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP61185315",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Krish Bhatia",
+  "pan": "MLIJZ1829U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 81766,
+  "salary_net": 47589,
+  "itr_total_income": 534275,
+  "land_value": 405668083,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

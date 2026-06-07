@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP56594852",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "blurred_edge",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, blurred_edge, math_mismatch",
+  "name": "Nilima Sampath",
+  "pan": "YAEJS0584J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 113857,
+  "salary_net": 64171,
+  "itr_total_income": 850940,
+  "land_value": 1216201867,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

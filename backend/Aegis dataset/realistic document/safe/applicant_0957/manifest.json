@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP59827724",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faqid Nayar",
+  "pan": "CIYAH6529D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 35369,
+  "salary_net": 33001,
+  "itr_total_income": 101053,
+  "land_value": 1030020000,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

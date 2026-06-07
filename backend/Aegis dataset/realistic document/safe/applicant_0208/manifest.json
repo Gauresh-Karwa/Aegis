@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP13136545",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Gaurika Divan",
+  "pan": "FRVTU4820H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 109071,
+  "salary_net": 61698,
+  "itr_total_income": 769100,
+  "land_value": 210775711,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP85497626",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Maanav Nagarajan",
+  "pan": "TXDBQ3504A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 88055,
+  "salary_net": 50839,
+  "itr_total_income": 554878,
+  "land_value": 3708388659,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

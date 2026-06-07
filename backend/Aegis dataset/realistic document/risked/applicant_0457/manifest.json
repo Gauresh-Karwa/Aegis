@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP42316906",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch",
+    "tilted_amount",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch, tilted_amount, blurred_edge",
+  "name": "Baghyawati Srivastava",
+  "pan": "IEKJR4262R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 49453,
+  "salary_net": 30895,
+  "itr_total_income": 282838,
+  "land_value": 117193765,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

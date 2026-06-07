@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP33752704",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, pixel_artifact",
+  "name": "Udyati Deshpande",
+  "pan": "CFZAM3048P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 79768,
+  "salary_net": 46558,
+  "itr_total_income": 506375,
+  "land_value": 218203819,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

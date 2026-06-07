@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP61394292",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, blurred_edge",
+  "name": "Ekiya Rau",
+  "pan": "AETPZ9284C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 87003,
+  "salary_net": 50296,
+  "itr_total_income": 592061,
+  "land_value": 371320039,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

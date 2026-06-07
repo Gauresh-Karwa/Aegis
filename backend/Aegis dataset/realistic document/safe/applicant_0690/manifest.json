@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP50641051",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ubika Pai",
+  "pan": "YYZFZ0684U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 76139,
+  "salary_net": 44682,
+  "itr_total_income": 469667,
+  "land_value": 534797134,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

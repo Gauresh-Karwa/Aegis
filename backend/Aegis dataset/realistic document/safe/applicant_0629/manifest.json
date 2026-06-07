@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17431875",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kala Loyal",
+  "pan": "XMBGX5674F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 61361,
+  "salary_net": 37048,
+  "itr_total_income": 297252,
+  "land_value": 567693425,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

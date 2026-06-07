@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP38974760",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, blurred_edge",
+  "name": "Ira Ahluwalia",
+  "pan": "CWACU5400T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 80760,
+  "salary_net": 47070,
+  "itr_total_income": 575673,
+  "land_value": 427826204,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

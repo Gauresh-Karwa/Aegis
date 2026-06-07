@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP59768906",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Deepa Basu",
+  "pan": "VPHLI2263X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 100323,
+  "salary_net": 57178,
+  "itr_total_income": 651008,
+  "land_value": 550219080,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP49463825",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Andrew Lal",
+  "pan": "MWVPR0248L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 123379,
+  "salary_net": 69090,
+  "itr_total_income": 929657,
+  "land_value": 465254647,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

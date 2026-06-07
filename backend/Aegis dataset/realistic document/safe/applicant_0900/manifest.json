@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP38423297",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Baljiwan Kalla",
+  "pan": "XANTF9254Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 73447,
+  "salary_net": 43292,
+  "itr_total_income": 460265,
+  "land_value": 302326825,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

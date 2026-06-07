@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP60461327",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Balhaar Chaudhary",
+  "pan": "ZWSHP9086O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 88124,
+  "salary_net": 50875,
+  "itr_total_income": 573612,
+  "land_value": 284097322,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP45927849",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "noise_stripe",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, noise_stripe, font_discrepancy",
+  "name": "Meghana Prashad",
+  "pan": "FQSTX1038R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 129678,
+  "salary_net": 72345,
+  "itr_total_income": 975059,
+  "land_value": 622846228,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

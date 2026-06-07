@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP33186716",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "font_discrepancy",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, math_mismatch, pixel_artifact",
+  "name": "Saanvi Koshy",
+  "pan": "HMMCA9359V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 110586,
+  "salary_net": 62480,
+  "itr_total_income": 808667,
+  "land_value": 267632935,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

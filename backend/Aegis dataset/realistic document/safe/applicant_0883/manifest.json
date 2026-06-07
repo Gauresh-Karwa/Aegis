@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP68861870",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Alka Padmanabhan",
+  "pan": "VELJC6320L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 86362,
+  "salary_net": 49965,
+  "itr_total_income": 558679,
+  "land_value": 1928557853,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

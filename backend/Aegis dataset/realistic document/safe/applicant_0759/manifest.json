@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP29597157",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Noah Gola",
+  "pan": "MNRCF6420J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 66660,
+  "salary_net": 39785,
+  "itr_total_income": 419611,
+  "land_value": 229536271,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

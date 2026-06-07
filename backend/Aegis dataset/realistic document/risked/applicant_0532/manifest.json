@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP51106865",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch",
+    "pixel_artifact",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch, pixel_artifact, tilted_amount",
+  "name": "Upma Pal",
+  "pan": "LUPPB7393X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 68671,
+  "salary_net": 40824,
+  "itr_total_income": 478511,
+  "land_value": 755045208,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

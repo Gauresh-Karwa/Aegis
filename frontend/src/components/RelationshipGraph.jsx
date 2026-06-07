@@ -5,7 +5,7 @@ const RelationshipGraph = ({ backendData }) => {
   const riskStatus = backendData?.overall_risk_score > 60 ? "HIGH RISK" : "CLEARED";
   
   // Simulate connected nodes based on Risk
-  const connections = backendData?.overall_risk_score > 60 ? [
+  const connections = backendData?.connections || (backendData?.overall_risk_score > 60 ? [
     { type: 'Device Hash', value: 'a8f9c2...11b', status: 'FLAGGED (Linked to 3 applications)' },
     { type: 'Employer GSTIN', value: '27AABCU9603R1ZM', status: 'CLEARED' },
     { type: 'Phone Node', value: '+91-98****1234', status: 'FLAGGED (Prepaid Burner)' }
@@ -13,7 +13,7 @@ const RelationshipGraph = ({ backendData }) => {
     { type: 'Device Hash', value: 'e2b4d1...99c', status: 'CLEARED (Unique Device)' },
     { type: 'Employer GSTIN', value: '27AABCU9603R1ZM', status: 'CLEARED' },
     { type: 'Phone Node', value: '+91-98****5678', status: 'CLEARED' }
-  ];
+  ]);
 
   return (
     <div className="w-full text-slate-200">

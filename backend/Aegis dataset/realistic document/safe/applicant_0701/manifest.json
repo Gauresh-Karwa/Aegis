@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP64931679",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vansha Taneja",
+  "pan": "WNMHD4185A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 127341,
+  "salary_net": 71137,
+  "itr_total_income": 896994,
+  "land_value": 472878187,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

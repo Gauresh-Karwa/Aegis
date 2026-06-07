@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP45380243",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "pixel_artifact",
+    "math_mismatch",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, pixel_artifact, math_mismatch, tilted_amount",
+  "name": "Pratyush Bhasin",
+  "pan": "DCXBD6782Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 113734,
+  "salary_net": 64106,
+  "itr_total_income": 756658,
+  "land_value": 617553894,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

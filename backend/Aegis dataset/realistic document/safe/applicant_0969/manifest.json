@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP13696121",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Fitan Borah",
+  "pan": "VHPGN1367F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 55758,
+  "salary_net": 34153,
+  "itr_total_income": 289082,
+  "land_value": 1131646589,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

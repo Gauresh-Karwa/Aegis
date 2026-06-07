@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP43426253",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vrinda Hans",
+  "pan": "ASDBJ0695K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 40102,
+  "salary_net": 37419,
+  "itr_total_income": 157471,
+  "land_value": 929338382,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

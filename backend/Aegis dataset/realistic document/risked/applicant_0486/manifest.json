@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP44691733",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "font_discrepancy",
+    "blurred_edge",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, font_discrepancy, blurred_edge, math_mismatch",
+  "name": "Yadavi Sur",
+  "pan": "DPLBW8480G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 90354,
+  "salary_net": 52028,
+  "itr_total_income": 622894,
+  "land_value": 524411695,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

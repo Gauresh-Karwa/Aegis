@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP48692379",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Hemangini Om",
+  "pan": "KTXCR3778I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 39556,
+  "salary_net": 36909,
+  "itr_total_income": 199532,
+  "land_value": 1291522588,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

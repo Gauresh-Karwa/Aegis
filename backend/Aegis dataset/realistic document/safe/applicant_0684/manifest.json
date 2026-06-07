@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP97080363",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nihal Pal",
+  "pan": "ZTXLY1675I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 46626,
+  "salary_net": 29435,
+  "itr_total_income": 242055,
+  "land_value": 698793044,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

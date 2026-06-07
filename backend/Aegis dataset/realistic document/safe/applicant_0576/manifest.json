@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP89039278",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rushil Sagar",
+  "pan": "ANKFB7006F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 60140,
+  "salary_net": 36416,
+  "itr_total_income": 353394,
+  "land_value": 681926876,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

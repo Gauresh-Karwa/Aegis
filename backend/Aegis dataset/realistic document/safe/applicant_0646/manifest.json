@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP78507325",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jatin Sahni",
+  "pan": "ELJHJ6722W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 60788,
+  "salary_net": 36751,
+  "itr_total_income": 382960,
+  "land_value": 1003972377,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

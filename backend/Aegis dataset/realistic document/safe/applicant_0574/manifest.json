@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP10787029",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Warjas Gara",
+  "pan": "NJFFG3828R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 42577,
+  "salary_net": 39729,
+  "itr_total_income": 225051,
+  "land_value": 548401023,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

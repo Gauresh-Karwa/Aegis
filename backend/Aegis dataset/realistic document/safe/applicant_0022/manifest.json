@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP22438107",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Elijah Chawla",
+  "pan": "GNMFF6132C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 101799,
+  "salary_net": 57941,
+  "itr_total_income": 646415,
+  "land_value": 436896786,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

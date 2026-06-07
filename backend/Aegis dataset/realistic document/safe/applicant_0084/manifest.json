@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15083097",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vincent Lanka",
+  "pan": "TYXAW4840T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 61945,
+  "salary_net": 37350,
+  "itr_total_income": 394464,
+  "land_value": 265335127,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

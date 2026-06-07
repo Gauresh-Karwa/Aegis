@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP43962136",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nidra Koshy",
+  "pan": "QNOLL9771V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 132580,
+  "salary_net": 73844,
+  "itr_total_income": 953438,
+  "land_value": 277484773,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

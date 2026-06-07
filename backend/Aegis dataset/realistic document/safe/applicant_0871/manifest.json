@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP76173810",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Tejas Bumb",
+  "pan": "KPGHJ5349I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 104185,
+  "salary_net": 59173,
+  "itr_total_income": 762705,
+  "land_value": 865546090,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

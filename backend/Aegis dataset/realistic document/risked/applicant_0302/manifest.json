@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP97483292",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe",
+  "name": "Azaan Wali",
+  "pan": "NXGAN4373T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 89065,
+  "salary_net": 51361,
+  "itr_total_income": 617620,
+  "land_value": 514425503,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

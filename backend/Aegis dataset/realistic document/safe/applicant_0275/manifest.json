@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP42916333",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Qabil Ramachandran",
+  "pan": "DZKPH2406T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 100045,
+  "salary_net": 57034,
+  "itr_total_income": 658992,
+  "land_value": 354441778,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

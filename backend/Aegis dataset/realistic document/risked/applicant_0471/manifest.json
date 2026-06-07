@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP20485811",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "blurred_edge",
+    "math_mismatch",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge, math_mismatch, tilted_amount",
+  "name": "Ekbal Khosla",
+  "pan": "WSKFG7331Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 94699,
+  "salary_net": 54272,
+  "itr_total_income": 625943,
+  "land_value": 179494440,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

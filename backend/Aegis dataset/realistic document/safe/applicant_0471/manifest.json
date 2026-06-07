@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP83384729",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Idika Arya",
+  "pan": "VCALA7304B",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 118798,
+  "salary_net": 66723,
+  "itr_total_income": 836304,
+  "land_value": 1237973665,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

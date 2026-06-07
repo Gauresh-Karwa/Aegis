@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP70125933",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount",
+  "name": "Dayita Sarna",
+  "pan": "WQZPU5971I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 130159,
+  "salary_net": 72593,
+  "itr_total_income": 960424,
+  "land_value": 730892390,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

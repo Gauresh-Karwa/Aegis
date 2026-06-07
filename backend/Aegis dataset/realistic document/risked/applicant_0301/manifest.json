@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP77017362",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "pixel_artifact",
+    "font_discrepancy",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, pixel_artifact, font_discrepancy, blurred_edge",
+  "name": "Udyati Padmanabhan",
+  "pan": "IQACD6158F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 75763,
+  "salary_net": 44489,
+  "itr_total_income": 501179,
+  "land_value": 1151107402,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

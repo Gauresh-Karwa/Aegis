@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP48029021",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Teerth Das",
+  "pan": "UZIFA7461W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 30148,
+  "salary_net": 28129,
+  "itr_total_income": 45414,
+  "land_value": 641180383,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

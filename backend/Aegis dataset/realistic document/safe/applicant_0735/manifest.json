@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP87262264",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Hardik Chandra",
+  "pan": "RZBFW0786X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 59744,
+  "salary_net": 36211,
+  "itr_total_income": 363524,
+  "land_value": 1092111632,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

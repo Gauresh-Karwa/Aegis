@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP82541655",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Indrajit Lad",
+  "pan": "JPBCF5032E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 59281,
+  "salary_net": 35972,
+  "itr_total_income": 343110,
+  "land_value": 1501095305,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

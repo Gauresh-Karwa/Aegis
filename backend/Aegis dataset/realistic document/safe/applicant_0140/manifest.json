@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP69927703",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Tanay Gade",
+  "pan": "ZYGCY0388H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 38858,
+  "salary_net": 36258,
+  "itr_total_income": 170328,
+  "land_value": 3236149224,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

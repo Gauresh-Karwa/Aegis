@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP25890211",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Om Swamy",
+  "pan": "NKPHW0001V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 98034,
+  "salary_net": 55996,
+  "itr_total_income": 703792,
+  "land_value": 490511558,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

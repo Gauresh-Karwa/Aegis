@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP52928904",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nitara Upadhyay",
+  "pan": "HPDPT3062X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 132831,
+  "salary_net": 73974,
+  "itr_total_income": 991044,
+  "land_value": 166507694,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

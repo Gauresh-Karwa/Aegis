@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP60130536",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jacob Chakraborty",
+  "pan": "ZDUCD2453G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 112057,
+  "salary_net": 63240,
+  "itr_total_income": 839311,
+  "land_value": 171768680,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

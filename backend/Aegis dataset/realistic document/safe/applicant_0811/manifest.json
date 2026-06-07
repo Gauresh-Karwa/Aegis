@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP33619215",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Varsha Baria",
+  "pan": "KIFHE7765I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 53278,
+  "salary_net": 32872,
+  "itr_total_income": 335925,
+  "land_value": 83361770,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

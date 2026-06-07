@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP29271972",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vedhika Madan",
+  "pan": "NYXHU6663M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 125854,
+  "salary_net": 70369,
+  "itr_total_income": 889830,
+  "land_value": 1422073259,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -38,23 +38,25 @@ def init_db():
     conn.commit()
     conn.close()
 
-def execute_query(query: str, params: tuple = ()) -> list:
-    """Executes a SELECT query and returns the results."""
+def get_db_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute(query, params)
-    rows = cursor.fetchall()
-    conn.close()
-    return [dict(row) for row in rows]
+    return conn
+
+def execute_query(query: str, params: tuple = ()) -> list:
+    """Executes a SELECT query and returns the results."""
+    with get_db_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+        return [dict(row) for row in rows]
 
 def execute_insert(query: str, params: tuple = ()):
     """Executes an INSERT/UPDATE query."""
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute(query, params)
-    conn.commit()
-    conn.close()
+    with get_db_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        conn.commit()
 
 # Initialize on module load
 init_db()

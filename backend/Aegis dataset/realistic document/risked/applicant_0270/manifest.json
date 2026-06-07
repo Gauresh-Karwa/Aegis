@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP81515775",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch",
+  "name": "Yauvani Deol",
+  "pan": "OHCHD4309L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 59416,
+  "salary_net": 36043,
+  "itr_total_income": 380347,
+  "land_value": 688760661,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

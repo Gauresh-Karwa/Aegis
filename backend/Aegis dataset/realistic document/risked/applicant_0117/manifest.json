@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP16524792",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "pixel_artifact",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, pixel_artifact, font_discrepancy",
+  "name": "Yash Dhingra",
+  "pan": "KNDLZ7976I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 60631,
+  "salary_net": 36670,
+  "itr_total_income": 273940,
+  "land_value": 377667309,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

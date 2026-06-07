@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP89182852",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Robert Sarma",
+  "pan": "YLUFP5688V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 28234,
+  "salary_net": 26342,
+  "itr_total_income": 44948,
+  "land_value": 1419900021,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP85641203",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch",
+  "name": "Vihaan Bhatnagar",
+  "pan": "EHCLC3374Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 112751,
+  "salary_net": 63599,
+  "itr_total_income": 836249,
+  "land_value": 386410462,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

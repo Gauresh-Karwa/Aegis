@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP84995568",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe, font_discrepancy",
+  "name": "Niharika Suri",
+  "pan": "FHRPU7567J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 36986,
+  "salary_net": 34511,
+  "itr_total_income": 117721,
+  "land_value": 189465438,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -4,8 +4,7 @@ import PipelineDashboard from './PipelineDashboard';
 const DocumentConsistency = ({ backendData }) => {
   const [activeCrop, setActiveCrop] = useState(null);
 
-  // Mock data for the diff grid based on the user's requirements
-  const diffData = [
+  const diffData = backendData?.diff_data || [
     { field: "Gross Income", docA: "₹ 12,50,000", docB: "₹ 12,50,000", match: true, sourceA: "Salary_Slip_pg1.pdf", sourceB: "ITR_2025.pdf" },
     { field: "Tax Deducted", docA: "₹ 1,80,000", docB: "₹ 1,80,000", match: true, sourceA: "Salary_Slip_pg1.pdf", sourceB: "ITR_2025.pdf" },
     { field: "Net Pay", docA: "₹ 10,70,000", docB: "₹ 14,70,000", match: false, sourceA: "Salary_Slip_pg1.pdf", sourceB: "ITR_2025.pdf" },

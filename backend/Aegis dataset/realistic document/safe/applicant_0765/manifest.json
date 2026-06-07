@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15738490",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Zayan Mani",
+  "pan": "SWHAS2632X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 117025,
+  "salary_net": 65807,
+  "itr_total_income": 846368,
+  "land_value": 135792931,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

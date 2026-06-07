@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP75216628",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faqid Khare",
+  "pan": "GZDFN1910A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 129120,
+  "salary_net": 72056,
+  "itr_total_income": 959757,
+  "land_value": 1432205938,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

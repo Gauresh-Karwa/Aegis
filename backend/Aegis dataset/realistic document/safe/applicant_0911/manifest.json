@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP65912653",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Lakshit Rajan",
+  "pan": "LTDBO1234J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 122758,
+  "salary_net": 68770,
+  "itr_total_income": 878579,
+  "land_value": 670303846,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

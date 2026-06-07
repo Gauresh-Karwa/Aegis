@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP41211041",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Manbir Majumdar",
+  "pan": "WLEBZ0930T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 30308,
+  "salary_net": 28278,
+  "itr_total_income": 64340,
+  "land_value": 1283609824,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

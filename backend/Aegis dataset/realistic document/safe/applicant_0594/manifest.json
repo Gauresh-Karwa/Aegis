@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP63443513",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rachita Bhargava",
+  "pan": "JEQCT6072F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 40409,
+  "salary_net": 37705,
+  "itr_total_income": 157022,
+  "land_value": 263655577,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

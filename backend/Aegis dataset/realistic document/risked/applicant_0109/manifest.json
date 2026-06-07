@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP30149380",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "tilted_amount",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount, math_mismatch, pixel_artifact",
+  "name": "Joshua Keer",
+  "pan": "UEZTL0727L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 114604,
+  "salary_net": 64556,
+  "itr_total_income": 851391,
+  "land_value": 697332613,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

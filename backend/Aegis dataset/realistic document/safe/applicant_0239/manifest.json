@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP52906846",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Geetika Gandhi",
+  "pan": "JCDFJ0718O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 124106,
+  "salary_net": 69466,
+  "itr_total_income": 905509,
+  "land_value": 587291043,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

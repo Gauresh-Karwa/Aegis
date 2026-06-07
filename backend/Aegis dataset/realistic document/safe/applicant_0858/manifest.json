@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP41929746",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kavya Walia",
+  "pan": "PGIJB4949W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 80764,
+  "salary_net": 47072,
+  "itr_total_income": 525344,
+  "land_value": 2316611815,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

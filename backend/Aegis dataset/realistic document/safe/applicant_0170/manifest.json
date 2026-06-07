@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP48389128",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Hritik Merchant",
+  "pan": "SQVFW0613R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 112334,
+  "salary_net": 63383,
+  "itr_total_income": 768042,
+  "land_value": 1099604804,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP93678086",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faraj Nazareth",
+  "pan": "DHDHR6730T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 53436,
+  "salary_net": 32953,
+  "itr_total_income": 309963,
+  "land_value": 228618253,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

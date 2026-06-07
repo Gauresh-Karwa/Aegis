@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP30940290",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vamakshi Acharya",
+  "pan": "GHJGE6255H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 119681,
+  "salary_net": 67179,
+  "itr_total_income": 864024,
+  "land_value": 3573239627,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

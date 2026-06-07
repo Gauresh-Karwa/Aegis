@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP25785639",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, tilted_amount",
+  "name": "Onveer Johal",
+  "pan": "NRTGR0121D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 97741,
+  "salary_net": 55843,
+  "itr_total_income": 673415,
+  "land_value": 97776269,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

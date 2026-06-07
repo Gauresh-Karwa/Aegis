@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP84555189",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Eiravati Badami",
+  "pan": "ZEECO2935U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 77571,
+  "salary_net": 45423,
+  "itr_total_income": 483808,
+  "land_value": 729322238,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

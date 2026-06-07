@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP61069170",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Urmi Luthra",
+  "pan": "VLOAD1997Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 44282,
+  "salary_net": 41320,
+  "itr_total_income": 238781,
+  "land_value": 1298874982,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

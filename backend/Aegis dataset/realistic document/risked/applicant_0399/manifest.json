@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP56591697",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, pixel_artifact",
+  "name": "Faras Iyengar",
+  "pan": "PKBBM2031U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 76805,
+  "salary_net": 45026,
+  "itr_total_income": 492144,
+  "land_value": 271411300,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

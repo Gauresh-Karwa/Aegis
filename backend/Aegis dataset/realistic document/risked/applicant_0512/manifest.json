@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP76193214",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount",
+  "name": "Arjun Dada",
+  "pan": "GSEJU9914F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 87798,
+  "salary_net": 50706,
+  "itr_total_income": 571325,
+  "land_value": 424099228,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

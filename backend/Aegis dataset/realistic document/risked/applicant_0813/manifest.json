@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP38916823",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "noise_stripe",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, noise_stripe, math_mismatch",
+  "name": "Alka Gokhale",
+  "pan": "WPMPT6189H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 91410,
+  "salary_net": 52573,
+  "itr_total_income": 616806,
+  "land_value": 370880484,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15083417",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ekaja Shah",
+  "pan": "YRQBC1379O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 101814,
+  "salary_net": 57949,
+  "itr_total_income": 649067,
+  "land_value": 170883517,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

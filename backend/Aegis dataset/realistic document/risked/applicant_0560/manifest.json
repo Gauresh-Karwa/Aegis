@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP88240879",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "math_mismatch",
+    "noise_stripe",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch, noise_stripe, font_discrepancy",
+  "name": "Rohan Din",
+  "pan": "LBKGS8694Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 133939,
+  "salary_net": 74545,
+  "itr_total_income": 1040193,
+  "land_value": 1084705607,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

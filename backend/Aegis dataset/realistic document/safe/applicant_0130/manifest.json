@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP43951893",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nakul Bajwa",
+  "pan": "WCMBT9051Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 50067,
+  "salary_net": 31213,
+  "itr_total_income": 263459,
+  "land_value": 747801900,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

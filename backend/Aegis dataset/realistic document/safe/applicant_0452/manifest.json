@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP81751154",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kiaan Pall",
+  "pan": "ECTHA6565C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 58671,
+  "salary_net": 35658,
+  "itr_total_income": 337503,
+  "land_value": 539500185,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

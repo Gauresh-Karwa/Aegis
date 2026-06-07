@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP82018870",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Arya Aurora",
+  "pan": "SAZJU4377S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 100514,
+  "salary_net": 57275,
+  "itr_total_income": 735595,
+  "land_value": 538875534,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

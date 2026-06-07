@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { UploadCloud } from 'lucide-react';
+import { UploadCloud, FolderUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const UploadZone = ({ onUpload }) => {
+const UploadZone = ({ onUpload, compact }) => {
   const [isDragActive, setIsDragActive] = useState(false);
   const fileInputRef = useRef(null);
 
@@ -20,24 +20,25 @@ const UploadZone = ({ onUpload }) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      onUpload(e.dataTransfer.files[0]);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      onUpload(Array.from(e.dataTransfer.files));
     }
   };
 
   const handleChange = (e) => {
     e.preventDefault();
-    if (e.target.files && e.target.files[0]) {
-      onUpload(e.target.files[0]);
+    if (e.target.files && e.target.files.length > 0) {
+      onUpload(Array.from(e.target.files));
     }
   };
 
   return (
     <div
-      className={`relative w-full mx-auto rounded-md border-2 border-dashed transition-all duration-300 p-12 text-center cursor-pointer overflow-hidden
+      className={`relative w-full mx-auto border-2 border-dashed transition-all duration-300 text-center cursor-pointer overflow-hidden
+        ${compact ? 'p-4' : 'p-12 rounded-lg'}
         ${isDragActive 
-          ? 'border-verification-green bg-verification-green/5' 
-          : 'border-white/20 bg-enterprise-800/80 hover:border-verification-green/50 hover:bg-white/5 backdrop-blur-md'
+          ? 'border-black bg-gray-100' 
+          : 'border-black bg-white hover:bg-gray-50 shadow-sm'
         }
       `}
       onDragEnter={handleDrag}
@@ -51,22 +52,25 @@ const UploadZone = ({ onUpload }) => {
         type="file"
         className="hidden"
         onChange={handleChange}
-        accept="application/pdf,image/jpeg,image/png"
+        multiple
+        webkitdirectory="true"
+        directory="true"
       />
       
       <motion.div 
         animate={{ y: isDragActive ? -5 : 0 }}
         className="flex flex-col items-center justify-center pointer-events-none"
       >
-        <UploadCloud size={48} className="text-slate-300 mb-4 opacity-80" />
-        <h2 className="text-xl font-bold font-sans tracking-tight text-white mb-2">
-          Submit Encrypted Payload
-        </h2>
-        <p className="text-slate-400 font-medium text-sm">
-          Drag & drop secure documents here or <span className="text-verification-green hover:underline">browse local files</span>
-        </p>
-        <p className="text-[10px] text-slate-500 mt-4 uppercase tracking-widest font-bold">
-          Supported Formats: PDF, JPG, PNG (Max 15MB)
+        <div className={`bg-gray-100 rounded-full border border-black ${compact ? 'p-2 mb-2' : 'p-4 mb-4'}`}>
+           <FolderUp size={compact ? 20 : 40} className="text-black" />
+        </div>
+        {!compact && (
+            <h2 className="text-xl font-bold font-sans tracking-tight text-black mb-2">
+            Upload Applicant Folder
+            </h2>
+        )}
+        <p className={`font-mono text-black ${compact ? 'text-[10px]' : 'font-medium text-sm'}`}>
+          {compact ? 'Drop Folder' : 'Drag & drop the dossier folder (4 documents) here'}
         </p>
       </motion.div>
     </div>

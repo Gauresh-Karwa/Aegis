@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP60922638",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "math_mismatch",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch, tilted_amount",
+  "name": "Ishita Sarkar",
+  "pan": "CGNBH6281Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 122265,
+  "salary_net": 68514,
+  "itr_total_income": 900893,
+  "land_value": 304414472,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

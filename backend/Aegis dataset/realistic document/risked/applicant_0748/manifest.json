@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP83102665",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact",
+  "name": "Charvi Bora",
+  "pan": "DPZTW1954V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 34271,
+  "salary_net": 31977,
+  "itr_total_income": 130220,
+  "land_value": 782613449,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP99125849",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Hredhaan Johal",
+  "pan": "WDHFN4647I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 33787,
+  "salary_net": 31525,
+  "itr_total_income": 65876,
+  "land_value": 544716403,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

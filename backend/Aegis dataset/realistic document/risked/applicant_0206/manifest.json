@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP98920535",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "pixel_artifact",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, pixel_artifact, tilted_amount",
+  "name": "Ryan Tella",
+  "pan": "IUSTI0771W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 45655,
+  "salary_net": 28933,
+  "itr_total_income": 236170,
+  "land_value": 85462098,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

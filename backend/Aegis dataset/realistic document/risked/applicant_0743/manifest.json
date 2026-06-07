@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP55240080",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe",
+  "name": "Ria Modi",
+  "pan": "HKZTK3395C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 94329,
+  "salary_net": 54081,
+  "itr_total_income": 662725,
+  "land_value": 1871814522,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

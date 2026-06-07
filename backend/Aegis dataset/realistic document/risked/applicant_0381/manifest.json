@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP52488920",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "blurred_edge",
+    "noise_stripe",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge, noise_stripe, math_mismatch",
+  "name": "Sanya Menon",
+  "pan": "QBKFQ1743K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 33690,
+  "salary_net": 31434,
+  "itr_total_income": 69262,
+  "land_value": 576170579,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

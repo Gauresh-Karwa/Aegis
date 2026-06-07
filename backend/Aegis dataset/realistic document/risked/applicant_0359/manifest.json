@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP43637328",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, noise_stripe",
+  "name": "Lekha Choudhary",
+  "pan": "NVNBL4559M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 50147,
+  "salary_net": 31253,
+  "itr_total_income": 196700,
+  "land_value": 169314016,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP32016697",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "math_mismatch",
+    "tilted_amount",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, math_mismatch, tilted_amount, font_discrepancy",
+  "name": "Manthan Munshi",
+  "pan": "PKDPU1543U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 78094,
+  "salary_net": 45693,
+  "itr_total_income": 450353,
+  "land_value": 2359535397,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

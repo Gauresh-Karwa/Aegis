@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP59065966",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "font_discrepancy",
+    "blurred_edge",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, font_discrepancy, blurred_edge, math_mismatch",
+  "name": "Arjun Sawhney",
+  "pan": "MEAFE8361I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 130543,
+  "salary_net": 72792,
+  "itr_total_income": 1017980,
+  "land_value": 120793710,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

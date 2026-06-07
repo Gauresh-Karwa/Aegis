@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP12661812",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, pixel_artifact",
+  "name": "Akshay Desai",
+  "pan": "BBXBL1882V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 68139,
+  "salary_net": 40550,
+  "itr_total_income": 396094,
+  "land_value": 1152694026,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

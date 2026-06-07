@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP22883082",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Falguni Soman",
+  "pan": "GNDTC8518G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 98150,
+  "salary_net": 56055,
+  "itr_total_income": 672177,
+  "land_value": 586195722,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

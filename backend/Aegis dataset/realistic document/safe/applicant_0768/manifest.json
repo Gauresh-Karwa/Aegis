@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP29228937",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Darika Kant",
+  "pan": "WPJAO0082K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 103898,
+  "salary_net": 59025,
+  "itr_total_income": 780955,
+  "land_value": 489465034,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

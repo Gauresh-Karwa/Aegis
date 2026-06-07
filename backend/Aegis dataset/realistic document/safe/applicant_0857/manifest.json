@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP18944504",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Krishna Ramesh",
+  "pan": "XLVBR0678P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 90115,
+  "salary_net": 51904,
+  "itr_total_income": 590659,
+  "land_value": 783372429,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

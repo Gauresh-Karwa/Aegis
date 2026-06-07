@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP73002504",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Timothy Joshi",
+  "pan": "IDDHD5955G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 59334,
+  "salary_net": 36001,
+  "itr_total_income": 332059,
+  "land_value": 488776026,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

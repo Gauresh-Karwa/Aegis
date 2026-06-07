@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP25235885",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Niharika Mukhopadhyay",
+  "pan": "SUJPM8416T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 77803,
+  "salary_net": 45543,
+  "itr_total_income": 533347,
+  "land_value": 706501511,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17702132",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vaishnavi Sachdev",
+  "pan": "WXEHY8816U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 93782,
+  "salary_net": 53798,
+  "itr_total_income": 666905,
+  "land_value": 1882617427,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

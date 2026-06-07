@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP68914209",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Dominic Arya",
+  "pan": "EZVAA4292E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 79441,
+  "salary_net": 46388,
+  "itr_total_income": 478837,
+  "land_value": 492934573,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP12671160",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Abhiram Bajwa",
+  "pan": "PZELP4904V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 57692,
+  "salary_net": 35151,
+  "itr_total_income": 339259,
+  "land_value": 1462942010,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

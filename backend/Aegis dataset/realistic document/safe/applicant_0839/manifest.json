@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP35270564",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yauvani Acharya",
+  "pan": "ZNZAP9004H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 64004,
+  "salary_net": 38412,
+  "itr_total_income": 399458,
+  "land_value": 199318248,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

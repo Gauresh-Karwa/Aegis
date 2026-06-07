@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP56712206",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe, pixel_artifact",
+  "name": "Logan Deep",
+  "pan": "QHBPS6243T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 67834,
+  "salary_net": 40391,
+  "itr_total_income": 390405,
+  "land_value": 991709888,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

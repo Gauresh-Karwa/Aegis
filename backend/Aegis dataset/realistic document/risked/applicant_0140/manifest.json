@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP45076465",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, math_mismatch",
+  "name": "Jatin Sarraf",
+  "pan": "KYGPW5712F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 67750,
+  "salary_net": 40349,
+  "itr_total_income": 427822,
+  "land_value": 115340105,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

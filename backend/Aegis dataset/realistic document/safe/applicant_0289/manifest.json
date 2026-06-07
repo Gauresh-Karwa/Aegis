@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP63050857",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ekiya Purohit",
+  "pan": "USYJH0930S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 29832,
+  "salary_net": 27834,
+  "itr_total_income": 134119,
+  "land_value": 566930388,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

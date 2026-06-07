@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP65467199",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rushil Datta",
+  "pan": "ZHMBB0266W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 109928,
+  "salary_net": 62140,
+  "itr_total_income": 794480,
+  "land_value": 117851197,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

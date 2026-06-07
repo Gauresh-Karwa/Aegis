@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15655869",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Quincy Parmer",
+  "pan": "QNQTU1525A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 104244,
+  "salary_net": 59205,
+  "itr_total_income": 744257,
+  "land_value": 1187536746,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

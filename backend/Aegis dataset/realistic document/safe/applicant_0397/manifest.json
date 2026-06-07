@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP83927660",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Onkar Manne",
+  "pan": "AMDAW0258W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 46043,
+  "salary_net": 29133,
+  "itr_total_income": 221544,
+  "land_value": 116410301,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

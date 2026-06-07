@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP60722659",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "blurred_edge",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, blurred_edge, math_mismatch",
+  "name": "Chandran Tara",
+  "pan": "PWYTS4619Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 133846,
+  "salary_net": 74498,
+  "itr_total_income": 948024,
+  "land_value": 64330108,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

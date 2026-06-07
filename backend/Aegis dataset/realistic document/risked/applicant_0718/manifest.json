@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP39084151",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe",
+    "pixel_artifact",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe, pixel_artifact, blurred_edge",
+  "name": "Vasana Bala",
+  "pan": "LWPTB9846Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 104068,
+  "salary_net": 59113,
+  "itr_total_income": 734494,
+  "land_value": 645550400,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

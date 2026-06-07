@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP99246238",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "tilted_amount",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount, pixel_artifact",
+  "name": "Chasmum Pandey",
+  "pan": "DMGLZ3933O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 123064,
+  "salary_net": 68927,
+  "itr_total_income": 890783,
+  "land_value": 71536309,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

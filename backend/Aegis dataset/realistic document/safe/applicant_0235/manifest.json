@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP14031001",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Adya Mital",
+  "pan": "KSYGP0179E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 91045,
+  "salary_net": 52385,
+  "itr_total_income": 576890,
+  "land_value": 426092838,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP26374374",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Timothy Doctor",
+  "pan": "WIXJS7324A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 41438,
+  "salary_net": 38666,
+  "itr_total_income": 161351,
+  "land_value": 717965390,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

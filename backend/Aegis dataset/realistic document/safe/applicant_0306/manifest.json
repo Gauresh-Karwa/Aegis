@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP50624561",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Naveen Nadig",
+  "pan": "EAOCI2341I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 68165,
+  "salary_net": 40562,
+  "itr_total_income": 378835,
+  "land_value": 69870730,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

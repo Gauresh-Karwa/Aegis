@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP33177482",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge",
+  "name": "Veer Tandon",
+  "pan": "HRSAB5407W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 132198,
+  "salary_net": 73647,
+  "itr_total_income": 959593,
+  "land_value": 625987868,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

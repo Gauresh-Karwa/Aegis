@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17165730",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Naveen Parekh",
+  "pan": "QSBFM3952R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 124117,
+  "salary_net": 69471,
+  "itr_total_income": 855820,
+  "land_value": 839977426,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP27336723",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ijaya Sharaf",
+  "pan": "EBBBR6598V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 46297,
+  "salary_net": 29264,
+  "itr_total_income": 165760,
+  "land_value": 738670136,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

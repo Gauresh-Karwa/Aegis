@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP45853584",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, blurred_edge",
+  "name": "Varenya Ravi",
+  "pan": "JXQFO6015F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 126812,
+  "salary_net": 70863,
+  "itr_total_income": 910578,
+  "land_value": 628500620,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

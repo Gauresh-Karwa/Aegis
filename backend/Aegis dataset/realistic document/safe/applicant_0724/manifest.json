@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP34674456",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Pooja Deol",
+  "pan": "RAZCK4868N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 129958,
+  "salary_net": 72490,
+  "itr_total_income": 965500,
+  "land_value": 509582241,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

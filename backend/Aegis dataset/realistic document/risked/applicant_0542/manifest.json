@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP38186116",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "tilted_amount",
+    "pixel_artifact",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, tilted_amount, pixel_artifact, blurred_edge",
+  "name": "Darsh Desai",
+  "pan": "SHKTG7255L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 113974,
+  "salary_net": 64231,
+  "itr_total_income": 799911,
+  "land_value": 414472161,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

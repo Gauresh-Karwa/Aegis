@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP64797060",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Anya Choudhry",
+  "pan": "OLULD4166P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 34260,
+  "salary_net": 31966,
+  "itr_total_income": 109907,
+  "land_value": 229199544,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

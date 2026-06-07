@@ -1,70 +1,116 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import RiskGauge from './RiskGauge';
 
 const ThreatEngine = ({ backendData }) => {
-  const flags = backendData?.all_flags || [];
+  const [insightText, setInsightText] = useState("");
+  const fullText = backendData?.llm_insight || "";
+
+  useEffect(() => {
+      setInsightText("");
+      let i = 0;
+      const interval = setInterval(() => {
+          setInsightText(fullText.substring(0, i));
+          i++;
+          if (i > fullText.length) clearInterval(interval);
+      }, 30);
+      return () => clearInterval(interval);
+  }, [fullText]);
+
+  const docs = ['Identity', 'Salary', 'ITR', 'Land'];
+  const fields = ['Name', 'PAN', 'Employer', 'Address'];
 
   return (
-    <div className="w-[350px] bg-enterprise-900 border-l border-white/5 h-full flex flex-col fixed right-0 top-16 pt-6 z-10 overflow-y-auto hidden lg:flex rounded-none">
-      <div className="px-6 flex flex-col h-full">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 border-b border-white/5 pb-2">
-          Threat Engine
-        </h2>
+    <div className="w-full h-full flex flex-col bg-brand-slate overflow-y-auto">
+      
+      {/* 1. Risk Gauge */}
+      <RiskGauge score={backendData?.risk_score || 0} />
 
-        {/* Anomaly Stream */}
-        <div className="flex-1">
-          <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">Live Anomaly Stream</h3>
-          <div className="space-y-3">
-            {flags.length > 0 ? (
-              flags.map((flag, idx) => (
-                <div key={idx} className="bg-action-orange/10 border border-action-orange/30 p-3 rounded-none relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-action-orange"></div>
-                  <div className="text-[10px] font-mono text-action-orange mb-1 uppercase">ALERT TRIGGERED</div>
-                  <div className="text-xs text-white">{flag}</div>
-                </div>
-              ))
-            ) : (
-              <div className="bg-verification-green/10 border border-verification-green/30 p-3 rounded-none relative">
-                <div className="absolute top-0 left-0 w-1 h-full bg-verification-green"></div>
-                <div className="text-[10px] font-mono text-verification-green mb-1 uppercase">SYSTEM CLEAR</div>
-                <div className="text-xs text-white">No active anomalies detected in current stream.</div>
+      <div className="p-4 space-y-6 flex-1">
+          
+          {/* 2. FORENSIC EVIDENCE */}
+          <div className="bg-white border border-black p-4">
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3 border-b border-black pb-2">Forensic Evidence</h3>
+              <div className="space-y-3">
+                  {backendData?.fraud_flags?.length > 0 ? (
+                      backendData.fraud_flags.map((flag, idx) => (
+                          <div key={idx} className="flex gap-2 items-start text-xs font-mono">
+                              <span className="text-[#FF0000]">⚠</span>
+                              <div>
+                                  <div className="font-bold text-[#FF0000]">{flag}</div>
+                                  <div className="text-gray-600 mt-1">{backendData.fraud_reasons?.[flag]}</div>
+                              </div>
+                          </div>
+                      ))
+                  ) : (
+                      <div className="text-xs font-mono text-gray-500">No forensic anomalies detected.</div>
+                  )}
               </div>
-            )}
-            
-            {/* Synthetic Alert Mock for Demo if not flagged by backend */}
-            <div className="bg-white/5 border border-white/10 p-3 rounded-none relative">
-              <div className="text-[10px] font-mono text-slate-400 mb-1 uppercase">DEVICE INTELLIGENCE</div>
-              <div className="text-xs text-slate-300">
-                Device Fingerprint matches 1 prior application (Status: Normal).
-              </div>
-            </div>
-            
-             <div className="bg-white/5 border border-white/10 p-3 rounded-none relative">
-              <div className="text-[10px] font-mono text-slate-400 mb-1 uppercase">LLM INSIGHTS</div>
-              <div className="text-xs text-slate-300">
-                {backendData?.llm_insights?.extracted_text_summary?.substring(0, 100)}...
-              </div>
-            </div>
           </div>
-        </div>
 
-        {/* Action Panel */}
-        <div className="mt-8 border-t border-white/5 pt-6 pb-24">
-           <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">Underwriter Action Panel</h3>
-           <div className="space-y-3">
-              <button className="w-full bg-verification-green/10 border border-verification-green/50 text-verification-green hover:bg-verification-green hover:text-white transition-colors py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                APPROVE DOCUMENT
-              </button>
-              <button className="w-full bg-blue-500/10 border border-blue-500/50 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                ESCALATE TO L2
-              </button>
-              <button className="w-full bg-action-orange/10 border border-action-orange/50 text-action-orange hover:bg-action-orange hover:text-white transition-colors py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                FLAG AS FRAUD
-              </button>
-           </div>
-           <div className="mt-4 text-[10px] text-slate-500 uppercase tracking-widest text-center">
-             Audit Trail: Logs recorded under User ID 4492
-           </div>
-        </div>
+          {/* 3. METADATA INSPECTOR */}
+          <div className="bg-white border border-black p-4">
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3 border-b border-black pb-2">Metadata Inspector</h3>
+              <div className="text-xs font-mono space-y-2">
+                  <div className="flex justify-between">
+                      <span className="text-gray-500">Producer:</span>
+                      <span className="font-bold truncate max-w-[150px]">{backendData?.metadata_forensics?.pdf_producer}</span>
+                  </div>
+                  <div className="flex justify-between">
+                      <span className="text-gray-500">Creator:</span>
+                      <span className="font-bold truncate max-w-[150px]">{backendData?.metadata_forensics?.creator}</span>
+                  </div>
+                  <div className="mt-2 pt-2 border-t border-gray-200 flex justify-between items-center">
+                      <span className="text-gray-500">Signal:</span>
+                      <span className={`px-2 py-0.5 font-bold text-[10px] ${backendData?.metadata_forensics?.risk_signal === 'CLEAN' ? 'bg-[#00FF88] text-black' : 'bg-[#FF0000] text-white'}`}>
+                          {backendData?.metadata_forensics?.risk_signal}
+                      </span>
+                  </div>
+              </div>
+          </div>
+
+          {/* 4. AEGIS ANALYSIS */}
+          <div className="bg-white border border-black p-4">
+              <div className="flex justify-between items-center mb-3 border-b border-black pb-2">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-500">AEGIS Analysis</h3>
+                  <span className="text-[8px] bg-black text-white px-1 uppercase">Rule Engine</span>
+              </div>
+              <div className="text-xs font-mono text-gray-700 min-h-[60px]">
+                  {insightText}
+                  <span className="animate-pulse">_</span>
+              </div>
+          </div>
+
+          {/* 5. CROSS-REFERENCE MATRIX */}
+          <div className="bg-white border border-black p-4">
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3 border-b border-black pb-2">Cross-Reference Matrix</h3>
+              <div className="overflow-x-auto">
+                  <table className="w-full text-left text-[10px] font-mono border-collapse">
+                      <thead>
+                          <tr>
+                              <th className="border border-black p-1 bg-gray-50"></th>
+                              {docs.map(d => <th key={d} className="border border-black p-1 bg-gray-50">{d.substring(0,3)}</th>)}
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {fields.map(f => (
+                              <tr key={f}>
+                                  <td className="border border-black p-1 font-bold bg-gray-50">{f}</td>
+                                  {docs.map(d => {
+                                      const isMath = f === 'Name' || f === 'PAN';
+                                      const match = isMath ? backendData?.logic_forensics?.cross_doc_name_match : true;
+                                      return (
+                                          <td key={d} className={`border border-black p-1 text-center ${match ? 'bg-[#00FF88]/20' : 'bg-[#FF0000]/20'}`}>
+                                              {match ? '✓' : '✗'}
+                                          </td>
+                                      )
+                                  })}
+                              </tr>
+                          ))}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
       </div>
     </div>
   );

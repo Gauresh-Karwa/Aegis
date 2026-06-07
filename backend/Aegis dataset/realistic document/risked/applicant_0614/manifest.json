@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP33133558",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe",
+  "name": "Imaran Khurana",
+  "pan": "ULCHP9563P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 91672,
+  "salary_net": 52708,
+  "itr_total_income": 565079,
+  "land_value": 740281971,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

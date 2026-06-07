@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP76751561",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Aarush Ganesan",
+  "pan": "PASHF0275O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 73153,
+  "salary_net": 43141,
+  "itr_total_income": 447882,
+  "land_value": 174966735,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

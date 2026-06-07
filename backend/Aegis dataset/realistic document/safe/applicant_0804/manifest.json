@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17480537",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Upkaar Varughese",
+  "pan": "HBTCI0931B",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 130820,
+  "salary_net": 72935,
+  "itr_total_income": 921719,
+  "land_value": 757810164,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP11831697",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount",
+  "name": "Maanav Deol",
+  "pan": "SQYFC5021W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 45474,
+  "salary_net": 28840,
+  "itr_total_income": 206404,
+  "land_value": 315268228,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

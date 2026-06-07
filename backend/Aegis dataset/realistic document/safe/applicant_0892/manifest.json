@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP39091781",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jyoti Rattan",
+  "pan": "MSPPO5060F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 37220,
+  "salary_net": 34729,
+  "itr_total_income": 154254,
+  "land_value": 1426235629,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

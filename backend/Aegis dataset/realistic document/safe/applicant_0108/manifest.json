@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP43006802",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chavvi Anne",
+  "pan": "RZWPN5379X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 86024,
+  "salary_net": 49789,
+  "itr_total_income": 626526,
+  "land_value": 643429593,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP97090070",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chakradev Sankaran",
+  "pan": "INUJX3247K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 33544,
+  "salary_net": 31298,
+  "itr_total_income": 146310,
+  "land_value": 358951449,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

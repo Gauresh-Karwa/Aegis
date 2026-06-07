@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17985736",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Abhiram Raju",
+  "pan": "MCWTS0721E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 94744,
+  "salary_net": 54295,
+  "itr_total_income": 593437,
+  "land_value": 493953303,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

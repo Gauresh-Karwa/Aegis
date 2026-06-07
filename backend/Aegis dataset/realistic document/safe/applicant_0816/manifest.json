@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP60506621",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Dakshesh Dalal",
+  "pan": "SXAHE9275S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 84378,
+  "salary_net": 48939,
+  "itr_total_income": 599064,
+  "land_value": 488483236,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

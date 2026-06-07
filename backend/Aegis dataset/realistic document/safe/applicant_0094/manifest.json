@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP25912317",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yash Bhatnagar",
+  "pan": "RYNGJ1523X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 50532,
+  "salary_net": 31453,
+  "itr_total_income": 265141,
+  "land_value": 312619041,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

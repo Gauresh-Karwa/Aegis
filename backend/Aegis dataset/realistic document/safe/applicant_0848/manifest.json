@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP65810798",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ranveer Walia",
+  "pan": "BTPGO0424X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 105104,
+  "salary_net": 59647,
+  "itr_total_income": 746233,
+  "land_value": 918153524,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

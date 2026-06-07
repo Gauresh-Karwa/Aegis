@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP10509871",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Gayathri Pant",
+  "pan": "REEGD0060V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 113569,
+  "salary_net": 64022,
+  "itr_total_income": 790991,
+  "land_value": 2930054795,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

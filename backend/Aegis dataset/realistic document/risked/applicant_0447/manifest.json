@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP39166910",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "tilted_amount",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, tilted_amount, font_discrepancy",
+  "name": "Kashvi Iyer",
+  "pan": "MQWTP6618V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 35731,
+  "salary_net": 33339,
+  "itr_total_income": 155770,
+  "land_value": 443200753,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,61 +1,71 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const RiskGauge = ({ score }) => {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, Math.round);
+  const [animatedScore, setAnimatedScore] = useState(0);
 
   useEffect(() => {
-    const controls = animate(count, score || 0, { duration: 2, ease: "easeOut" });
-    return controls.stop;
-  }, [score, count]);
+    // Animate score from 0 to final
+    let start = 0;
+    const end = Math.round(score * 100);
+    if (start === end) return;
+    
+    const duration = 1500; // ms
+    const increment = end / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+            clearInterval(timer);
+            setAnimatedScore(end);
+        } else {
+            setAnimatedScore(Math.floor(start));
+        }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [score]);
 
-  const getRiskColor = (val) => {
-    if (val >= 70) return 'text-action-orange'; // Muted orange for severe
-    if (val >= 40) return 'text-yellow-500';
-    return 'text-verification-green';
+  const getColor = (s) => {
+      if (s >= 65) return '#FF0000';
+      if (s >= 45) return '#FF6B35';
+      if (s >= 30) return '#FFB800';
+      return '#00FF88';
   };
 
-  const getRiskStroke = (val) => {
-    if (val >= 70) return '#d97706'; // Tailwind amber-600/orange
-    if (val >= 40) return '#eab308'; // Tailwind yellow-500
-    return '#10b981'; // Emerald 500
-  };
+  const radius = 80;
+  const circumference = Math.PI * radius; // Half circle
+  const strokeDashoffset = circumference - (animatedScore / 100) * circumference;
 
   return (
-    <div className="panel-glass p-6 flex flex-col items-center justify-center min-h-[200px]">
-      <h3 className="text-xs font-bold tracking-widest text-slate-400 uppercase w-full text-left mb-6 border-b border-white/5 pb-2">
-        Risk Assessment
-      </h3>
-      
-      <div className="relative flex items-center justify-center">
-        <svg className="w-32 h-32 transform -rotate-90">
-          <circle
-            cx="64" cy="64" r="56"
-            fill="transparent"
-            stroke="rgba(255,255,255,0.03)"
-            strokeWidth="8"
-          />
-          <motion.circle
-            cx="64" cy="64" r="56"
-            fill="transparent"
-            stroke={getRiskStroke(score || 0)}
-            strokeWidth="8"
-            strokeDasharray={352}
-            initial={{ strokeDashoffset: 352 }}
-            animate={{ strokeDashoffset: 352 - (352 * (score || 0)) / 100 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            strokeLinecap="round"
-          />
-        </svg>
-        
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <motion.span className={`text-4xl font-bold font-sans ${getRiskColor(score || 0)}`}>
-            {rounded}
-          </motion.span>
-          <span className="text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-bold">Score</span>
+    <div className="flex flex-col items-center justify-center p-6 border-b border-black bg-white">
+        <div className="relative w-[200px] h-[120px] overflow-hidden flex justify-center">
+            <svg width="200" height="120" viewBox="0 0 200 120" className="rotate-180">
+                <circle
+                    cx="100" cy="10" r={radius}
+                    fill="none"
+                    stroke="#f1f5f9"
+                    strokeWidth="16"
+                    strokeDasharray={circumference}
+                    strokeDashoffset="0"
+                />
+                <circle
+                    cx="100" cy="10" r={radius}
+                    fill="none"
+                    stroke={getColor(animatedScore)}
+                    strokeWidth="16"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={strokeDashoffset}
+                    className="transition-all duration-75"
+                />
+            </svg>
+            <div className="absolute bottom-2 text-center">
+                <div className="text-5xl font-mono font-bold" style={{color: getColor(animatedScore)}}>
+                    {animatedScore}
+                </div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mt-1">Risk Score</div>
+            </div>
         </div>
-      </div>
     </div>
   );
 };

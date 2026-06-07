@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP70335791",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch",
+  "name": "Sathvik Khurana",
+  "pan": "QMWPO1607C",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 63711,
+  "salary_net": 38262,
+  "itr_total_income": 387053,
+  "land_value": 695014752,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

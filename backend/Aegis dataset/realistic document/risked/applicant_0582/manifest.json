@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP15596568",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "math_mismatch",
+    "noise_stripe",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch, noise_stripe, font_discrepancy",
+  "name": "Irya Nagarajan",
+  "pan": "ZUAFF4901I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 77496,
+  "salary_net": 45384,
+  "itr_total_income": 454733,
+  "land_value": 339919672,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

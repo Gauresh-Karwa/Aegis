@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP52609952",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Pranit Ghose",
+  "pan": "JREGR2278O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 63840,
+  "salary_net": 38328,
+  "itr_total_income": 331812,
+  "land_value": 428102791,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP78728844",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kamala Sodhi",
+  "pan": "MGPPE3682J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 114209,
+  "salary_net": 64352,
+  "itr_total_income": 803403,
+  "land_value": 200809117,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

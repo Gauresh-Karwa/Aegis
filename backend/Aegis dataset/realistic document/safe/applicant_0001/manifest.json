@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP97642873",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Xavier Dhawan",
+  "pan": "XPITR1069U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 128356,
+  "salary_net": 71661,
+  "itr_total_income": 933355,
+  "land_value": 213699436,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP77503310",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ekiya D\u2019Alia",
+  "pan": "NITPV8977M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 44740,
+  "salary_net": 41748,
+  "itr_total_income": 242389,
+  "land_value": 398065275,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

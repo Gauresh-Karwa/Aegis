@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP77853237",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rajata Pandya",
+  "pan": "ERGGD4377V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 60116,
+  "salary_net": 36405,
+  "itr_total_income": 326406,
+  "land_value": 470104866,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP91038839",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Michael Chad",
+  "pan": "EPRTA9885L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 29105,
+  "salary_net": 27155,
+  "itr_total_income": 63083,
+  "land_value": 395819532,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

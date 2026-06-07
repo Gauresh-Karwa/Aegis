@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP62744434",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Abha Datta",
+  "pan": "EFSLI7198G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 118117,
+  "salary_net": 66371,
+  "itr_total_income": 912524,
+  "land_value": 176192627,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP95292113",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Falguni Kunda",
+  "pan": "RHFGK6818H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 118817,
+  "salary_net": 66732,
+  "itr_total_income": 907554,
+  "land_value": 2016472487,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

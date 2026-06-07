@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP85787183",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Tanveer Mitter",
+  "pan": "DYFCV0717V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 97183,
+  "salary_net": 55556,
+  "itr_total_income": 605120,
+  "land_value": 528786063,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

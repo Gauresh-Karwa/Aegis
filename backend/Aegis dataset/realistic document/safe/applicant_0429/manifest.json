@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP60677499",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Shravya Minhas",
+  "pan": "USGCY1622R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 100711,
+  "salary_net": 57378,
+  "itr_total_income": 681551,
+  "land_value": 681371330,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

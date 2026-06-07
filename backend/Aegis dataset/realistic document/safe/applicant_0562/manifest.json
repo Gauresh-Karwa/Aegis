@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP69803175",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kritika Char",
+  "pan": "RUOJY1296P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 126262,
+  "salary_net": 70580,
+  "itr_total_income": 942403,
+  "land_value": 398884948,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

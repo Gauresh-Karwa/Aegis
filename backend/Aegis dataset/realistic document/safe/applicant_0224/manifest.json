@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP32002187",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Aadi Saha",
+  "pan": "YEMBW7524W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 39350,
+  "salary_net": 36717,
+  "itr_total_income": 185071,
+  "land_value": 2435631192,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

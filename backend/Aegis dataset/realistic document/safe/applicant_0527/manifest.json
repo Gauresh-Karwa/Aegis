@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP66223978",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chanchal Chauhan",
+  "pan": "SFDBK5416O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 117002,
+  "salary_net": 65794,
+  "itr_total_income": 826612,
+  "land_value": 374046678,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

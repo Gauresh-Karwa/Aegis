@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP22676103",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact",
+  "name": "Kevin Khalsa",
+  "pan": "NGSTK2434F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 64374,
+  "salary_net": 38605,
+  "itr_total_income": 328169,
+  "land_value": 251635745,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

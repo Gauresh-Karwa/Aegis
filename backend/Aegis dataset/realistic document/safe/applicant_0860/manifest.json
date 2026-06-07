@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP31416944",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Baghyawati Datta",
+  "pan": "SHICE7055Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 70998,
+  "salary_net": 42027,
+  "itr_total_income": 469038,
+  "land_value": 233322160,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

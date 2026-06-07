@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP62797315",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Avi Sankaran",
+  "pan": "SHEGV2753N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 116832,
+  "salary_net": 65708,
+  "itr_total_income": 809764,
+  "land_value": 115111758,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

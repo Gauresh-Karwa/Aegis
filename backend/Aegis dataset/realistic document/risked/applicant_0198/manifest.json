@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP44411253",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "pixel_artifact",
+    "math_mismatch",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, pixel_artifact, math_mismatch, font_discrepancy",
+  "name": "Oviya Choudhury",
+  "pan": "XXBLJ6423P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 52894,
+  "salary_net": 32672,
+  "itr_total_income": 349338,
+  "land_value": 149792573,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

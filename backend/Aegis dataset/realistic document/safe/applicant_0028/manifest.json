@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP95279712",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bhavya Varughese",
+  "pan": "GLLPN0488G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 28348,
+  "salary_net": 26449,
+  "itr_total_income": 44430,
+  "land_value": 478305162,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP82470121",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Fitan Atwal",
+  "pan": "EZPBA4130S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 58350,
+  "salary_net": 35491,
+  "itr_total_income": 340783,
+  "land_value": 622785301,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

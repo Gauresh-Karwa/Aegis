@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP19953420",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nakul Sahni",
+  "pan": "JYIFK0861H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 133819,
+  "salary_net": 74484,
+  "itr_total_income": 1042655,
+  "land_value": 689123219,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

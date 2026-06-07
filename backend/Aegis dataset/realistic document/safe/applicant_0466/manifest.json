@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP95316592",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Darpan Hari",
+  "pan": "VJWAA7095O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 132001,
+  "salary_net": 73545,
+  "itr_total_income": 919875,
+  "land_value": 69736153,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

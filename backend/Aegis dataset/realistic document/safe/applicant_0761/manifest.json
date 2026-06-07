@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP71917985",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ranveer Banik",
+  "pan": "HFUJV7936G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 32082,
+  "salary_net": 29934,
+  "itr_total_income": 105722,
+  "land_value": 2058763249,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

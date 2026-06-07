@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP32391997",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chakradhar Hora",
+  "pan": "VVITF3470H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 102912,
+  "salary_net": 58517,
+  "itr_total_income": 735609,
+  "land_value": 312364098,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP98162786",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "blurred_edge",
+    "pixel_artifact",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, blurred_edge, pixel_artifact, tilted_amount",
+  "name": "Raghav Nath",
+  "pan": "YFBGS2905A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 61919,
+  "salary_net": 37335,
+  "itr_total_income": 372484,
+  "land_value": 381505926,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

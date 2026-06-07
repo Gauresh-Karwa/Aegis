@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP18062432",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Adweta Dave",
+  "pan": "EDZBH5714U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 69086,
+  "salary_net": 41039,
+  "itr_total_income": 409445,
+  "land_value": 776818611,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

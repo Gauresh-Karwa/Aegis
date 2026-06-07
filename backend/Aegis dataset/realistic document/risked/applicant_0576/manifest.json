@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP18090886",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe",
+  "name": "Zinal Rama",
+  "pan": "JCOJR3380R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 38370,
+  "salary_net": 35802,
+  "itr_total_income": 81932,
+  "land_value": 1556538788,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

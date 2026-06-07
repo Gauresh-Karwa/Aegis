@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP45860981",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, font_discrepancy",
+  "name": "Vedhika Keer",
+  "pan": "LRLAX2499T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 78958,
+  "salary_net": 46139,
+  "itr_total_income": 463866,
+  "land_value": 73783979,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

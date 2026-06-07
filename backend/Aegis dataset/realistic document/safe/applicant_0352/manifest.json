@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP38944362",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Andrew Sule",
+  "pan": "FJQHS5299L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 119041,
+  "salary_net": 66848,
+  "itr_total_income": 868730,
+  "land_value": 147696151,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

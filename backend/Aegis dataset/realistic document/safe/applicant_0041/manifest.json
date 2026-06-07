@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP10646735",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Sai Manda",
+  "pan": "MKYCO3834Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 101539,
+  "salary_net": 57806,
+  "itr_total_income": 647195,
+  "land_value": 192959367,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

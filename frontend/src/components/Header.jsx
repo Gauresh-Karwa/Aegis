@@ -5,29 +5,29 @@ const Header = ({ currentView, setCurrentView, currentRoute, setCurrentRoute, ha
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full pointer-events-auto flex justify-between items-center py-4 px-8 absolute top-0 left-0 z-50 bg-enterprise-900 border-b border-white/5">
+    <nav className="w-full pointer-events-auto flex justify-between items-center py-4 px-8 absolute top-0 left-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="flex items-center gap-6">
         <div 
           className="flex flex-col justify-center cursor-pointer"
           onClick={() => setCurrentRoute('upload')}
         >
-          <div className="text-base font-bold font-sans tracking-tight text-white leading-none">AEGIS</div>
-          <div className="text-[10px] uppercase tracking-widest text-slate-400 mt-0.5 flex items-center gap-1">
+          <div className="text-base font-bold font-sans tracking-tight text-brand-navy leading-none">AEGIS</div>
+          <div className="text-[10px] uppercase tracking-widest text-brand-gray mt-0.5 flex items-center gap-1">
             Canara Bank
           </div>
         </div>
         
         {/* Main Navigation */}
-        <div className="hidden md:flex items-center gap-4 ml-8 border-l border-white/10 pl-8">
+        <div className="hidden md:flex items-center gap-4 ml-8 border-l border-slate-200 pl-8">
            <button 
              onClick={() => hasDocument ? setCurrentRoute('hub') : setCurrentRoute('upload')}
-             className={`text-xs font-bold uppercase tracking-widest transition-colors ${currentRoute === 'hub' || currentRoute === 'upload' ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
+             className={`text-xs font-bold uppercase tracking-widest transition-colors ${currentRoute === 'hub' || currentRoute === 'upload' ? 'text-brand-blue' : 'text-slate-500 hover:text-brand-navy'}`}
            >
              Forensic Hub
            </button>
            <button 
              onClick={() => setCurrentRoute('database')}
-             className={`text-xs font-bold uppercase tracking-widest transition-colors ${currentRoute === 'database' ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}
+             className={`text-xs font-bold uppercase tracking-widest transition-colors ${currentRoute === 'database' ? 'text-brand-blue' : 'text-slate-500 hover:text-brand-navy'}`}
            >
              Database
            </button>
@@ -35,8 +35,8 @@ const Header = ({ currentView, setCurrentView, currentRoute, setCurrentRoute, ha
       </div>
       
       <div className="flex items-center gap-4 relative">
-        <div className="hidden sm:flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-verification-green bg-verification-green/10 border border-verification-green/20 px-3 py-1.5 rounded-none">
-           <div className="w-1.5 h-1.5 bg-verification-green animate-pulse rounded-none"></div>
+        <div className="hidden sm:flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded">
+           <div className="w-1.5 h-1.5 bg-emerald-500 animate-pulse rounded-full"></div>
            System Online
         </div>
         

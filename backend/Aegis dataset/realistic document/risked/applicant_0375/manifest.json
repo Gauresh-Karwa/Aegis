@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP43478261",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe, math_mismatch, pixel_artifact",
+  "name": "Urmi Ram",
+  "pan": "NSGCT7744P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 117297,
+  "salary_net": 65949,
+  "itr_total_income": 796074,
+  "land_value": 637820954,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

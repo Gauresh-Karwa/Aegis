@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP80472367",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Aayush Apte",
+  "pan": "DFSLL5525A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 61387,
+  "salary_net": 37061,
+  "itr_total_income": 365030,
+  "land_value": 195284576,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

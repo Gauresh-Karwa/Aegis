@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP82787615",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Isha Kumar",
+  "pan": "ZYDJX8985R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 119310,
+  "salary_net": 66988,
+  "itr_total_income": 838550,
+  "land_value": 270963529,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

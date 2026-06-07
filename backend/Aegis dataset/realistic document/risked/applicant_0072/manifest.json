@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP96057216",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "pixel_artifact",
+    "blurred_edge",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, pixel_artifact, blurred_edge, noise_stripe",
+  "name": "Kala Chad",
+  "pan": "KLWAK6414F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 75242,
+  "salary_net": 44218,
+  "itr_total_income": 528847,
+  "land_value": 758624341,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP62000328",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "font_discrepancy",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, font_discrepancy, tilted_amount",
+  "name": "Waida Gokhale",
+  "pan": "LETTJ4635W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 122432,
+  "salary_net": 68600,
+  "itr_total_income": 867970,
+  "land_value": 1374430204,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

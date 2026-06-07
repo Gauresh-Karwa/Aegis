@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP51964876",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Tristan Wadhwa",
+  "pan": "XNZLT3534M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 104038,
+  "salary_net": 59098,
+  "itr_total_income": 696239,
+  "land_value": 1127035771,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

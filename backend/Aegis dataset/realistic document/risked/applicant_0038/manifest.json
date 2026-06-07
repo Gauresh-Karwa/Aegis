@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP41985101",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "pixel_artifact",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact, tilted_amount",
+  "name": "Caleb Mistry",
+  "pan": "TKPFD5734O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 48462,
+  "salary_net": 30384,
+  "itr_total_income": 232813,
+  "land_value": 1166033798,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP69183481",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yashawini Dhar",
+  "pan": "RJYTE4581Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 127564,
+  "salary_net": 71253,
+  "itr_total_income": 889225,
+  "land_value": 267967216,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

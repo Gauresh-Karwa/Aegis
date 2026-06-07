@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP49013061",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vamakshi Baral",
+  "pan": "EBDFW6256P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 59731,
+  "salary_net": 36205,
+  "itr_total_income": 310512,
+  "land_value": 171751568,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP88785808",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chatura Patla",
+  "pan": "HZNAK5713I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 116191,
+  "salary_net": 65376,
+  "itr_total_income": 802453,
+  "land_value": 206324396,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

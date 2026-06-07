@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70688102",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Viraj Kulkarni",
+  "pan": "ACMLN6279M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 57882,
+  "salary_net": 35250,
+  "itr_total_income": 338317,
+  "land_value": 3044834180,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

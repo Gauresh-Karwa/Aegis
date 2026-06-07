@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP60615589",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "noise_stripe",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, noise_stripe, blurred_edge",
+  "name": "Janaki Pandya",
+  "pan": "IWSPR6986D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 118742,
+  "salary_net": 66694,
+  "itr_total_income": 797382,
+  "land_value": 519131593,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

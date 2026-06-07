@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP46202873",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Triya Padmanabhan",
+  "pan": "GQTBJ8827P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 95918,
+  "salary_net": 54902,
+  "itr_total_income": 664999,
+  "land_value": 370713916,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

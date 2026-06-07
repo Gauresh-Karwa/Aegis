@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP44020762",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yahvi Sarma",
+  "pan": "ZONAU7444J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 82423,
+  "salary_net": 47930,
+  "itr_total_income": 557922,
+  "land_value": 518074377,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

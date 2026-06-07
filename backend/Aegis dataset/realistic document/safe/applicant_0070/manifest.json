@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP48719118",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bhanumati Tailor",
+  "pan": "WUIGB2316T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 48746,
+  "salary_net": 30529,
+  "itr_total_income": 207448,
+  "land_value": 396897761,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

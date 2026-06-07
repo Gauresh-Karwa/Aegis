@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP71173599",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact",
+  "name": "Vasatika Mistry",
+  "pan": "OCFHX7391P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 74680,
+  "salary_net": 43929,
+  "itr_total_income": 444501,
+  "land_value": 561526523,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

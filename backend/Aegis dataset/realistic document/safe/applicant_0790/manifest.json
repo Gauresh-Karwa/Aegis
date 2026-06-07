@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP30871992",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Brinda Purohit",
+  "pan": "TNTJF3547Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 73144,
+  "salary_net": 43135,
+  "itr_total_income": 490966,
+  "land_value": 2239470989,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

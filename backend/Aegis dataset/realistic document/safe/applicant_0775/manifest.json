@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP84838811",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Upasna Taneja",
+  "pan": "KNRBA1409W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 95672,
+  "salary_net": 54774,
+  "itr_total_income": 670294,
+  "land_value": 711962648,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

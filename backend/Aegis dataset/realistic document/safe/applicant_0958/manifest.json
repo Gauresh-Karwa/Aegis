@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP24677862",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Damini Anand",
+  "pan": "PQOLN8159A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 80955,
+  "salary_net": 47171,
+  "itr_total_income": 444493,
+  "land_value": 335164037,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

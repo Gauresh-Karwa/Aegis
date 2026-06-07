@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP54703464",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "noise_stripe",
+    "tilted_amount",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, noise_stripe, tilted_amount, font_discrepancy",
+  "name": "Jeet Bhatnagar",
+  "pan": "SUQCN3732E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 71557,
+  "salary_net": 42316,
+  "itr_total_income": 450157,
+  "land_value": 282962398,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

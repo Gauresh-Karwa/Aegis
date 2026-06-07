@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP19074093",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rayaan Prabhu",
+  "pan": "GSXGP8805Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 93195,
+  "salary_net": 53495,
+  "itr_total_income": 642226,
+  "land_value": 176647261,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

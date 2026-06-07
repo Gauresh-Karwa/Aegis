@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP96614557",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "noise_stripe",
+    "blurred_edge",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, noise_stripe, blurred_edge, font_discrepancy",
+  "name": "Faras Joshi",
+  "pan": "HVHBK6301A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 130879,
+  "salary_net": 72964,
+  "itr_total_income": 953617,
+  "land_value": 360230313,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

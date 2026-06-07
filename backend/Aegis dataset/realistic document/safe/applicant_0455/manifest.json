@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP59078645",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Darsh Chadha",
+  "pan": "QURJR0306Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 44408,
+  "salary_net": 41438,
+  "itr_total_income": 210186,
+  "land_value": 904054975,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

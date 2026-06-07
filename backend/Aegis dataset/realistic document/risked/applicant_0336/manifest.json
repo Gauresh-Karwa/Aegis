@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP69350257",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, font_discrepancy",
+  "name": "Lila Bansal",
+  "pan": "OBJJA8950S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 54686,
+  "salary_net": 33598,
+  "itr_total_income": 308679,
+  "land_value": 634244057,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

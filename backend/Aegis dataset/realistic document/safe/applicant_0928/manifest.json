@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP30211144",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Warda Kara",
+  "pan": "HWYBW5139W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 35683,
+  "salary_net": 33295,
+  "itr_total_income": 97380,
+  "land_value": 120557311,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

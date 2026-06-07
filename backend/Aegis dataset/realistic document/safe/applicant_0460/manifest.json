@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP30851805",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Wazir Mutti",
+  "pan": "SZOTY1117R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 99801,
+  "salary_net": 56908,
+  "itr_total_income": 671237,
+  "land_value": 358896338,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

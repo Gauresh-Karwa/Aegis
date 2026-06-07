@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70611039",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Onkar Rattan",
+  "pan": "ARGTY3751H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 45694,
+  "salary_net": 28952,
+  "itr_total_income": 209375,
+  "land_value": 3654390292,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP68316873",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Oviya Chaudhary",
+  "pan": "IVFGL7299K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 84036,
+  "salary_net": 48762,
+  "itr_total_income": 545666,
+  "land_value": 712334445,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

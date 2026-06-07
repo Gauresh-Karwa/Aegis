@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP49705174",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kala Padmanabhan",
+  "pan": "GARGI0406J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 37747,
+  "salary_net": 35221,
+  "itr_total_income": 137136,
+  "land_value": 2625156986,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

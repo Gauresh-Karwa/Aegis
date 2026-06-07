@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70380310",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bhavna Sule",
+  "pan": "YHWJQ6059W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 46036,
+  "salary_net": 29129,
+  "itr_total_income": 188272,
+  "land_value": 2429690662,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

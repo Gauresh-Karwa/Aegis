@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP44077791",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jeremiah Karnik",
+  "pan": "PWFJN8534M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 80960,
+  "salary_net": 47174,
+  "itr_total_income": 566928,
+  "land_value": 1359018213,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

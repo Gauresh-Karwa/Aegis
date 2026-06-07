@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP36496734",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "math_mismatch",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, math_mismatch, font_discrepancy",
+  "name": "Damini Raval",
+  "pan": "ITTAH4835G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 134389,
+  "salary_net": 74778,
+  "itr_total_income": 991063,
+  "land_value": 1410610244,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

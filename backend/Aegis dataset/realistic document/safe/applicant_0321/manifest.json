@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15366476",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Neelima Sani",
+  "pan": "UOTTS3163F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 115898,
+  "salary_net": 65225,
+  "itr_total_income": 823573,
+  "land_value": 897689347,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

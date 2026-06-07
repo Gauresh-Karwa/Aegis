@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP80995515",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, blurred_edge",
+  "name": "Ubika Dugar",
+  "pan": "ITRHS9163M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 124477,
+  "salary_net": 69658,
+  "itr_total_income": 914259,
+  "land_value": 543007605,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

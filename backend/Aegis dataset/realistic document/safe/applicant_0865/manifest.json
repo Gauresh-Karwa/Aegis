@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70066356",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Harsh Ram",
+  "pan": "XFCFD8679O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 134420,
+  "salary_net": 74794,
+  "itr_total_income": 967767,
+  "land_value": 207693613,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

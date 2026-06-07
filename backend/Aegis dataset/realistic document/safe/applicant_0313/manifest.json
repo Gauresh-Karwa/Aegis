@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP21421300",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chaitaly Varghese",
+  "pan": "DBUAC0853G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 112228,
+  "salary_net": 63329,
+  "itr_total_income": 812622,
+  "land_value": 757576234,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

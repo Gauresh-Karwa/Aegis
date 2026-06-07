@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP69652133",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe",
+  "name": "Ekbal Chaudhari",
+  "pan": "AHMJA0975X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 122456,
+  "salary_net": 68613,
+  "itr_total_income": 899399,
+  "land_value": 583518757,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

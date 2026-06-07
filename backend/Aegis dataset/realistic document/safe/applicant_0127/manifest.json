@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP65587798",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Frado Gade",
+  "pan": "QDMJT2796I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 34772,
+  "salary_net": 32444,
+  "itr_total_income": 110157,
+  "land_value": 304247814,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

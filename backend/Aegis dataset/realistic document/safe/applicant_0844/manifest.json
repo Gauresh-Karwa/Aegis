@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17634781",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Saumya Sabharwal",
+  "pan": "HMPBD2926Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 127187,
+  "salary_net": 71057,
+  "itr_total_income": 944060,
+  "land_value": 679078533,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

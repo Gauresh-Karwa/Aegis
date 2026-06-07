@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP42713541",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, font_discrepancy",
+  "name": "Jagvi Nagy",
+  "pan": "UQDHJ5004Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 34867,
+  "salary_net": 32533,
+  "itr_total_income": 97383,
+  "land_value": 379783847,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

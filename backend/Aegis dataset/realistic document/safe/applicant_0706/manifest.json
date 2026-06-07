@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP61865061",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Laksh Tiwari",
+  "pan": "LLGCO5364Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 45204,
+  "salary_net": 28700,
+  "itr_total_income": 235103,
+  "land_value": 809069596,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

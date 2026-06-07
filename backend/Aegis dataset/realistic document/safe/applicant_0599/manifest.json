@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP41175858",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Theodore Cherian",
+  "pan": "MPKBU3710J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 126858,
+  "salary_net": 70887,
+  "itr_total_income": 932492,
+  "land_value": 114982140,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

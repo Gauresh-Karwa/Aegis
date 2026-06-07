@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP36068863",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kai Sagar",
+  "pan": "AYWPV3661G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 89577,
+  "salary_net": 51627,
+  "itr_total_income": 558974,
+  "land_value": 1050304807,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

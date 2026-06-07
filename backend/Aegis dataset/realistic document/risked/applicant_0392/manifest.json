@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP17114277",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "font_discrepancy",
+    "tilted_amount",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, font_discrepancy, tilted_amount, noise_stripe",
+  "name": "Ria Mandal",
+  "pan": "AGNBS7852Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 127608,
+  "salary_net": 71275,
+  "itr_total_income": 969920,
+  "land_value": 671953967,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

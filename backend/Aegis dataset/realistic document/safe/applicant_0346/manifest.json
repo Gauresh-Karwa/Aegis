@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP75000940",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ethan Hayer",
+  "pan": "YUFBO1957U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 51787,
+  "salary_net": 32101,
+  "itr_total_income": 288859,
+  "land_value": 510494472,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

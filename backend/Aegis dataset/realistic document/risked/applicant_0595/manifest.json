@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP74611108",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "blurred_edge",
+    "math_mismatch",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, blurred_edge, math_mismatch, noise_stripe",
+  "name": "Simon Bora",
+  "pan": "IXALM0652H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 125976,
+  "salary_net": 70432,
+  "itr_total_income": 869239,
+  "land_value": 858896305,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

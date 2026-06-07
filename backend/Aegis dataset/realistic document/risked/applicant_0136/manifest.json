@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP25946623",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "blurred_edge",
+    "math_mismatch",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge, math_mismatch, font_discrepancy",
+  "name": "Gaurangi Gaba",
+  "pan": "VDJCU4403S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 106477,
+  "salary_net": 60358,
+  "itr_total_income": 760615,
+  "land_value": 331442530,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

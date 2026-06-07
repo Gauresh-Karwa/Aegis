@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP96115488",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "noise_stripe",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, noise_stripe, math_mismatch, pixel_artifact",
+  "name": "Tanish Edwin",
+  "pan": "OTIFV4665D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 49093,
+  "salary_net": 30710,
+  "itr_total_income": 199147,
+  "land_value": 3123016483,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

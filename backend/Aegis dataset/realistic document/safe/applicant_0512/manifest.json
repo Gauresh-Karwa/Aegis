@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP47953048",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Kala Bala",
+  "pan": "JMAGQ7880W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 73215,
+  "salary_net": 43172,
+  "itr_total_income": 452725,
+  "land_value": 110606053,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

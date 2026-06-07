@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP71814965",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Dayita Luthra",
+  "pan": "VRPFH9521N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 73259,
+  "salary_net": 43194,
+  "itr_total_income": 488712,
+  "land_value": 570940597,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

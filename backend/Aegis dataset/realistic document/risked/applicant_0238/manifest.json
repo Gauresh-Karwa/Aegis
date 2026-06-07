@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP33661217",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "blurred_edge",
+    "tilted_amount",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, blurred_edge, tilted_amount, font_discrepancy",
+  "name": "Janani Dutt",
+  "pan": "KVXHG9757N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 35667,
+  "salary_net": 33280,
+  "itr_total_income": 117335,
+  "land_value": 513110966,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP56336581",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yachana Gola",
+  "pan": "FVUPI5272P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 73081,
+  "salary_net": 43103,
+  "itr_total_income": 507294,
+  "land_value": 1557175853,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

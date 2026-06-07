@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP87118575",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vedhika Suri",
+  "pan": "GEQPF1415X",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 133345,
+  "salary_net": 74240,
+  "itr_total_income": 982616,
+  "land_value": 158214749,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

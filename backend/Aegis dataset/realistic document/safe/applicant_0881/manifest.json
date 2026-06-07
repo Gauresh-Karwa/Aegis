@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP18562856",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Lajita Dutt",
+  "pan": "RJOHS6902A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 108045,
+  "salary_net": 61167,
+  "itr_total_income": 747244,
+  "land_value": 986993598,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

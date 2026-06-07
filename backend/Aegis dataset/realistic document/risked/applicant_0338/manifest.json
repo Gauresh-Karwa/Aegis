@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP79104746",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "tilted_amount",
+    "pixel_artifact",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, tilted_amount, pixel_artifact, font_discrepancy",
+  "name": "Saanvi Randhawa",
+  "pan": "SRKFN9140M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 101390,
+  "salary_net": 57729,
+  "itr_total_income": 701467,
+  "land_value": 212944376,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

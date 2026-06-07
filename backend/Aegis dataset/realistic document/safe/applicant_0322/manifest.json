@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP27020696",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yasti Ranganathan",
+  "pan": "JAGFJ2352Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 116084,
+  "salary_net": 65320,
+  "itr_total_income": 805334,
+  "land_value": 470352868,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP17129859",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vansha Behl",
+  "pan": "INXGW7373V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 98989,
+  "salary_net": 56488,
+  "itr_total_income": 717593,
+  "land_value": 621265209,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

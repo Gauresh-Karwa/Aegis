@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP85520705",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "math_mismatch",
+    "tilted_amount",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, math_mismatch, tilted_amount, blurred_edge",
+  "name": "Caleb Banerjee",
+  "pan": "HFDBA0535V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 27424,
+  "salary_net": 25586,
+  "itr_total_income": 61621,
+  "land_value": 77312935,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

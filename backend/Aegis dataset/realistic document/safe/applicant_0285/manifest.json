@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP90505437",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ekapad Rajan",
+  "pan": "HLJPW7235N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 84385,
+  "salary_net": 48943,
+  "itr_total_income": 476434,
+  "land_value": 455893346,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

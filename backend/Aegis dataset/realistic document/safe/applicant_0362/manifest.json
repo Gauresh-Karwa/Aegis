@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP22582408",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Orinder Gour",
+  "pan": "NQZTU1022K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 29665,
+  "salary_net": 27678,
+  "itr_total_income": 113455,
+  "land_value": 1240026673,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

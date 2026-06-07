@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP24595433",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Raagini Golla",
+  "pan": "XPQBE7397B",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 58682,
+  "salary_net": 35662,
+  "itr_total_income": 334161,
+  "land_value": 2839248092,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

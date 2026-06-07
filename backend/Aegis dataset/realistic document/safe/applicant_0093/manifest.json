@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP35292190",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Amrita Biswas",
+  "pan": "NRHHS3421L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 65494,
+  "salary_net": 39183,
+  "itr_total_income": 336390,
+  "land_value": 258530893,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

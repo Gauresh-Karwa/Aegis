@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15843322",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Omisha Yadav",
+  "pan": "QDLHQ5250Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 93018,
+  "salary_net": 53404,
+  "itr_total_income": 575669,
+  "land_value": 555911580,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

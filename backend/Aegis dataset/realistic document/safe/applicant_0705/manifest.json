@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP15124856",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Finn Sarma",
+  "pan": "IQPJY0664D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 61102,
+  "salary_net": 36914,
+  "itr_total_income": 351641,
+  "land_value": 559622883,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

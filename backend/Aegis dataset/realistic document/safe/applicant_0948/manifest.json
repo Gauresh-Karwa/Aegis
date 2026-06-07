@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP84879871",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bhavini Goyal",
+  "pan": "CQAPG7775I",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 83526,
+  "salary_net": 48500,
+  "itr_total_income": 582446,
+  "land_value": 637999833,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP67498592",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ojas Dhar",
+  "pan": "UFSHB8910A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 133333,
+  "salary_net": 74233,
+  "itr_total_income": 985114,
+  "land_value": 1051760995,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

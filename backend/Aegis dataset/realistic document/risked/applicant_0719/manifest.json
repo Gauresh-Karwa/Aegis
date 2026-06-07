@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP91832224",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "noise_stripe",
+    "pixel_artifact",
+    "math_mismatch"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe, pixel_artifact, math_mismatch",
+  "name": "Brinda Choudhury",
+  "pan": "QZGBL3905Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 30686,
+  "salary_net": 28631,
+  "itr_total_income": 49293,
+  "land_value": 3091328053,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

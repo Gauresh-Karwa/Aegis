@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP60373508",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "font_discrepancy",
+    "math_mismatch",
+    "pixel_artifact"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, math_mismatch, pixel_artifact",
+  "name": "Dipta Sethi",
+  "pan": "VARAQ7559J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 119869,
+  "salary_net": 67277,
+  "itr_total_income": 875438,
+  "land_value": 740903088,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

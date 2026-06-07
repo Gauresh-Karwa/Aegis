@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP76327339",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Maanav Seth",
+  "pan": "JSRJF2332U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 91092,
+  "salary_net": 52409,
+  "itr_total_income": 592417,
+  "land_value": 490483034,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

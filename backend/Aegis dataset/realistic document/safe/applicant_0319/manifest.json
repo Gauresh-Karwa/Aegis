@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP62393694",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Reva Chad",
+  "pan": "TVPLP2300S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 30400,
+  "salary_net": 28364,
+  "itr_total_income": 102053,
+  "land_value": 538933507,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

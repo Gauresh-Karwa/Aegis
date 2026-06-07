@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP40095517",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Onkar Srinivasan",
+  "pan": "QAAPL7133L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 80556,
+  "salary_net": 46965,
+  "itr_total_income": 489311,
+  "land_value": 139097001,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP73560755",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "math_mismatch",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch, noise_stripe",
+  "name": "Hredhaan Devan",
+  "pan": "EPBHA6184A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 68054,
+  "salary_net": 40505,
+  "itr_total_income": 390984,
+  "land_value": 609435089,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

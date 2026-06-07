@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP85095334",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Sudiksha Aggarwal",
+  "pan": "OVJHP9411F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 82434,
+  "salary_net": 47935,
+  "itr_total_income": 554979,
+  "land_value": 332072393,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP75061020",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yachana Bora",
+  "pan": "OLVHP3042N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 45109,
+  "salary_net": 28650,
+  "itr_total_income": 244295,
+  "land_value": 665059626,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

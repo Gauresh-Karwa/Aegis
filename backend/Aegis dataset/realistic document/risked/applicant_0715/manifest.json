@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP53343779",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "font_discrepancy"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, font_discrepancy",
+  "name": "Gautam Choudhry",
+  "pan": "GBETX8302Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 71552,
+  "salary_net": 42312,
+  "itr_total_income": 409907,
+  "land_value": 2005981579,
+  "pdf_producer": "Adobe Photoshop CC 2024",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

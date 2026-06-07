@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP51155704",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "math_mismatch",
+    "font_discrepancy",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, math_mismatch, font_discrepancy, tilted_amount",
+  "name": "Veda Choudhury",
+  "pan": "HPMLP3241T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 32874,
+  "salary_net": 30673,
+  "itr_total_income": 90238,
+  "land_value": 248766849,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

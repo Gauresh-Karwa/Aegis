@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP20170484",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "math_mismatch",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, noise_stripe",
+  "name": "Widisha Cherian",
+  "pan": "IYFHV8560L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 112363,
+  "salary_net": 63399,
+  "itr_total_income": 762049,
+  "land_value": 514541238,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

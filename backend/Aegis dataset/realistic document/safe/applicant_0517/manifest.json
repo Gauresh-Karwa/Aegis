@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP89013175",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Abha Pai",
+  "pan": "TYRFS4874A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 64474,
+  "salary_net": 38656,
+  "itr_total_income": 372997,
+  "land_value": 253055682,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

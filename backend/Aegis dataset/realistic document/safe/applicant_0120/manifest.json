@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP98893752",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Onveer Gara",
+  "pan": "VKHCX3251A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 61004,
+  "salary_net": 36862,
+  "itr_total_income": 381427,
+  "land_value": 541065557,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

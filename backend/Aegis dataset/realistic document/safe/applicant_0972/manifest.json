@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP45506405",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Harinakshi Mall",
+  "pan": "ZBCPM9320F",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 43480,
+  "salary_net": 40572,
+  "itr_total_income": 133829,
+  "land_value": 1453729717,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

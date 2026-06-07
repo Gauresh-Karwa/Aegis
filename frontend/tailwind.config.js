@@ -11,16 +11,16 @@ export default {
           900: '#0f172a', // Slate 900
           800: '#1e293b', // Slate 800
         },
-        action: {
-          orange: '#d97706', // Amber 600 (muted warning)
-        },
-        verification: {
-          green: '#059669', // Emerald 600 (muted success)
+        risk: {
+          low: '#00FF88',
+          medium: '#FFB800',
+          high: '#FF6B35',
+          critical: '#FF0000',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        syne: ['Syne', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
       animation: {
         'scan': 'scan 3s linear infinite',

@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP51635751",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "tilted_amount",
+    "blurred_edge",
+    "pixel_artifact",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, blurred_edge, pixel_artifact, noise_stripe",
+  "name": "Girindra Garg",
+  "pan": "FGSJM9365A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 100251,
+  "salary_net": 57141,
+  "itr_total_income": 703170,
+  "land_value": 1262881212,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

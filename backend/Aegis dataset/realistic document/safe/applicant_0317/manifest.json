@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP87011635",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Idika Taneja",
+  "pan": "EDFGI0486W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 120152,
+  "salary_net": 67422,
+  "itr_total_income": 867615,
+  "land_value": 190289672,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

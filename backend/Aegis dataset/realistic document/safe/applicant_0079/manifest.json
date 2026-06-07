@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP46935590",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Shravya Aggarwal",
+  "pan": "XOLGW8392T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 51335,
+  "salary_net": 31867,
+  "itr_total_income": 311715,
+  "land_value": 1318381752,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

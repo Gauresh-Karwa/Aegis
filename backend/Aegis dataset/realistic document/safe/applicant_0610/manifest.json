@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP42857809",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Zinal Misra",
+  "pan": "NKSGM4231H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 83671,
+  "salary_net": 48574,
+  "itr_total_income": 551872,
+  "land_value": 224959434,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

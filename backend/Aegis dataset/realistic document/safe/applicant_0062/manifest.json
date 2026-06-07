@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP84752869",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ira Sundaram",
+  "pan": "ZASHX4746E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 89683,
+  "salary_net": 51681,
+  "itr_total_income": 643581,
+  "land_value": 1416830110,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

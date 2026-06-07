@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP36707883",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "pixel_artifact",
+    "blurred_edge",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge, tilted_amount",
+  "name": "Faris Bawa",
+  "pan": "VGKAT3391J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 77003,
+  "salary_net": 45129,
+  "itr_total_income": 545999,
+  "land_value": 298758361,
+  "pdf_producer": "Adobe Acrobat Pro DC",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

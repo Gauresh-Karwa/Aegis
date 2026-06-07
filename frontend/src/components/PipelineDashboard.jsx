@@ -38,15 +38,7 @@ const PipelineDashboard = ({ backendData }) => {
 
   useEffect(() => {
     if (backendData) {
-      setActiveStep(0);
-      const timer = setInterval(() => {
-        setActiveStep(prev => {
-          if (prev < 7) return prev + 1;
-          clearInterval(timer);
-          return 8; 
-        });
-      }, 800); 
-      return () => clearInterval(timer);
+      setActiveStep(8);
     } else {
       setActiveStep(-1);
     }

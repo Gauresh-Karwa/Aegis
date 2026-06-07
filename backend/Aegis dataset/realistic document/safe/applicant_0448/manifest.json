@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP12457415",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faras Varughese",
+  "pan": "FJOJC8557K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 117564,
+  "salary_net": 66087,
+  "itr_total_income": 858592,
+  "land_value": 120282580,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

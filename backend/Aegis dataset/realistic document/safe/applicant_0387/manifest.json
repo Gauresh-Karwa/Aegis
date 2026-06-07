@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP61566775",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Lipika Nori",
+  "pan": "EWUGW4682A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 132445,
+  "salary_net": 73774,
+  "itr_total_income": 972182,
+  "land_value": 354654694,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

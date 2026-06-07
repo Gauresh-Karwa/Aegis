@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP53368712",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chanchal Banik",
+  "pan": "XRYCY8567E",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 97932,
+  "salary_net": 55943,
+  "itr_total_income": 641854,
+  "land_value": 587404588,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

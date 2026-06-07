@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP25701843",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "font_discrepancy",
+    "math_mismatch",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, font_discrepancy, math_mismatch, tilted_amount",
+  "name": "Yug Date",
+  "pan": "QVGFI8198T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 56498,
+  "salary_net": 34535,
+  "itr_total_income": 289605,
+  "land_value": 640430730,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

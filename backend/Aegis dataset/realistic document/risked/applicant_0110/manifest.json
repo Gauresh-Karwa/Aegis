@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP91070169",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, tilted_amount",
+  "name": "Parth Dada",
+  "pan": "FJCJM5979W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 84430,
+  "salary_net": 48967,
+  "itr_total_income": 569816,
+  "land_value": 861107947,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP89834093",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Chasmum Cherian",
+  "pan": "UZJJI6373J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 30987,
+  "salary_net": 28912,
+  "itr_total_income": 131259,
+  "land_value": 149817871,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

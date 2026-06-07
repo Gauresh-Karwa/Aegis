@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP89605950",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jagdish Sengupta",
+  "pan": "IQKHE9023Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 92724,
+  "salary_net": 53252,
+  "itr_total_income": 635248,
+  "land_value": 760921366,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

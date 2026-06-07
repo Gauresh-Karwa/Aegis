@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP84617536",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vaishnavi Bhargava",
+  "pan": "ZSACL0171M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 116996,
+  "salary_net": 65793,
+  "itr_total_income": 831548,
+  "land_value": 242631311,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

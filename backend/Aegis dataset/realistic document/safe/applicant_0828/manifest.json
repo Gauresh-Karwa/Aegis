@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP38548344",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bakhshi Mandal",
+  "pan": "IVQTC9255J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 123777,
+  "salary_net": 69297,
+  "itr_total_income": 887914,
+  "land_value": 306946259,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP39314741",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Inaya Sharma",
+  "pan": "WDIAO1719U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 104866,
+  "salary_net": 59525,
+  "itr_total_income": 762310,
+  "land_value": 639081977,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

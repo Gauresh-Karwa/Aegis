@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP82819369",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Tanmayi Nath",
+  "pan": "LRFJE3336H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 71407,
+  "salary_net": 42238,
+  "itr_total_income": 446087,
+  "land_value": 333843603,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

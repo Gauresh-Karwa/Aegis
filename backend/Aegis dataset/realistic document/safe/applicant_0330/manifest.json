@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP96102656",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Nidra Misra",
+  "pan": "VQRCH9001K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 83678,
+  "salary_net": 48578,
+  "itr_total_income": 584480,
+  "land_value": 719615256,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70283903",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "David Patel",
+  "pan": "YWLHP0052T",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 69460,
+  "salary_net": 41232,
+  "itr_total_income": 416301,
+  "land_value": 962631699,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP41815220",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Jason Guha",
+  "pan": "TKIBZ9164D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 54862,
+  "salary_net": 33690,
+  "itr_total_income": 277412,
+  "land_value": 1176442617,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

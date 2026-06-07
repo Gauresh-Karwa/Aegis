@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP18357419",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Anusha Kannan",
+  "pan": "UXPJG9226S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 93275,
+  "salary_net": 53536,
+  "itr_total_income": 647004,
+  "land_value": 299551930,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

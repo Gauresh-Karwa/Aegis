@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP73832126",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, tilted_amount",
+  "name": "Nitara Sehgal",
+  "pan": "VYDJZ2676Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 58581,
+  "salary_net": 35611,
+  "itr_total_income": 278678,
+  "land_value": 3050081523,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

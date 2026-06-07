@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP67359417",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Pavani Sharma",
+  "pan": "GHPAI2509V",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 122000,
+  "salary_net": 68377,
+  "itr_total_income": 918885,
+  "land_value": 1417582658,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

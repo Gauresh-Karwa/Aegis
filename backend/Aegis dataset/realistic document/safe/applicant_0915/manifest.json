@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP75900661",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Dev Sahni",
+  "pan": "MSNFO9774K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 38576,
+  "salary_net": 35995,
+  "itr_total_income": 117969,
+  "land_value": 379781176,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

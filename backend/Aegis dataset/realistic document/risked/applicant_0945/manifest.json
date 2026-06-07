@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP23654993",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "font_discrepancy",
+    "math_mismatch",
+    "pixel_artifact",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch, pixel_artifact, blurred_edge",
+  "name": "Ikbal Bedi",
+  "pan": "HDMAJ2148O",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 34076,
+  "salary_net": 31795,
+  "itr_total_income": 119757,
+  "land_value": 41683491,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

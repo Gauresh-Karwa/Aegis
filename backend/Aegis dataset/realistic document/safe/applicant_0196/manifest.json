@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP20381920",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bhavna Chakrabarti",
+  "pan": "ODOBR0474K",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 74280,
+  "salary_net": 43722,
+  "itr_total_income": 418460,
+  "land_value": 40443386,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

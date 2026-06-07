@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP70697104",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Mitali Issac",
+  "pan": "KWMLL3788W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 55917,
+  "salary_net": 34235,
+  "itr_total_income": 335417,
+  "land_value": 780880260,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

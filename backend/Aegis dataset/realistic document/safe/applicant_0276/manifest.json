@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP49655543",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ekaja Hegde",
+  "pan": "DXPJB4751H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 75853,
+  "salary_net": 44536,
+  "itr_total_income": 464902,
+  "land_value": 62859656,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

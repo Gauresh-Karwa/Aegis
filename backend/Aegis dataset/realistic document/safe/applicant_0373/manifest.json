@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP18985737",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Naveen Barad",
+  "pan": "OYFPH7284D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 49030,
+  "salary_net": 30677,
+  "itr_total_income": 190313,
+  "land_value": 1569202788,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

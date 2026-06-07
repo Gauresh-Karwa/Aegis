@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP57437531",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yuvraj Kurian",
+  "pan": "NIOFQ4890S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 57493,
+  "salary_net": 35049,
+  "itr_total_income": 263779,
+  "land_value": 775023301,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

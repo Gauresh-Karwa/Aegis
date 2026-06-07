@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP86442266",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Gaurav Narayanan",
+  "pan": "ZSDJA6674U",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 62710,
+  "salary_net": 37745,
+  "itr_total_income": 351675,
+  "land_value": 198408779,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

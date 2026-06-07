@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP22953597",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Victor Edwin",
+  "pan": "SOLGD3442Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 129830,
+  "salary_net": 72423,
+  "itr_total_income": 941231,
+  "land_value": 122850325,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

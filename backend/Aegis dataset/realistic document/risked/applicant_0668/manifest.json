@@ -1,0 +1,29 @@
+{
+  "applicant_id": "CBLP62344872",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "noise_stripe",
+    "font_discrepancy",
+    "pixel_artifact",
+    "blurred_edge"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, font_discrepancy, pixel_artifact, blurred_edge",
+  "name": "Rehaan Peri",
+  "pan": "JRUFQ8046N",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 107866,
+  "salary_net": 61074,
+  "itr_total_income": 799641,
+  "land_value": 552047780,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

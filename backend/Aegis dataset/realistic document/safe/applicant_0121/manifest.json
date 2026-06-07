@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP99470166",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Harish Krishna",
+  "pan": "ZOQJW9027W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 110773,
+  "salary_net": 62577,
+  "itr_total_income": 783868,
+  "land_value": 942326046,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

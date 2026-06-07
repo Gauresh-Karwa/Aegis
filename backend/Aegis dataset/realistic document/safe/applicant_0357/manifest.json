@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP29418974",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Dhriti Subramanian",
+  "pan": "RWCLR7909D",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 45572,
+  "salary_net": 28890,
+  "itr_total_income": 227679,
+  "land_value": 1378937674,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

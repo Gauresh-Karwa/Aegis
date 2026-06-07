@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP48088982",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Faraj Garg",
+  "pan": "ZPRGU6379L",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 125721,
+  "salary_net": 70300,
+  "itr_total_income": 898573,
+  "land_value": 100472093,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

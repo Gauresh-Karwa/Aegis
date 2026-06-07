@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP83570349",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Vamakshi Bains",
+  "pan": "FVHLP1429W",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 130221,
+  "salary_net": 72625,
+  "itr_total_income": 985174,
+  "land_value": 766863472,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

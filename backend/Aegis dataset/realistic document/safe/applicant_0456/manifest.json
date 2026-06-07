@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP42475155",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Indrajit Goel",
+  "pan": "ILTBH4386J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 40244,
+  "salary_net": 37551,
+  "itr_total_income": 194427,
+  "land_value": 233004840,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP10489996",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Rajeshri Chana",
+  "pan": "SECLA1981S",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 30940,
+  "salary_net": 28868,
+  "itr_total_income": 144130,
+  "land_value": 771286924,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

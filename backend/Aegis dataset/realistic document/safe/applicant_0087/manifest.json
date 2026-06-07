@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP25482936",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yashica Hayer",
+  "pan": "QSGBH2487M",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 107400,
+  "salary_net": 60834,
+  "itr_total_income": 781116,
+  "land_value": 1721446682,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

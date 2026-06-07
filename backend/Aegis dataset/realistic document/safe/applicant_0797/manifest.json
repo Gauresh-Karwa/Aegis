@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP38271327",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Yahvi Mand",
+  "pan": "ITNLH7306H",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 44236,
+  "salary_net": 41277,
+  "itr_total_income": 204073,
+  "land_value": 188605245,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

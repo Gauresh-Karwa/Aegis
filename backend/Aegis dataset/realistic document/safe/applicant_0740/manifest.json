@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP60501292",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Om Chowdhury",
+  "pan": "MZDPH1150Y",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 89677,
+  "salary_net": 51677,
+  "itr_total_income": 561809,
+  "land_value": 198737107,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

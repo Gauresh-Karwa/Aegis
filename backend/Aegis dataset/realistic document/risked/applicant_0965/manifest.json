@@ -1,0 +1,27 @@
+{
+  "applicant_id": "CBLP41961245",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "tilted_amount"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, tilted_amount",
+  "name": "Ekapad Rama",
+  "pan": "GJJBJ4970Z",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 88451,
+  "salary_net": 51044,
+  "itr_total_income": 652789,
+  "land_value": 73926929,
+  "pdf_producer": "GIMP 2.10",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

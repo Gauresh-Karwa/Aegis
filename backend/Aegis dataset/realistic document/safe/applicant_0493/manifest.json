@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP98908763",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Falguni Bobal",
+  "pan": "ACQGH5474A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 83876,
+  "salary_net": 48680,
+  "itr_total_income": 522229,
+  "land_value": 210738204,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

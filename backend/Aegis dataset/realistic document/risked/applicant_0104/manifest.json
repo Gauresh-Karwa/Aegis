@@ -1,0 +1,28 @@
+{
+  "applicant_id": "CBLP93394122",
+  "class": "risked",
+  "is_risked": true,
+  "fraud_flags": [
+    "metadata_poisoning",
+    "semantic_drift",
+    "blurred_edge",
+    "font_discrepancy",
+    "noise_stripe"
+  ],
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, noise_stripe",
+  "name": "Hitesh Sami",
+  "pan": "QISAB4335A",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 46683,
+  "salary_net": 29464,
+  "itr_total_income": 178370,
+  "land_value": 595081719,
+  "pdf_producer": "Adobe Photoshop CS6",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

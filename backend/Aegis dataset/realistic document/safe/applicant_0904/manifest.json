@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP65724417",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Janya Kari",
+  "pan": "EBKBY7095Q",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 28388,
+  "salary_net": 26486,
+  "itr_total_income": 119500,
+  "land_value": 218630855,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

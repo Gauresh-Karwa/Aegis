@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP53803421",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Sathvik Kanda",
+  "pan": "EVZTQ0542J",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 89502,
+  "salary_net": 51588,
+  "itr_total_income": 653505,
+  "land_value": 213891818,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

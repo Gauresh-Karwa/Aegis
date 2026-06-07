@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP55592032",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Ganga Ramachandran",
+  "pan": "LYTGC2915P",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 111221,
+  "salary_net": 62808,
+  "itr_total_income": 869528,
+  "land_value": 1317019271,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

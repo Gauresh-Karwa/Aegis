@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP29366421",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Bahadurjit Nayar",
+  "pan": "KIRJH2119G",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 46441,
+  "salary_net": 29338,
+  "itr_total_income": 247307,
+  "land_value": 556085403,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}

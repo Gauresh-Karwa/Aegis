@@ -1,0 +1,22 @@
+{
+  "applicant_id": "CBLP63673464",
+  "class": "safe",
+  "is_risked": false,
+  "fraud_flags": [],
+  "fraud_reason": "none",
+  "name": "Azad Sharaf",
+  "pan": "XQJAO1498R",
+  "doc_date": "02/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 50236,
+  "salary_net": 31299,
+  "itr_total_income": 237179,
+  "land_value": 322818400,
+  "pdf_producer": "Canara-Core-System v4.1.2",
+  "files": {
+    "identity": "identity.pdf",
+    "salary": "salary.pdf",
+    "itr": "itr.pdf",
+    "land_record": "land_record.pdf"
+  }
+}
