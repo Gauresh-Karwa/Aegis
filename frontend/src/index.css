@@ -29,30 +29,24 @@
     @apply bg-brand-slate text-brand-navy font-sans antialiased;
     background-color: #ffffff !important;
     color: #000000 !important;
-    font-family: "Inter", sans-serif !important;
-    min-height: 100vh;
+    @apply antialiased text-black bg-[#f5f5f5];
+    font-family: 'Avalon', sans-serif !important;
   }
   
-  /* Force light theme and Jet Black text globally */
-  .bg-enterprise-900, .bg-enterprise-800, .bg-black\/50, .bg-brand-navy {
-    background-color: #ffffff !important;
-  }
-  .text-white, .text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500, .text-brand-navy {
-    color: #000000 !important;
-  }
-  .border-white\/10, .border-white\/5 {
-    border-color: #000000 !important;
-  }
-  
-  /* Enforce sharp edges and sharp borders globally */
   * {
     border-radius: 0 !important;
+    font-family: 'Avalon', sans-serif !important;
+  }
+
+  /* Reset all headings to Avalon */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avalon', sans-serif !important;
   }
 }
 
 @layer components {
   .panel-glass {
-    @apply bg-white shadow-sm border border-black;
+    @apply bg-white border border-[#ddd] shadow-none;
   }
   
   .data-grid {
@@ -65,4 +59,19 @@
   .feature-card {
     @apply bg-white border border-black p-6 hover:shadow-md transition-all duration-300;
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }

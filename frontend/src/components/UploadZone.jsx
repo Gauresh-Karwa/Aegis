@@ -1,8 +1,7 @@
-import { useRef, useState } from 'react';
-import { UploadCloud, FolderUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { FolderUp } from 'lucide-react';
 
-const UploadZone = ({ onUpload, compact }) => {
+const UploadZone = ({ onUpload }) => {
   const [isDragActive, setIsDragActive] = useState(false);
   const fileInputRef = useRef(null);
 
@@ -34,13 +33,19 @@ const UploadZone = ({ onUpload, compact }) => {
 
   return (
     <div
-      className={`relative w-full mx-auto border-2 border-dashed transition-all duration-300 text-center cursor-pointer overflow-hidden
-        ${compact ? 'p-4' : 'p-12 rounded-lg'}
-        ${isDragActive 
-          ? 'border-black bg-gray-100' 
-          : 'border-black bg-white hover:bg-gray-50 shadow-sm'
-        }
-      `}
+      style={{
+          width: '360px',
+          height: '160px',
+          border: '1.5px solid #000000',
+          background: isDragActive ? '#f0f0f0' : 'transparent',
+          cursor: 'pointer',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.2s ease',
+          margin: '0 auto'
+      }}
       onDragEnter={handleDrag}
       onDragLeave={handleDrag}
       onDragOver={handleDrag}
@@ -57,22 +62,12 @@ const UploadZone = ({ onUpload, compact }) => {
         directory="true"
       />
       
-      <motion.div 
-        animate={{ y: isDragActive ? -5 : 0 }}
-        className="flex flex-col items-center justify-center pointer-events-none"
-      >
-        <div className={`bg-gray-100 rounded-full border border-black ${compact ? 'p-2 mb-2' : 'p-4 mb-4'}`}>
-           <FolderUp size={compact ? 20 : 40} className="text-black" />
-        </div>
-        {!compact && (
-            <h2 className="text-xl font-bold font-sans tracking-tight text-black mb-2">
-            Upload Applicant Folder
-            </h2>
-        )}
-        <p className={`font-mono text-black ${compact ? 'text-[10px]' : 'font-medium text-sm'}`}>
-          {compact ? 'Drop Folder' : 'Drag & drop the dossier folder (4 documents) here'}
-        </p>
-      </motion.div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pointerEvents: 'none' }}>
+        <FolderUp size={32} color="#000000" style={{ marginBottom: '8px' }} />
+        <span style={{ fontSize: '14px', color: '#444' }}>
+          {isDragActive ? "Release to analyze" : "Drop applicant folder here"}
+        </span>
+      </div>
     </div>
   );
 };

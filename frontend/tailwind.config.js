@@ -6,21 +6,29 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        enterprise: {
-          900: '#0f172a', // Slate 900
-          800: '#1e293b', // Slate 800
-        },
-        risk: {
-          low: '#00FF88',
-          medium: '#FFB800',
-          high: '#FF6B35',
-          critical: '#FF0000',
-        },
-      },
       fontFamily: {
-        sans: ['"IBM Plex Sans"', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        sans: ['Avalon', 'sans-serif'],
+        mono: ['Avalon', 'sans-serif'],
+      },
+      colors: {
+        brand: {
+          navy: '#0f172a',
+          blue: '#3b82f6',
+          gray: '#64748b',
+          slate: '#f5f5f5',
+        },
+        enterprise: {
+          900: '#000000',
+          800: '#111111',
+          700: '#222222',
+        },
+        action: {
+          orange: '#FF6B35',
+          red: '#FF0000',
+        },
+        verification: {
+          green: '#00FF88',
+        }
       },
       animation: {
         'scan': 'scan 3s linear infinite',
