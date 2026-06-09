@@ -65,6 +65,44 @@ const ForensicWorkspace = ({ backendData }) => {
       {/* Bottom Split: Forensic Pipeline Accordion */}
       <div className="flex-1 p-6 space-y-4 bg-[#f5f5f5]">
         
+        {/* Applicant Header & Report Export */}
+        <div className="flex justify-between items-center bg-[#fff] border border-[#ddd] p-4">
+            <div>
+                <h2 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: '16px', color: '#111' }}>
+                    Applicant: {backendData?.applicant_id || 'Unknown'}
+                </h2>
+            </div>
+            <button 
+                onClick={async () => {
+                    const id = backendData?.applicant_id;
+                    if (!id) return;
+                    try {
+                        const response = await fetch(`http://127.0.0.1:8000/report/${id}`);
+                        if (!response.ok) {
+                            alert("Failed to generate report.");
+                            return;
+                        }
+                        const blob = await response.blob();
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `AEGIS_Report_${id}.pdf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                    } catch (err) {
+                        alert("Error downloading report.");
+                    }
+                }}
+                style={{ border: '1px solid #111', fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '12px', padding: '6px 14px', backgroundColor: '#fff', color: '#111', cursor: 'pointer', transition: '150ms' }}
+                onMouseOver={(e) => { e.target.style.backgroundColor = '#111'; e.target.style.color = '#fff'; }}
+                onMouseOut={(e) => { e.target.style.backgroundColor = '#fff'; e.target.style.color = '#111'; }}
+            >
+                EXPORT REPORT
+            </button>
+        </div>
+        
         {/* 1. Document Ingestion */}
         <div className="border border-[#ddd] bg-white">
             <button onClick={() => toggleSection('ingestion')} className="w-full p-3 flex justify-between items-center bg-[#f5f5f5] hover:bg-[#eaeaea] border-b border-[#ddd]">

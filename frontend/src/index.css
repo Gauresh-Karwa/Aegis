@@ -1,77 +1,66 @@
 @import "tailwindcss";
 
-@theme {
-  --color-brand-navy: #0F172A; /* Slate 900 */
-  --color-brand-blue: #1E3A8A; /* Blue 900 */
-  --color-brand-slate: #F1F5F9; /* Slate 100 */
-  --color-brand-gray: #64748B; /* Slate 500 */
-  
-  --color-action-primary: #2563EB; /* Blue 600 */
-  --color-verification-green: #059669; /* Emerald 600 */
-  --color-flag-red: #DC2626; /* Red 600 */
-  
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  
-  --font-sans: "Inter", sans-serif;
-  --font-syne: "Syne", sans-serif;
-  
-  --animate-scan: scan 3s linear infinite;
-}
-
-@keyframes scan {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100%); }
-}
-
 @layer base {
+  html, body, #root { 
+    height: 100vh; 
+    overflow: hidden; 
+    background: #ffffff; 
+    margin: 0;
+    padding: 0;
+  }
+  
   body {
-    @apply bg-brand-slate text-brand-navy font-sans antialiased;
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    @apply antialiased text-black bg-[#f5f5f5];
-    font-family: 'Avalon', sans-serif !important;
+    @apply antialiased text-[#111111];
+    font-family: 'Inter', sans-serif;
   }
   
   * {
-    border-radius: 0 !important;
-    font-family: 'Avalon', sans-serif !important;
-  }
-
-  /* Reset all headings to Avalon */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Avalon', sans-serif !important;
+    border-radius: 0px !important; /* Strict no border radius, will selectively override up to 4px via inline if needed, or allow TW utilities if we remove !important. The prompt says 'no border-radius > 4px anywhere'. So we can just not use large radius classes. */
   }
 }
 
-@layer components {
-  .panel-glass {
-    @apply bg-white border border-[#ddd] shadow-none;
-  }
-  
-  .data-grid {
-    background-size: 40px 40px;
-    background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  }
-
-  .feature-card {
-    @apply bg-white border border-black p-6 hover:shadow-md transition-all duration-300;
-  }
-}
-
-/* Custom scrollbar */
+/* Custom scrollbar hidden on panels if required, but default to minimal */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #e5e7eb;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+
+/* 
+ * Background texture: ledger paper feel 
+ * 1px horizontal line every 40px
+ */
+.ledger-bg {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 39px,
+    #f0f0f0 39px,
+    #f0f0f0 40px
+  );
+  background-color: #ffffff;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes march {
+  to { stroke-dashoffset: -20; }
+}
+
+.animate-march {
+  animation: march 1s linear infinite;
 }
