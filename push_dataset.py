@@ -6,16 +6,9 @@ dataset_dir = "backend/Aegis dataset/realistic document"
 categories = ["safe", "risked"]
 batch_size = 50
 
-# First, remove the dataset from gitignore so we can add it
-with open(".gitignore", "r") as f:
-    lines = f.readlines()
-with open(".gitignore", "w") as f:
-    for line in lines:
-        if "backend/Aegis dataset" not in line:
-            f.write(line)
-
-subprocess.run(["git", "add", ".gitignore"])
-subprocess.run(["git", "commit", "-m", "Unignore dataset for batch pushing"])
+# First, commit any other remaining modifications in Aegis dataset
+subprocess.run(["git", "add", "backend/Aegis dataset/*.py"])
+subprocess.run(["git", "commit", "-m", "Update other dataset files"])
 subprocess.run(["git", "push"])
 
 for cat in categories:
@@ -26,16 +19,25 @@ for cat in categories:
     for i in range(0, len(applicants), batch_size):
         batch = applicants[i:i+batch_size]
         print(f"Adding batch {i//batch_size} for {cat}...")
+        
+        has_changes = False
         for app in batch:
             path = os.path.join(cat_dir, app)
-            # Use forward slashes for git
             path = path.replace("\\", "/")
-            subprocess.run(["git", "add", path])
-        
-        subprocess.run(["git", "commit", "-m", f"Add dataset {cat} batch {i//batch_size}"])
-        print("Pushing...")
-        result = subprocess.run(["git", "push"])
-        if result.returncode != 0:
-            print(f"Failed to push batch {i//batch_size}. Exiting.")
-            exit(1)
-        time.sleep(2)
+            
+            # Check if there are changes to add
+            status = subprocess.run(["git", "status", "--porcelain", path], capture_output=True, text=True)
+            if status.stdout.strip():
+                subprocess.run(["git", "add", path])
+                has_changes = True
+                
+        if has_changes:
+            subprocess.run(["git", "commit", "-m", f"Add dataset {cat} batch {i//batch_size}"])
+            print("Pushing...")
+            result = subprocess.run(["git", "push"])
+            if result.returncode != 0:
+                print(f"Failed to push batch {i//batch_size}. Exiting.")
+                exit(1)
+            time.sleep(1)
+        else:
+            print(f"No changes in batch {i//batch_size} for {cat}.")
