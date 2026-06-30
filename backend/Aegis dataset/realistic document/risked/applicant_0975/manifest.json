@@ -1,23 +1,21 @@
 {
-  "applicant_id": "CBLP14521649",
+  "applicant_id": "CBLP70682589",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
     "font_discrepancy",
-    "pixel_artifact",
-    "blurred_edge"
+    "pixel_artifact"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact, blurred_edge",
-  "name": "Alka Chatterjee",
-  "pan": "IHFHL2181D",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, font_discrepancy, pixel_artifact",
+  "name": "Rohit Patel",
+  "pan": "GUNTN0940N",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0003456",
-  "salary_gross": 130301,
-  "salary_net": 72666,
-  "itr_total_income": 927557,
-  "land_value": 466776227,
+  "salary_gross": 96623,
+  "salary_net": 55266,
+  "itr_total_income": 690168,
+  "land_value": 94394647,
   "pdf_producer": "Adobe Photoshop CC 2024",
   "files": {
     "identity": "identity.pdf",
