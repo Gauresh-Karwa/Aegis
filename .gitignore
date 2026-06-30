@@ -4,5 +4,4 @@ backend/venv/
 frontend/node_modules/
 
 backend/Aegis dataset/
-
-backend/Aegis dataset/
+backend/public_datasets/
