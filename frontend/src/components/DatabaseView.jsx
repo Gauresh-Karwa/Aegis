@@ -135,6 +135,40 @@ const DatabaseView = () => {
                   {filter}
                 </button>
               ))}
+              
+              {/* Export Audit Trail */}
+              <button
+                onClick={async () => {
+                  try {
+                    const response = await fetch('http://127.0.0.1:8000/audit-trail/export?format=csv');
+                    if (!response.ok) {
+                      alert('Failed to export audit trail');
+                      return;
+                    }
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `AEGIS_AuditTrail_${new Date().toISOString().split('T')[0]}.csv`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                  } catch (err) {
+                    console.error(err);
+                    alert('Export failed');
+                  }
+                }}
+                style={{
+                  fontFamily: "'Inter', sans-serif", fontSize: '12px', padding: '4px 12px',
+                  background: '#fff',
+                  color: '#111',
+                  border: '1px solid #e5e7eb',
+                }}
+                title="Export all records and forensic data as CSV"
+              >
+                 Export CSV
+              </button>
             </div>
           </div>
         </div>
@@ -163,6 +197,7 @@ const DatabaseView = () => {
                     <th className="px-4 py-3 font-semibold">DATE</th>
                     <th className="px-4 py-3 font-semibold">RISK SCORE</th>
                     <th className="px-4 py-3 font-semibold">RISK LEVEL</th>
+                    <th className="px-4 py-3 font-semibold">DOMINANT RISK</th>
                     <th className="px-4 py-3 font-semibold text-right">ACTION</th>
                   </tr>
                 </thead>
@@ -182,6 +217,13 @@ const DatabaseView = () => {
                           {row.risk_level}
                         </span>
                       </td>
+                      <td className="px-4 py-3" style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#4b5563' }}>
+                        {row.risk_level === 'LOW' ? '-' : (
+                            Array.isArray(row.fraud_flags) && row.fraud_flags.length > 0 
+                            ? row.fraud_flags[0].replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) 
+                            : 'Complex Anomalies'
+                        )}
+                      </td>
                       <td className="px-4 py-3 text-right">
                         {(() => {
                             const state = loadingReports[row.applicant_id];
@@ -196,7 +238,7 @@ const DatabaseView = () => {
                                 label = "FAILED";
                             } else if (state === 'SUCCESS') {
                                 btnStyle = { ...btnStyle, background: '#111', color: '#fff' };
-                                label = "DOWNLOADED ✓";
+                                label = "DOWNLOADED ";
                             }
 
                             return (

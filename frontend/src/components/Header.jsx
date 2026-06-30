@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Header = ({ currentRoute, setCurrentRoute }) => {
+const Header = ({ currentRoute, setCurrentRoute, applicantName, applicantId, onViewHistory }) => {
+  const [modelStatus, setModelStatus] = useState(null); // true = MMFFN, false = FALLBACK
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkModelHealth = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/health');
+        if (response.ok) {
+          const data = await response.json();
+          setModelStatus(data.model_loaded);
+        } else {
+          setModelStatus(false);
+        }
+      } catch (error) {
+        console.error('Error checking model health:', error);
+        setModelStatus(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkModelHealth();
+    // Recheck every 30 seconds
+    const interval = setInterval(checkModelHealth, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <nav className="w-full bg-[#ffffff] border-b border-[#111111] shrink-0" style={{ height: '52px', padding: '0 24px' }}>
       <div className="flex items-center justify-between h-full">
@@ -46,13 +73,55 @@ const Header = ({ currentRoute, setCurrentRoute }) => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex flex-col items-end justify-center">
+        <div className="flex gap-6 items-center">
+          {/* Applicant Name */}
+          {applicantName && (
+            <div className="flex items-center gap-2" style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#555' }}>
+              <span style={{ fontWeight: 400, color: '#9ca3af' }}>Applicant: </span>
+              <span style={{ fontWeight: 600, color: '#111' }}>{applicantName}</span>
+              {onViewHistory && (
+                <button 
+                  onClick={onViewHistory}
+                  className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-white hover:bg-gray-100 border border-[#e5e7eb] rounded transition-colors text-[#111] cursor-pointer"
+                >
+                  History
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* NN Mode Indicator */}
+          <div 
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '4px 12px',
+              borderRadius: '12px',
+              backgroundColor: modelStatus === true ? '#00FF88' : modelStatus === false ? '#FFB800' : '#e5e7eb',
+              color: modelStatus === true ? '#000' : modelStatus === false ? '#000' : '#666',
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+              fontSize: '10px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
+            <span style={{ fontSize: '12px' }}>
+              {modelStatus === true ? '●' : modelStatus === false ? '' : '○'}
+            </span>
+            {modelStatus === true ? 'MMFFN ACTIVE' : modelStatus === false ? 'RULE-BASED FALLBACK' : 'CHECKING...'}
+          </div>
+
+          {/* Bank Info */}
+          <div className="flex flex-col items-end justify-center">
             <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '11px', color: '#111111', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 CANARA BANK
             </div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: '10px', color: '#9ca3af' }}>
                 Fraud Detection Division
             </div>
+          </div>
         </div>
       </div>
     </nav>

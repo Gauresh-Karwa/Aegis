@@ -95,6 +95,22 @@ def fetch_all_applicants():
         row["class"] = row["class_label"] # Map back for UI consistency
     return rows
 
+def fetch_by_pan(pan: str):
+    """Fetch all submissions for a given PAN, ordered by date (newest first)."""
+    rows = execute_query(
+        "SELECT * FROM applicants WHERE pan = ? ORDER BY doc_date DESC",
+        (pan,)
+    )
+    for row in rows:
+        if "fraud_flags" in row and row["fraud_flags"]:
+            try:
+                row["fraud_flags"] = json.loads(row["fraud_flags"])
+            except:
+                row["fraud_flags"] = []
+        else:
+            row["fraud_flags"] = []
+    return rows
+
 def seed_dataset(compute_score_fn, get_level_fn):
     """Systematically seeds the 2000 folders into the SQLite database."""
     # Check if already populated

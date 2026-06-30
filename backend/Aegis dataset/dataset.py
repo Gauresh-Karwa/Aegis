@@ -1,6 +1,6 @@
 """
 =============================================================================
-AEGIS DOSSIER FACTORY  v2.0
+AEGIS DOSSIER FACTORY  v3.0  —  Bug-Fixed Edition
 Senior Lead Architect: Document Forensics & AI Data Engineering
 -----------------------------------------------------------------------------
 Generates synthetic, high-fidelity Indian banking document datasets for
@@ -12,7 +12,16 @@ Produces 4 PDFs per applicant:
   itr.pdf          – Income Tax Return (ITR-1)
   land_record.pdf  – Land / Property Record (RoR)
 
-Tampering engine injects 7 forensic anomaly classes when is_risked=True.
+Bug fixes in v3.0 (vs v2.0):
+  1. UID last-4 ALWAYS matches Aadhaar last-4 (same digits, one source)
+  2. City, District, and PIN code come from the SAME validated triplet
+  3. Branch phone number is LOCKED per IFSC — same on every page header
+  4. Land classification and use zone come from VALIDATED pair table
+  5. Father name is drawn from Indian-only name pool (no Western mixing)
+  6. All related dates (KYC, salary, ITR, mortgage) are derived from a
+     single base_date so they are internally coordinated
+
+Tampering engine injects forensic anomaly classes when is_risked=True.
 =============================================================================
 """
 
@@ -63,36 +72,139 @@ TEXT_MED         = HexColor("#444444")
 TEXT_LIGHT       = HexColor("#888888")
 LINE_BLUE        = HexColor("#5A8FCC")
 
-# District / circle rates for Karnataka (realistic)
-DISTRICTS_KA = [
-    ("Bengaluru Urban",  "Jayanagar",   8500),
-    ("Bengaluru Rural",  "Devanahalli", 3200),
-    ("Mysuru",           "Vijayanagar", 2800),
-    ("Tumakuru",         "Gubbi",       1800),
-    ("Hubballi-Dharwad", "Keshwapur",   2200),
-    ("Belagavi",         "Shahpur",     1600),
-    ("Mangaluru",        "Kadri",       4100),
-    ("Ballari",          "Toranagal",   1400),
+# =========================================================================
+#  BUG FIX 2 — VALIDATED CITY / DISTRICT / PIN TRIPLETS
+#  Every city is paired with the correct Karnataka district and a real
+#  PIN code. These are never mixed separately.
+# =========================================================================
+CITY_DISTRICT_PIN_PAIRS = [
+    # (city/area,              district,          pin,   taluk,           circle_rate_per_sqft)
+    ("Jayanagar, Bengaluru",   "Bengaluru Urban", "560041", "Bengaluru South", 8500),
+    ("Malleswaram, Bengaluru", "Bengaluru Urban", "560003", "Bengaluru North", 8200),
+    ("Indiranagar, Bengaluru", "Bengaluru Urban", "560038", "Bengaluru East",  8800),
+    ("Koramangala, Bengaluru", "Bengaluru Urban", "560034", "Bengaluru South", 9200),
+    ("Rajajinagar, Bengaluru", "Bengaluru Urban", "560010", "Bengaluru North", 7900),
+    ("Whitefield, Bengaluru",  "Bengaluru Urban", "560066", "Bengaluru East",  7600),
+    ("Yelahanka, Bengaluru",   "Bengaluru Urban", "560064", "Yelahanka",       6800),
+    ("Devanahalli",            "Bengaluru Rural", "562110", "Devanahalli",     3200),
+    ("Vijayanagar, Mysuru",    "Mysuru",          "570017", "Mysuru",          2800),
+    ("Hubballi",               "Hubballi-Dharwad","580020", "Hubballi",        2200),
+    ("Belagavi",               "Belagavi",        "590001", "Belagavi",        1600),
+    ("Mangaluru",              "Dakshina Kannada", "575001","Mangaluru",       4100),
+    ("Ballari",                "Ballari",         "583101", "Ballari",         1400),
+    ("Tumakuru",               "Tumakuru",        "572101", "Tumakuru",        1800),
+    ("Kalaburagi",             "Kalaburagi",      "585101", "Kalaburagi",      1300),
 ]
 
-BANK_BRANCHES = [
-    ("Jayanagar 4th Block", "CNRB0001234", "560041"),
-    ("Malleswaram",         "CNRB0002345", "560003"),
-    ("Indiranagar",         "CNRB0003456", "560038"),
-    ("Koramangala",         "CNRB0004567", "560034"),
-    ("Rajajinagar",         "CNRB0005678", "560010"),
-]
+# =========================================================================
+#  BUG FIX 3 — BRANCH REGISTRY: phone locked per IFSC
+#  Draw from this once per applicant; use the same phone on every page.
+# =========================================================================
+BRANCH_REGISTRY = {
+    "CNRB0001234": {
+        "name": "Jayanagar 4th Block",
+        "pin":  "560041",
+        "phone": "080-26532241",
+        "email": "cnrb0001234@canarabank.com",
+    },
+    "CNRB0002345": {
+        "name": "Malleswaram",
+        "pin":  "560003",
+        "phone": "080-23461890",
+        "email": "cnrb0002345@canarabank.com",
+    },
+    "CNRB0003456": {
+        "name": "Indiranagar",
+        "pin":  "560038",
+        "phone": "080-25200145",
+        "email": "cnrb0003456@canarabank.com",
+    },
+    "CNRB0004567": {
+        "name": "Koramangala",
+        "pin":  "560034",
+        "phone": "080-25502781",
+        "email": "cnrb0004567@canarabank.com",
+    },
+    "CNRB0005678": {
+        "name": "Rajajinagar",
+        "pin":  "560010",
+        "phone": "080-23391020",
+        "email": "cnrb0005678@canarabank.com",
+    },
+}
 
 EMPLOYERS = [
-    ("Infosys Limited",          "Infosys Ltd"),
-    ("Wipro Technologies",       "Wipro Technologies Pvt Ltd"),
-    ("Tech Mahindra",            "Tech Mahindra Pvt Ltd"),
-    ("Tata Consultancy Services","TCS Limited"),
-    ("HCL Technologies",         "HCL Technologies Ltd"),
-    ("Accenture Solutions",      "Accenture Solutions Pvt Ltd"),
-    ("Cognizant Technology",     "Cognizant Technology Solutions"),
-    ("L&T Infotech",             "LTIMindtree Limited"),
+    ("Infosys Limited",           "Infosys Limited"),
+    ("Wipro Technologies",        "Wipro Technologies Limited"),
+    ("Tech Mahindra Limited",     "Tech Mahindra Limited"),
+    ("Tata Consultancy Services", "Tata Consultancy Services Limited"),
+    ("HCL Technologies Limited",  "HCL Technologies Limited"),
+    ("Accenture Solutions",       "Accenture Solutions Private Limited"),
+    ("Cognizant Technology",      "Cognizant Technology Solutions India"),
+    ("LTIMindtree Limited",       "LTIMindtree Limited"),
 ]
+
+# =========================================================================
+#  BUG FIX 4 — VALIDATED LAND TYPE / ZONE PAIRS
+#  Land classification and use zone must be consistent with each other.
+# =========================================================================
+LAND_TYPE_ZONE_PAIRS = [
+    # (land_type,                          zone,                    kharif_crop,    rabi_crop)
+    ("Agricultural Land",                  "Agricultural",          "Paddy",        "Wheat"),
+    ("Agricultural Land",                  "Agricultural",          "Ragi",         "Jowar"),
+    ("Agri-Horticulture Land",             "Agricultural",          "Mango",        "Sugarcane"),
+    ("Converted Land (Section 95)",        "Residential",           "N/A",          "N/A"),
+    ("Converted Land (Section 95)",        "Commercial",            "N/A",          "N/A"),
+    ("Residential Plot",                   "Residential",           "N/A",          "N/A"),
+    ("Commercial Plot",                    "Commercial",            "N/A",          "N/A"),
+    ("Residential Plot",                   "Mixed Use",             "N/A",          "N/A"),
+]
+
+# =========================================================================
+#  BUG FIX 5 — INDIAN-ONLY NAME POOLS
+#  Father names are drawn from this pool — no Western names mixed in.
+# =========================================================================
+INDIAN_MALE_FIRST_NAMES = [
+    "Rajesh", "Suresh", "Mahesh", "Ramesh", "Ganesh", "Naresh", "Dinesh",
+    "Mukesh", "Nilesh", "Lokesh", "Sridhar", "Venkatesh", "Nagesh", "Girish",
+    "Harish", "Manish", "Santosh", "Rakesh", "Umesh", "Yogesh", "Prakash",
+    "Ashok", "Ravi", "Arun", "Vijay", "Sunil", "Anil", "Nitin", "Vikas",
+    "Praveen", "Deepak", "Anand", "Arvind", "Mohan", "Shyam", "Kishore",
+    "Ajay", "Sanjay", "Bijay", "Manoj", "Tarun", "Varun", "Gaurav", "Rahul",
+    "Rohit", "Mohit", "Ankit", "Amit", "Sumit", "Rajiv", "Srinivas", "Murali",
+    "Shivakumar", "Basavaraj", "Manjunath", "Channakeshava", "Siddaramaiah",
+    "Thimmarayappa", "Nagaraj", "Basappa", "Hanumanthappa", "Shivalingaiah",
+]
+
+INDIAN_SURNAMES = [
+    "Sharma", "Verma", "Gupta", "Singh", "Kumar", "Patel", "Shah", "Mehta",
+    "Reddy", "Rao", "Naidu", "Pillai", "Nair", "Iyer", "Iyengar", "Menon",
+    "Krishnamurthy", "Subramanian", "Venkataraman", "Balasubramanian",
+    "Gowda", "Hegde", "Shetty", "Kamath", "Nayak", "Pai", "Bhat", "Rao",
+    "Patil", "Desai", "Joshi", "Kulkarni", "Deshpande", "Gaikwad", "More",
+    "Jadhav", "Shinde", "Pawar", "Bhosale", "Mane", "Sawant", "Thakur",
+    "Yadav", "Mishra", "Tiwari", "Pandey", "Shukla", "Dwivedi", "Trivedi",
+    "Mukherjee", "Banerjee", "Chatterjee", "Ghosh", "Das", "Bose", "Datta",
+    "Choudhury", "Chakraborty", "Sen", "Roy", "Sarkar", "Mitra", "Dey",
+    "Khan", "Ahmed", "Ansari", "Siddiqui", "Sheikh", "Qureshi",
+]
+
+INDIAN_FEMALE_FIRST_NAMES = [
+    "Priya", "Divya", "Kavya", "Geeta", "Sunita", "Anita", "Asha", "Usha",
+    "Rekha", "Sneha", "Pooja", "Neha", "Meha", "Isha", "Nisha", "Risha",
+    "Lakshmi", "Saraswathi", "Parvathi", "Durga", "Meena", "Leena", "Reena",
+    "Seema", "Meera", "Veera", "Heera", "Hema", "Prema", "Kema", "Savitha",
+    "Kavitha", "Revathi", "Urvashi", "Shalini", "Nalini", "Malini", "Kalindi",
+    "Padmavathi", "Sarojini", "Vijayalakshmi", "Jayashree", "Mangala",
+    "Nirmala", "Vimala", "Kamala", "Shantha", "Vanitha", "Radha", "Janaki",
+    "Sumathi", "Vidhya", "Suchitra", "Aparna", "Anuradha", "Sudha", "Geetha",
+]
+
+def rand_indian_male_name() -> str:
+    return f"{random.choice(INDIAN_MALE_FIRST_NAMES)} {random.choice(INDIAN_SURNAMES)}"
+
+def rand_indian_female_name() -> str:
+    return f"{random.choice(INDIAN_FEMALE_FIRST_NAMES)} {random.choice(INDIAN_SURNAMES)}"
 
 ITR_SECTIONS = ["17(1)", "17(2)", "17(3)"]
 
@@ -109,9 +221,16 @@ def rand_pan() -> str:
             "".join(random.choices("0123456789", k=4)) +
             random.choice(letters))
 
-def rand_aadhaar() -> str:
-    """Masked Aadhaar (last 4 visible)."""
-    return "XXXX XXXX " + "".join(random.choices("0123456789", k=4))
+def rand_uid() -> tuple:
+    """
+    BUG FIX 1: Generate a full 12-digit UID and a masked Aadhaar
+    where the last 4 digits are IDENTICAL to the UID's last 4.
+    Returns (uid_display, aadhaar_masked)
+    """
+    digits = "".join(random.choices("0123456789", k=12))
+    uid_display = f"{digits[0:4]} {digits[4:8]} {digits[8:12]}"
+    aadhaar_masked = f"XXXX XXXX {digits[8:12]}"
+    return uid_display, aadhaar_masked
 
 def rand_gstn(state_code: str = "29") -> str:
     """Realistic GSTN format."""
@@ -157,16 +276,18 @@ def indian_num_words(n: int) -> str:
         return f"{n/1_000:.2f} Thousand"
     return str(n)
 
-def fake_address() -> str:
-    street_nums = ["No. " + str(random.randint(1,200))]
+def make_address(city_area: str, pin: str) -> str:
+    """
+    BUG FIX 2: Build an address that uses the correct city/area from a
+    validated CITY_DISTRICT_PIN pair — no mixing of separate pools.
+    """
+    street_nums = [f"No. {random.randint(1,200)}",
+                   f"{random.randint(1,200)}/A",
+                   f"Flat {random.randint(100,999)}"]
     streets = ["MG Road", "Gandhi Nagar", "Nehru Street", "Rajiv Gandhi Nagar",
-               "Ambedkar Road", "Indira Nagar", "Shivaji Road", "Patel Layout",
+               "Ambedkar Road", "Shivaji Road", "Patel Layout",
                "Vivekananda Road", "Subhash Chandra Bose Avenue"]
-    areas   = ["Jayanagar", "Koramangala", "Malleswaram", "Rajajinagar",
-               "Indiranagar", "BTM Layout", "HSR Layout", "Yelahanka",
-               "Electronic City", "Whitefield"]
-    cities  = ["Bengaluru", "Mysuru", "Hubballi", "Belagavi", "Mangaluru"]
-    return f"{random.choice(street_nums)}, {random.choice(streets)}, {random.choice(areas)}, {random.choice(cities)}, Karnataka"
+    return f"{random.choice(street_nums)}, {random.choice(streets)}, {city_area}, Karnataka – {pin}"
 
 def make_qr_image(data: str, size: int = 80) -> BytesIO:
     """Render a QR code to a BytesIO PNG."""
@@ -186,12 +307,11 @@ def make_bank_seal(size: int = 110) -> BytesIO:
     Render a circular Canara Bank official seal in PIL.
     Returns PNG bytes.
     """
-    sz = size * 3          # render at 3× then downscale (anti-alias)
+    sz = size * 3          # render at 3x then downscale (anti-alias)
     img = Image.new("RGBA", (sz, sz), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
     c = sz // 2
     r_outer = c - 4
-    r_inner = c - 18
 
     # Outer ring
     draw.ellipse([4, 4, sz-4, sz-4], outline=(0, 63, 135, 220), width=6)
@@ -210,7 +330,7 @@ def make_bank_seal(size: int = 110) -> BytesIO:
         font_lg = font_sm
 
     # Draw "CANARA BANK" arc text (top)
-    arc_text = "★  CANARA BANK  ★"
+    arc_text = "  CANARA BANK  "
     for i, ch in enumerate(arc_text):
         angle = -90 + (i - len(arc_text)/2) * (180 / max(len(arc_text), 1))
         rad   = math.radians(angle)
@@ -271,14 +391,12 @@ class BasePainter:
     # ------------------------------------------------------------------ #
     #  PAGE HEADER
     # ------------------------------------------------------------------ #
-    def draw_header(self, branch: tuple, doc_type: str,
+    def draw_header(self, branch_info: dict, doc_type: str,
                     ref_no: str, date_str: str, qr_data: str):
         """
-        Renders the full Canara Bank document header including:
-          - Bank name bar, branch details, IFSC
-          - Document type badge
-          - QR code placeholder
-          - Reference number & date
+        BUG FIX 3: branch_info is now a dict from BRANCH_REGISTRY.
+        The phone number comes from the registry and is identical on
+        every page header for the same branch — no more random per-call.
         """
         c = self.c
         w, h = PAGE_W, PAGE_H
@@ -306,15 +424,18 @@ class BasePainter:
         c.setFillColor(CANARA_LIGHT)
         c.rect(0, h - 44*mm, w, 20*mm, fill=1, stroke=0)
 
-        # ---- branch block -------------------------------------------
-        branch_name, ifsc, pin = branch
+        # ---- branch block (phone from registry — fixed per branch) ---
         c.setFillColor(CANARA_BLUE)
         c.setFont("Helvetica-Bold", 9)
-        c.drawString(MARGIN, h - 29.5*mm, f"Branch: {branch_name}")
+        c.drawString(MARGIN, h - 29.5*mm, f"Branch: {branch_info['name']}")
         c.setFont("Helvetica", 7.5)
         c.setFillColor(TEXT_MED)
+        ifsc = branch_info["ifsc"]
+        pin  = branch_info["pin"]
+        phone = branch_info["phone"]     # same on every page — BUG FIX 3
+        email = branch_info["email"]
         c.drawString(MARGIN, h - 33.5*mm, f"IFSC: {ifsc}   |   PIN: {pin}")
-        c.drawString(MARGIN, h - 37.5*mm, f"Ph: 080-{random.randint(2000,4999)}{random.randint(1000,9999)}  |  Email: {ifsc.lower()}@canarabank.com")
+        c.drawString(MARGIN, h - 37.5*mm, f"Ph: {phone}  |  Email: {email}")
         c.drawString(MARGIN, h - 41.5*mm, "Head Office: 112, J.C. Road, Bengaluru – 560 002, Karnataka, India")
 
         # ---- QR code (top-right) ------------------------------------
@@ -503,7 +624,7 @@ class TamperingEngine:
         """2-pixel black artifact near income field (clone-stamp simulation)."""
         c.saveState()
         c.setFillColor(black)
-        # Cluster of 3–5 misaligned black micro-rectangles
+        # Cluster of 3-5 misaligned black micro-rectangles
         for _ in range(random.randint(3, 5)):
             ox = x + random.uniform(-1.5, 1.5) * mm
             oy = y + random.uniform(-1.5, 1.5) * mm
@@ -562,7 +683,7 @@ class IdentityDocRenderer(BasePainter):
 
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="KYC IDENTITY DOCUMENT",
             ref_no=applicant["identity_ref"],
             date_str=applicant["doc_date"],
@@ -614,6 +735,7 @@ class IdentityDocRenderer(BasePainter):
             cy -= 6.5*mm
 
         # ---- Section: ADDRESS --------------------------------------
+        # BUG FIX 2: address, district, and PIN are from same validated triplet
         cy -= 4*mm
         self.section_title("Address Details", cy, full_width=False)
         cy -= 7*mm
@@ -633,11 +755,12 @@ class IdentityDocRenderer(BasePainter):
             cy -= 5*mm
 
         cy -= 4*mm
-        self.field_row("District", random.choice(DISTRICTS_KA)[0], MARGIN, cy, col_w=90*mm)
+        # District from validated triplet — not random DISTRICTS_KA
+        self.field_row("District", applicant["district"], MARGIN, cy, col_w=90*mm)
         cy -= 6.5*mm
         self.field_row("State", "Karnataka", MARGIN, cy, col_w=90*mm)
         cy -= 6.5*mm
-        self.field_row("PIN Code", applicant["branch"][2], MARGIN, cy, col_w=90*mm)
+        self.field_row("PIN Code", applicant["pin"], MARGIN, cy, col_w=90*mm)
         cy -= 6.5*mm
 
         # ---- Section: TAX / FINANCIAL IDENTIFIERS ------------------
@@ -653,7 +776,7 @@ class IdentityDocRenderer(BasePainter):
             ("Email (Registered)",              applicant["email"]),
             ("Bank Account No.",                applicant["account_no"]),
             ("Bank Name",                       "Canara Bank"),
-            ("Branch & IFSC",                   f"{applicant['branch'][0]} / {applicant['branch'][1]}"),
+            ("Branch & IFSC",                   f"{applicant['branch_info']['name']} / {applicant['branch_info']['ifsc']}"),
         ]
         half = len(fin_fields) // 2
         col_w = (PAGE_W - 2*MARGIN) / 2 - 3*mm
@@ -718,7 +841,7 @@ class SalarySlipRenderer(BasePainter):
         # ================================================================
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="PAYROLL SALARY SLIP",
             ref_no=applicant["salary_ref"],
             date_str=salary["pay_date"],
@@ -850,7 +973,7 @@ class SalarySlipRenderer(BasePainter):
         c.showPage()
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="PAYROLL SALARY SLIP",
             ref_no=applicant["salary_ref"],
             date_str=salary["pay_date"],
@@ -944,7 +1067,7 @@ class ITRRenderer(BasePainter):
         # ================================================================
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="ITR-1 (SAHAJ) RETURN",
             ref_no=applicant["itr_ref"],
             date_str=itr["filed_date"],
@@ -982,8 +1105,7 @@ class ITRRenderer(BasePainter):
         self.section_title("Part A – General Information", cy)
         cy -= 8*mm
 
-        # Semantic drift: employer name may differ from salary slip
-        itr_employer = itr["employer_name"]  # may differ if is_risked + semantic_drift
+        itr_employer = itr["employer_name"]
 
         personal_fields = [
             ("First Name",              applicant["name"].split()[0]),
@@ -1040,7 +1162,7 @@ class ITRRenderer(BasePainter):
         c.showPage()
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="ITR-1 (SAHAJ) RETURN",
             ref_no=applicant["itr_ref"],
             date_str=itr["filed_date"],
@@ -1093,8 +1215,8 @@ class ITRRenderer(BasePainter):
         cy2 -= 8*mm
         ref_fields = [
             ("Bank Name",       "Canara Bank"),
-            ("Branch",          applicant["branch"][0]),
-            ("IFSC Code",       applicant["branch"][1]),
+            ("Branch",          applicant["branch_info"]["name"]),
+            ("IFSC Code",       applicant["branch_info"]["ifsc"]),
             ("Account Number",  applicant["account_no"]),
             ("Account Type",    "Savings"),
             ("Pre-validated",   "Yes"),
@@ -1149,7 +1271,7 @@ class LandRecordRenderer(BasePainter):
         # ================================================================
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="PROPERTY RECORD OF RIGHTS",
             ref_no=applicant["land_ref"],
             date_str=land["issue_date"],
@@ -1175,7 +1297,12 @@ class LandRecordRenderer(BasePainter):
         self.section_title("Property Identification & Location", cy)
         cy -= 8*mm
 
-        dist_name, taluk_name, circle_rate = land["district_info"]
+        # BUG FIX 4: district, taluk, zone all come from same validated pair
+        land_pair = land["type_zone_pair"]
+        dist_name  = applicant["district"]
+        taluk_name = applicant["taluk"]
+        circle_rate = applicant["circle_rate"]
+
         prop_fields = [
             ("District",                  dist_name),
             ("Taluk / Sub-District",      taluk_name),
@@ -1187,8 +1314,8 @@ class LandRecordRenderer(BasePainter):
             ("Gat Number (if any)",       land.get("gat_no", "N/A")),
             ("Old Survey No.",            land.get("old_survey", f"{random.randint(100,999)}")),
             ("Village Map Reference",     f"VM/{dist_name[:3].upper()}/{random.randint(100,999)}"),
-            ("Classified As",             land["land_type"]),
-            ("Land Use Zone",             land.get("zone", "Residential / Agri Conversion")),
+            ("Classified As",             land_pair[0]),   # land_type from validated pair
+            ("Land Use Zone",             land_pair[1]),   # zone from same pair — BUG FIX 4
         ]
         col_w = (w - 2 * MARGIN) / 2 - 3 * mm
         for i, (label, val) in enumerate(prop_fields):
@@ -1215,6 +1342,7 @@ class LandRecordRenderer(BasePainter):
         self.section_title("Ownership / Khatedar Details (Column 3 – RTC)", cy)
         cy -= 4*mm
 
+        # BUG FIX 5: father_name from Indian-only name pool
         own_data = [
             ["Sl.", "Name of Owner / Khatedar", "Father's Name", "Share (%)", "Acquisition Mode", "Date"],
             ["1", applicant["name"], land["father_name"], "100%", land["acquisition_mode"], land["acquisition_date"]],
@@ -1227,11 +1355,12 @@ class LandRecordRenderer(BasePainter):
         self.section_title("Encumbrance & Liabilities (Column 11)", cy)
         cy -= 4*mm
 
+        # BUG FIX 6: mortgage date derived from base_date — always after acquisition
         enc_data = [
             ["Type of Liability", "Financial Institution", "Loan Account No.", "Amount (₹)", "Date of Mortgage", "Status"],
             ["Equitable Mortgage", "Canara Bank", applicant.get("loan_ref", rand_loan_ref()),
              f"₹ {format_inr(applicant.get('loan_amount', land['market_value']*0.6))}",
-             applicant["doc_date"], "Active"],
+             applicant["doc_date"], "Active"],   # doc_date = base_date — BUG FIX 6
         ]
         col_w6b = [32*mm, 35*mm, 35*mm, 28*mm, 28*mm, 19*mm]
         cy = self.draw_table(enc_data, col_w6b, MARGIN, cy - 2*mm)
@@ -1242,7 +1371,7 @@ class LandRecordRenderer(BasePainter):
         c.showPage()
         self.draw_watermark()
         self.draw_header(
-            branch=applicant["branch"],
+            branch_info=applicant["branch_info"],
             doc_type="PROPERTY RECORD OF RIGHTS",
             ref_no=applicant["land_ref"],
             date_str=land["issue_date"],
@@ -1283,6 +1412,7 @@ class LandRecordRenderer(BasePainter):
         self.section_title("Mutation Register (Column 9 – RTC)", cy2)
         cy2 -= 4*mm
 
+        pay_year = applicant["pay_year"]
         mut_data = [
             ["Mutation No.", "Date", "From Owner", "To Owner", "Mode", "Remarks"],
             [land.get("mutation_no", f"MUT/{random.randint(1000,9999)}/23-24"),
@@ -1297,11 +1427,13 @@ class LandRecordRenderer(BasePainter):
         self.section_title("Crop & Agricultural Details (Column 12 – If Applicable)", cy2)
         cy2 -= 4*mm
 
+        kharif = land_pair[2]   # from validated pair
+        rabi   = land_pair[3]   # from validated pair
         crop_data = [
             ["Season", "Crop Grown", "Irrigated / Dry", "Area (Acres)", "Water Source"],
-            ["Kharif (Jun–Nov)", land.get("kharif_crop", "Paddy / Ragi"),
+            ["Kharif (Jun–Nov)", kharif,
              "Irrigated", str(round(land["extent_acres"] * 0.6, 2)), "Borewell / Canal"],
-            ["Rabi (Nov–Mar)",   land.get("rabi_crop", "Wheat / Jowar"),
+            ["Rabi (Nov–Mar)",   rabi,
              "Dry",       str(round(land["extent_acres"] * 0.4, 2)), "Rainwater"],
         ]
         col_w5b = [28*mm, 50*mm, 35*mm, 28*mm, 36*mm]
@@ -1348,36 +1480,70 @@ class LandRecordRenderer(BasePainter):
 def generate_applicant_data(is_risked: bool) -> dict:
     """
     Generate a full, internally consistent applicant data dictionary.
-    When is_risked=True, certain fields are intentionally corrupted
-    to simulate fraud scenarios.
-    """
-    # ---- Identity core -----------------------------------------------
-    gender   = random.choice(["Male", "Female"])
-    if gender == "Male":
-        name = fake.name_male()
-    else:
-        name = fake.name_female()
 
-    dob_dt   = fake.date_of_birth(minimum_age=25, maximum_age=58)
-    dob      = dob_dt.strftime("%d/%m/%Y")
-    pan      = rand_pan()
-    aadhaar  = rand_aadhaar()
-    address  = fake_address()
-    branch   = random.choice(BANK_BRANCHES)
-    mobile   = "9" + "".join(random.choices("0123456789", k=9))
-    email    = (name.split()[0].lower() + str(random.randint(10, 999)) +
-                random.choice(["@gmail.com", "@yahoo.com", "@hotmail.com",
-                                "@outlook.com", "@rediffmail.com"]))
+    All 6 v2.0 bugs are fixed:
+      1. UID last-4 == Aadhaar last-4 (generated together from rand_uid)
+      2. City, District, PIN from same CITY_DISTRICT_PIN_PAIRS row
+      3. Branch phone locked from BRANCH_REGISTRY[ifsc] — not random per call
+      4. Land type & zone from LAND_TYPE_ZONE_PAIRS validated pair
+      5. Father name from Indian-only pool (rand_indian_male_name)
+      6. All dates coordinated from a single base_date
+    """
+
+    # ---- BUG FIX 6: single base_date — all dates derived from this -------
+    # The application is filed today. All other dates are relative to this.
+    base_date = date.today()
+
+    # ---- BUG FIX 1 — UID and Aadhaar generated together from same digits --
+    uid, aadhaar = rand_uid()
+
+    # ---- BUG FIX 5 — Indian-only name pool --------------------------------
+    gender = random.choice(["Male", "Female"])
+    if gender == "Male":
+        name = rand_indian_male_name()
+    else:
+        name = rand_indian_female_name()
+
+    # ---- BUG FIX 5 — Father name from same Indian pool --------------------
+    father_name = rand_indian_male_name()
+
+    dob_dt = fake.date_of_birth(minimum_age=25, maximum_age=58)
+    dob    = dob_dt.strftime("%d/%m/%Y")
+    pan    = rand_pan()
+
+    # ---- BUG FIX 3 — Branch: pick IFSC, then look up phone from registry --
+    ifsc      = random.choice(list(BRANCH_REGISTRY.keys()))
+    branch    = BRANCH_REGISTRY[ifsc]
+    branch_info = {
+        "ifsc":  ifsc,
+        "name":  branch["name"],
+        "pin":   branch["pin"],
+        "phone": branch["phone"],   # locked — same on every page header
+        "email": branch["email"],
+    }
+
+    # ---- BUG FIX 2 — City/District/PIN from same validated triplet ---------
+    loc = random.choice(CITY_DISTRICT_PIN_PAIRS)
+    city_area    = loc[0]   # "Jayanagar, Bengaluru"
+    district     = loc[1]   # "Bengaluru Urban"
+    pin          = loc[2]   # "560041"
+    taluk        = loc[3]   # "Bengaluru South"
+    circle_rate  = loc[4]   # 8500 per sqft
+
+    address = make_address(city_area, pin)
+
+    mobile    = "9" + "".join(random.choices("0123456789", k=9))
+    email_id  = (name.split()[0].lower() + str(random.randint(10, 999)) +
+                 random.choice(["@gmail.com", "@yahoo.com", "@hotmail.com",
+                                 "@outlook.com", "@rediffmail.com"]))
     account_no = rand_account()
     voter_id   = ("".join(random.choices("ABCDEFGHIJKLMNOPQRSTUVWXYZ", k=3)) +
                   "".join(random.choices("0123456789", k=7)))
-    uid        = rand_aadhaar().replace("XXXX XXXX ", "").strip()
-    uid        = f"{''.join(random.choices('0123456789', k=4))} {''.join(random.choices('0123456789', k=4))} {uid}"
 
-    # ---- Salary -------------------------------------------------------
-    ctc_annual   = random.randint(400000, 2200000)
-    basic        = int(ctc_annual * 0.40 / 12)
-    hra          = int(basic * 0.50)
+    # ---- Salary -----------------------------------------------------------
+    ctc_annual    = random.randint(400_000, 2_200_000)
+    basic         = int(ctc_annual * 0.40 / 12)
+    hra           = int(basic * 0.50)
     special_allow = int(basic * 0.20)
     travel_allow  = 1600
     medical_allow = 1250
@@ -1386,52 +1552,59 @@ def generate_applicant_data(is_risked: bool) -> dict:
     gratuity      = int(basic * 4.81 / 100)
     bonus_annual  = int(ctc_annual * 0.08)
 
-    gross_pay = basic + hra + special_allow + travel_allow + medical_allow + lta
-    employee_pf   = int(basic * 0.12)
-    prof_tax      = 200
-    esi_monthly   = int(gross_pay * 0.0075) if gross_pay < 21000 else 0
-    tds_monthly   = max(0, int((ctc_annual * 0.30 - 50000) / 12)) if ctc_annual > 700000 else 0
+    gross_pay        = basic + hra + special_allow + travel_allow + medical_allow + lta
+    employee_pf      = int(basic * 0.12)
+    prof_tax         = 200
+    esi_monthly      = int(gross_pay * 0.0075) if gross_pay < 21_000 else 0
+    tds_monthly      = max(0, int((ctc_annual * 0.30 - 50_000) / 12)) if ctc_annual > 700_000 else 0
     total_deductions = employee_pf + prof_tax + tds_monthly + esi_monthly
-    net_pay       = gross_pay - total_deductions
-    ctc_monthly   = gross_pay + employer_pf + gratuity + int(bonus_annual / 12)
+    net_pay          = gross_pay - total_deductions
+    ctc_monthly      = gross_pay + employer_pf + gratuity + int(bonus_annual / 12)
 
-    emp_pair = random.choice(EMPLOYERS)
+    # BUG FIX: employer name is THE SAME in both salary and ITR for safe docs.
+    # For risked docs with semantic_drift flag, ITR will show a *different* name.
+    # But this decision is made at fraud_flag time, not here — so we store
+    # both and let the fraud flag resolver override itr_employer if needed.
+    emp_pair             = random.choice(EMPLOYERS)
     employer_name_salary = emp_pair[0]
-    employer_name_itr    = emp_pair[1] if is_risked else emp_pair[0]   # Semantic drift
+    employer_name_itr    = emp_pair[0]   # SAME by default — no drift for safe
 
     emp_addr = (f"{random.randint(1,100)}, {random.choice(['MG Road','Brigade Road','Residency Road','Cunningham Road'])}, "
                 f"Bengaluru – {random.choice(['560001','560002','560025','560038'])}")
 
-    gstn         = rand_gstn()
-    pf_no        = rand_pf()
-    uan          = rand_uan()
-    esi_no       = rand_esi() if esi_monthly > 0 else "Not Applicable"
+    gstn           = rand_gstn()
+    pf_no          = rand_pf()
+    uan            = rand_uan()
+    esi_no         = rand_esi() if esi_monthly > 0 else "Not Applicable"
     employer_pf_reg = f"KA/BNE/{random.randint(10000,99999)}"
-    emp_code      = "EMP" + "".join(random.choices("0123456789", k=6))
-    designations  = ["Software Engineer", "Senior Engineer", "Team Lead", "Project Manager",
-                     "Analyst", "Associate Consultant", "Deputy Manager", "Manager",
-                     "Senior Analyst", "Technical Architect"]
-    designation   = random.choice(designations)
-    departments   = ["IT – Application Development", "IT – Infrastructure", "Finance & Accounts",
-                     "Human Resources", "Operations", "Sales & Marketing", "Legal & Compliance"]
-    department    = random.choice(departments)
-    doj_dt        = dob_dt + timedelta(days=random.randint(365*3, 365*20))
-    if doj_dt > date.today():
-        doj_dt = date.today() - timedelta(days=random.randint(365, 365*5))
-    doj           = doj_dt.strftime("%d/%m/%Y")
+    emp_code       = "EMP" + "".join(random.choices("0123456789", k=6))
+    designations   = ["Software Engineer", "Senior Engineer", "Team Lead", "Project Manager",
+                      "Analyst", "Associate Consultant", "Deputy Manager", "Manager",
+                      "Senior Analyst", "Technical Architect"]
+    designation    = random.choice(designations)
+    departments    = ["IT – Application Development", "IT – Infrastructure", "Finance & Accounts",
+                      "Human Resources", "Operations", "Sales & Marketing", "Legal & Compliance"]
+    department     = random.choice(departments)
 
-    months_completed = random.randint(1, 11)
-    month_names = ["January","February","March","April","May","June",
-                   "July","August","September","October","November","December"]
-    month_idx   = random.randint(0, 11)
-    pay_year    = random.randint(2022, 2024)
-    month_year  = f"{month_names[month_idx]} {pay_year}"
-    pay_date_dt = date(pay_year, month_idx + 1, random.randint(28, 28))
-    pay_date    = pay_date_dt.strftime("%d/%m/%Y")
+    # BUG FIX 6 — Date of Joining is before base_date and after DOB+3yrs
+    doj_dt = dob_dt + timedelta(days=random.randint(365*3, 365*20))
+    if doj_dt >= base_date:
+        doj_dt = base_date - timedelta(days=random.randint(365, 365*5))
+    doj = doj_dt.strftime("%d/%m/%Y")
+
+    # BUG FIX 6 — Salary month is derived relative to base_date
+    months_back      = random.randint(1, 6)          # salary slip is 1-6 months ago
+    pay_date_dt      = base_date - timedelta(days=months_back * 30)
+    pay_year         = pay_date_dt.year
+    month_idx        = pay_date_dt.month - 1
+    month_names      = ["January","February","March","April","May","June",
+                        "July","August","September","October","November","December"]
+    month_year       = f"{month_names[month_idx]} {pay_year}"
+    pay_date         = date(pay_year, month_idx + 1, 28).strftime("%d/%m/%Y")
+    months_completed = month_idx + 1
 
     working_days = random.randint(22, 26)
 
-    # Earning rows for salary table
     earning_rows = [
         ["Basic Salary",           f"₹ {format_inr(basic)}",        f"₹ {format_inr(basic*months_completed)}",
          "Employee PF (12% Basic)", f"₹ {format_inr(employee_pf)}", f"₹ {format_inr(employee_pf*months_completed)}"],
@@ -1448,77 +1621,83 @@ def generate_applicant_data(is_risked: bool) -> dict:
     ]
 
     # ---- ITR ----------------------------------------------------------
-    salary_17_1  = gross_pay * 12
-    perquisites  = int(ctc_annual * 0.01)
-    profits_lieu = 0
-    hra_exempt   = min(hra * 12, int(salary_17_1 * 0.40))
-    gross_salary = salary_17_1 + perquisites
-    std_ded      = 50000
-    prof_tax_yr  = prof_tax * 12
+    salary_17_1     = gross_pay * 12
+    perquisites     = int(ctc_annual * 0.01)
+    profits_lieu    = 0
+    hra_exempt      = min(hra * 12, int(salary_17_1 * 0.40))
+    gross_salary    = salary_17_1 + perquisites
+    std_ded         = 50_000
+    prof_tax_yr     = prof_tax * 12
     net_taxable_sal = gross_salary - hra_exempt - std_ded - prof_tax_yr
 
-    ded_80c  = min(random.randint(50000, 150000), 150000)
-    ded_80d  = min(random.randint(5000, 25000), 25000)
-    ded_80e  = random.randint(0, 50000)
-    ded_80tta = min(random.randint(0, 10000), 10000)
-    ded_80g  = random.randint(0, 10000)
+    ded_80c  = min(random.randint(50_000, 150_000), 150_000)
+    ded_80d  = min(random.randint(5_000, 25_000), 25_000)
+    ded_80e  = random.randint(0, 50_000)
+    ded_80tta = min(random.randint(0, 10_000), 10_000)
+    ded_80g  = random.randint(0, 10_000)
     total_ded_vi = ded_80c + ded_80d + ded_80e + ded_80tta + ded_80g
 
     total_income = max(0, net_taxable_sal - total_ded_vi)
     # Simplified slab calculation
-    if total_income <= 300000:
+    if total_income <= 300_000:
         tax_on_income = 0
-    elif total_income <= 600000:
-        tax_on_income = int((total_income - 300000) * 0.05)
-    elif total_income <= 900000:
-        tax_on_income = 15000 + int((total_income - 600000) * 0.10)
-    elif total_income <= 1200000:
-        tax_on_income = 45000 + int((total_income - 900000) * 0.15)
-    elif total_income <= 1500000:
-        tax_on_income = 90000 + int((total_income - 1200000) * 0.20)
+    elif total_income <= 600_000:
+        tax_on_income = int((total_income - 300_000) * 0.05)
+    elif total_income <= 900_000:
+        tax_on_income = 15_000 + int((total_income - 600_000) * 0.10)
+    elif total_income <= 1_200_000:
+        tax_on_income = 45_000 + int((total_income - 900_000) * 0.15)
+    elif total_income <= 1_500_000:
+        tax_on_income = 90_000 + int((total_income - 1_200_000) * 0.20)
     else:
-        tax_on_income = 150000 + int((total_income - 1500000) * 0.30)
+        tax_on_income = 150_000 + int((total_income - 1_500_000) * 0.30)
 
-    rebate_87a = tax_on_income if total_income <= 700000 else 0
-    tax_after  = max(0, tax_on_income - rebate_87a)
-    cess       = int(tax_after * 0.04)
-    total_tax  = tax_after + cess
+    rebate_87a   = tax_on_income if total_income <= 700_000 else 0
+    tax_after    = max(0, tax_on_income - rebate_87a)
+    cess         = int(tax_after * 0.04)
+    total_tax    = tax_after + cess
     tds_deducted = tds_monthly * 12
     net_tax_payable = total_tax - tds_deducted
 
+    # BUG FIX 6 — ITR filed date is after the salary pay_year end
     ay         = f"{pay_year}-{str(pay_year+1)[2:]}"
     prev_year  = f"{pay_year-1}-{str(pay_year)[2:]}"
-    filed_date_dt = date(pay_year + 1, random.randint(6, 7), random.randint(1, 28))
+    # ITR filed in Jul–Sep of the year AFTER the salary year
+    filed_year = pay_year + 1
+    filed_month = random.randint(7, 9)
+    filed_day   = random.randint(1, 28)
     try:
-        filed_date = filed_date_dt.strftime("%d/%m/%Y")
-    except:
-        filed_date = f"31/07/{pay_year+1}"
+        filed_date_dt = date(filed_year, filed_month, filed_day)
+        filed_date    = filed_date_dt.strftime("%d/%m/%Y")
+    except ValueError:
+        filed_date = f"31/07/{filed_year}"
 
-    ack_no = ("".join(random.choices("0123456789", k=15)))
+    ack_no = "".join(random.choices("0123456789", k=15))
 
     # ---- Land ---------------------------------------------------------
-    dist_info    = random.choice(DISTRICTS_KA)
+    # BUG FIX 4 — land type and zone from same validated pair
+    land_type_zone = random.choice(LAND_TYPE_ZONE_PAIRS)
+
     extent_acres = round(random.uniform(0.5, 8.0), 2)
-    extent_sqft  = int(extent_acres * 43560)
-    circle_rate  = dist_info[2]
+    extent_sqft  = int(extent_acres * 43_560)
     market_value = int(extent_sqft * circle_rate * random.uniform(1.0, 1.4))
 
     villages = ["Hegganahalli", "Yelahanka New Town", "Devanahalli", "Hoskote",
                 "Ramanagaram", "Channapatna", "Kanakapura", "Magadi",
                 "Doddaballapur", "Nelamangala"]
-    land_types = ["Agricultural Land", "Converted Land (Section 95)", "Residential Plot",
-                  "Commercial Plot", "Agri-Horticulture Land"]
-    acq_modes  = ["Sale Deed", "Gift Deed", "Partition Deed", "Inheritance",
-                  "Government Allotment"]
+    acq_modes = ["Sale Deed", "Gift Deed", "Partition Deed", "Inheritance",
+                 "Government Allotment"]
 
-    issue_dt    = date.today() - timedelta(days=random.randint(1, 60))
-    acq_dt      = date(random.randint(2010, 2022), random.randint(1, 12), random.randint(1, 28))
-    father_name = fake.name_male()
-    seller_name = fake.name_male()
+    # BUG FIX 6 — acquisition date is before the base_date
+    acq_dt   = base_date - timedelta(days=random.randint(365, 365*12))
+    issue_dt = base_date - timedelta(days=random.randint(1, 60))
 
-    # ---- Reference numbers / dates ----------------------------------
-    doc_date   = date.today().strftime("%d/%m/%Y")
-    app_id_num = random.randint(10000000, 99999999)
+    # BUG FIX 5 — seller name from Indian-only pool
+    seller_name = rand_indian_male_name()
+
+    # ---- Reference numbers / dates (BUG FIX 6: all tied to base_date) ---
+    doc_date     = base_date.strftime("%d/%m/%Y")
+    app_id_num   = random.randint(10_000_000, 99_999_999)
     applicant_id = f"CBLP{app_id_num}"
 
     identity_ref = f"CB/KYC/{applicant_id}/{''.join(random.choices('0123456789',k=6))}"
@@ -1542,15 +1721,19 @@ def generate_applicant_data(is_risked: bool) -> dict:
         "dob":          dob,
         "gender":       gender,
         "pan":          pan,
-        "aadhaar":      aadhaar,
-        "uid":          uid,
-        "address":      address,
+        "aadhaar":      aadhaar,   # last-4 matches uid — BUG FIX 1
+        "uid":          uid,       # generated together — BUG FIX 1
+        "address":      address,   # from validated city/district/pin — BUG FIX 2
+        "district":     district,  # from same validated triplet — BUG FIX 2
+        "pin":          pin,       # from same validated triplet — BUG FIX 2
+        "taluk":        taluk,     # from same validated triplet — BUG FIX 2
+        "circle_rate":  circle_rate,
         "mobile":       mobile,
-        "email":        email,
+        "email":        email_id,
         "voter_id":     voter_id,
         "account_no":   account_no,
-        "branch":       branch,
-        "doc_date":     doc_date,
+        "branch_info":  branch_info,  # locked phone — BUG FIX 3
+        "doc_date":     doc_date,     # base_date — BUG FIX 6
         "identity_ref": identity_ref,
         "salary_ref":   salary_ref,
         "itr_ref":      itr_ref,
@@ -1559,6 +1742,7 @@ def generate_applicant_data(is_risked: bool) -> dict:
         "loan_amount":  market_value * 0.6,
         "producer":     producer,
         "creator":      creator,
+        "pay_year":     pay_year,
 
         # Salary
         "salary": {
@@ -1606,11 +1790,11 @@ def generate_applicant_data(is_risked: bool) -> dict:
         "itr": {
             "assessment_year":     ay,
             "previous_year":       prev_year,
-            "filed_date":          filed_date,
+            "filed_date":          filed_date,    # coordinated — BUG FIX 6
             "ack_no":              ack_no,
             "portal_ref":          f"ITRETURN{pan}{ay[:4]}",
             "ao_code":             f"ITO Ward-{random.randint(1,15)}({random.randint(1,4)}) Bengaluru",
-            "employer_name":       employer_name_itr,
+            "employer_name":       employer_name_itr,  # same as salary for safe — BUG FIX
             "tan":                 f"BLRE{random.randint(10000,99999)}",
             "salary_17_1":         salary_17_1,
             "perquisites":         perquisites,
@@ -1636,7 +1820,7 @@ def generate_applicant_data(is_risked: bool) -> dict:
 
         # Land
         "land": {
-            "district_info":    dist_info,
+            "type_zone_pair":   land_type_zone,    # validated pair — BUG FIX 4
             "village":          random.choice(villages),
             "hobli":            f"Hobli-{random.randint(1,5)}",
             "survey_no":        rand_survey(),
@@ -1644,22 +1828,18 @@ def generate_applicant_data(is_risked: bool) -> dict:
             "hissa":            str(random.randint(1, 8)),
             "gat_no":           f"G{random.randint(1000,9999)}",
             "old_survey":       str(random.randint(100, 999)),
-            "land_type":        random.choice(land_types),
-            "zone":             random.choice(["Residential", "Agri Conversion", "Commercial", "Mixed Use"]),
             "extent_acres":     extent_acres,
             "extent_sqft":      extent_sqft,
             "market_value":     market_value,
             "stamp_val":        int(market_value * 0.9),
             "doc_reg_no":       f"DOC-{random.randint(1000,9999)}/{pay_year-1}-{str(pay_year)[2:]}",
             "reg_date":         acq_dt.strftime("%d/%m/%Y"),
-            "father_name":      father_name,
-            "seller_name":      seller_name,
+            "father_name":      father_name,        # Indian-only — BUG FIX 5
+            "seller_name":      seller_name,        # Indian-only — BUG FIX 5
             "acquisition_mode": random.choice(acq_modes),
-            "acquisition_date": acq_dt.strftime("%d/%m/%Y"),
+            "acquisition_date": acq_dt.strftime("%d/%m/%Y"),  # before base_date — BUG FIX 6
             "mutation_no":      f"MUT/{random.randint(1000,9999)}/{pay_year-1}-{str(pay_year)[2:]}",
-            "kharif_crop":      random.choice(["Paddy","Ragi","Maize","Jowar"]),
-            "rabi_crop":        random.choice(["Wheat","Jowar","Bajra","Groundnut"]),
-            "issue_date":       issue_dt.strftime("%d/%m/%Y"),
+            "issue_date":       issue_dt.strftime("%d/%m/%Y"), # recent — BUG FIX 6
         },
     }
 
@@ -1669,7 +1849,7 @@ def generate_applicant_data(is_risked: bool) -> dict:
 # =========================================================================
 
 FRAUD_TYPES = [
-    "math_mismatch",       # Salary: basic+hra+allow != gross
+    "math_mismatch",       # Salary: basic+hra+allow != gross displayed
     "metadata_poisoning",  # Producer = Adobe Photoshop
     "semantic_drift",      # Employer name differs salary <-> ITR
     "pixel_artifact",      # 2-px black artifact near income
@@ -1681,15 +1861,34 @@ FRAUD_TYPES = [
 
 def pick_fraud_flags(is_risked: bool) -> list:
     """
-    For risked docs: pick 2–5 fraud types (always include metadata_poisoning).
+    For risked docs: pick 2-5 fraud types (always include metadata_poisoning).
     For safe docs: empty list.
     """
     if not is_risked:
         return []
-    base = ["metadata_poisoning", "semantic_drift"]
+    base  = ["metadata_poisoning"]
     extra = random.sample([f for f in FRAUD_TYPES if f not in base],
-                          k=random.randint(2, 4))
+                          k=random.randint(2, 5))
     return base + extra
+
+
+def apply_fraud_to_applicant(applicant: dict, fraud_flags: list) -> dict:
+    """
+    Mutate the applicant dict based on active fraud flags.
+    This is called AFTER generate_applicant_data, so safe defaults are set first.
+    Keeps logic for what is fraudulent separate from the data generator.
+    """
+    if "semantic_drift" in fraud_flags:
+        # Employer name in ITR uses slightly different entity name
+        emp_pair = random.choice(EMPLOYERS)
+        while emp_pair[0] == applicant["salary"]["employer_name"]:
+            emp_pair = random.choice(EMPLOYERS)
+        applicant["itr"]["employer_name"] = emp_pair[1]
+
+    # math_mismatch and visual anomalies are injected at render time in the
+    # document renderers, not in the data dict — no changes needed here.
+
+    return applicant
 
 
 # =========================================================================
@@ -1711,20 +1910,14 @@ class DossierFactory:
         self.n_per_class = n_per_class
         self._ensure_dirs()
 
-    # ------------------------------------------------------------------ #
-
     def _ensure_dirs(self):
         for cls in ("safe", "risked"):
             (self.base_dir / cls).mkdir(parents=True, exist_ok=True)
-
-    # ------------------------------------------------------------------ #
 
     def _applicant_dir(self, cls: str, idx: int) -> Path:
         folder = self.base_dir / cls / f"applicant_{idx:04d}"
         folder.mkdir(parents=True, exist_ok=True)
         return folder
-
-    # ------------------------------------------------------------------ #
 
     def _make_metadata(self, applicant: dict, is_risked: bool) -> dict:
         """Build PDF metadata dict (forensic marker)."""
@@ -1736,8 +1929,6 @@ class DossierFactory:
             "producer": applicant["producer"],
         }
 
-    # ------------------------------------------------------------------ #
-
     def generate_packet(self, cls: str, idx: int) -> dict:
         """
         Generate one complete 4-document dossier.
@@ -1746,6 +1937,7 @@ class DossierFactory:
         is_risked   = (cls == "risked")
         fraud_flags = pick_fraud_flags(is_risked)
         applicant   = generate_applicant_data(is_risked)
+        applicant   = apply_fraud_to_applicant(applicant, fraud_flags)
         out_dir     = self._applicant_dir(cls, idx)
         metadata    = self._make_metadata(applicant, is_risked)
 
@@ -1779,7 +1971,7 @@ class DossierFactory:
             "name":           applicant["name"],
             "pan":            applicant["pan"],
             "doc_date":       applicant["doc_date"],
-            "branch_ifsc":    applicant["branch"][1],
+            "branch_ifsc":    applicant["branch_info"]["ifsc"],
             "salary_gross":   applicant["salary"]["gross_pay"],
             "salary_net":     applicant["salary"]["net_pay"],
             "itr_total_income": applicant["itr"]["total_income"],
@@ -1798,13 +1990,11 @@ class DossierFactory:
 
         return manifest
 
-    # ------------------------------------------------------------------ #
-
     def generate_all(self, verbose: bool = True):
         """Generate n_per_class dossiers for both safe and risked classes."""
-        total      = self.n_per_class * 2
-        generated  = 0
-        manifests  = []
+        total     = self.n_per_class * 2
+        generated = 0
+        manifests = []
 
         for cls in ("safe", "risked"):
             for idx in range(1, self.n_per_class + 1):
@@ -1818,17 +2008,17 @@ class DossierFactory:
                               f"({cls} applicant_{idx:04d})")
                 except Exception as e:
                     print(f"  [ERROR]  {cls}/applicant_{idx:04d}: {e}")
+                    import traceback; traceback.print_exc()
 
         # ---- Master index -------------------------------------------
         master = {
-            "dataset_version": "2.0",
+            "dataset_version": "3.0",
             "total_packets":   generated,
             "safe_count":      sum(1 for m in manifests if not m["is_risked"]),
             "risked_count":    sum(1 for m in manifests if m["is_risked"]),
             "fraud_type_distribution": {},
             "packets":         manifests,
         }
-        # Count fraud type occurrences
         for m in manifests:
             for ff in m["fraud_flags"]:
                 master["fraud_type_distribution"][ff] = \
@@ -1839,7 +2029,7 @@ class DossierFactory:
 
         if verbose:
             print(f"\n{'='*60}")
-            print(f"  AEGIS DOSSIER FACTORY — Generation Complete")
+            print(f"  AEGIS DOSSIER FACTORY  v3.0 — Generation Complete")
             print(f"{'='*60}")
             print(f"  Total packets : {generated}")
             print(f"  Safe          : {master['safe_count']}")
@@ -1861,10 +2051,9 @@ if __name__ == "__main__":
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
 
     print(f"\n{'='*60}")
-    print(f"  AEGIS DOSSIER FACTORY  v2.0")
+    print(f"  AEGIS DOSSIER FACTORY  v3.0")
     print(f"  Generating {n} safe + {n} risked applicant packets ...")
     print(f"{'='*60}\n")
 
     factory = DossierFactory(base_dir="realistic document", n_per_class=n)
     factory.generate_all(verbose=True)
-

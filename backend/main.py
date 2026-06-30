@@ -87,7 +87,7 @@ async def analyze_document(files: List[UploadFile] = File(...)):
 
 from database import execute_query
 
-@app.get("/database")
+@app.get("/database/list")
 def get_database():
     """Returns all 2000 applicant dossiers from the SQLite database."""
     # We join profiles and audit_logs to get the risk score
@@ -101,5 +101,14 @@ def get_database():
     rows = execute_query(query)
     return {"members": rows}
 
+@app.get("/stats")
+def get_stats():
+    """Returns baseline statistics."""
+    try:
+        with open("baseline_stats.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+        
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

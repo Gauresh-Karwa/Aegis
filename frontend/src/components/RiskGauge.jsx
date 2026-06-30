@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const RiskGauge = ({ score }) => {
+const RiskGauge = ({ score, confidence, modelMode }) => {
   const [animatedScore, setAnimatedScore] = useState(0);
 
   useEffect(() => {
@@ -37,6 +37,8 @@ const RiskGauge = ({ score }) => {
   const circumference = Math.PI * radius; // Half circle
   const strokeDashoffset = circumference - (animatedScore / 100) * circumference;
 
+  const displayConfidence = confidence ? Math.round(confidence * 100) : 0;
+
   return (
     <div className="flex flex-col items-center justify-center p-6 border-b border-black bg-white">
         <div className="relative w-[200px] h-[120px] overflow-hidden flex justify-center">
@@ -65,6 +67,26 @@ const RiskGauge = ({ score }) => {
                 </div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-gray-500 mt-1">Risk Score</div>
             </div>
+        </div>
+        
+        {/* Confidence & Mode Indicators */}
+        <div className="w-full mt-4 flex gap-2 justify-center items-center">
+          {/* Confidence Badge */}
+          <div className="px-2 py-1 border border-[#ddd] bg-[#f5f5f5] rounded text-[10px] font-bold text-[#444]">
+            Confidence: {displayConfidence}%
+          </div>
+          
+          {/* Model Mode Badge */}
+          <div 
+            className="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider"
+            style={{
+              backgroundColor: modelMode === 'MMFFN' ? '#00FF88' : '#FFB800',
+              color: '#000',
+              border: 'none'
+            }}
+          >
+            {modelMode === 'MMFFN' ? '● MMFFN' : ' STATISTICAL'}
+          </div>
         </div>
     </div>
   );

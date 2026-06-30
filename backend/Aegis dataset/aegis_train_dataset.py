@@ -1,41 +1,40 @@
 """
 =============================================================================
-AEGIS INTELLIGENCE HEAD  v1.0
-Multi-Modal Forensic Fusion Network  (MMFFN)
+AEGIS INTELLIGENCE HEAD  v2.0  —  Logic Stream Trainer
 =============================================================================
+Trains the tabular Fraud-Detection FNN on 12 computed features extracted
+from each applicant's manifest.json and salary PDF image (ELA).
+
 Architecture:
-  ┌──────────────────────────────────────────────────────────┐
-  │  Vision Branch (4 parallel CNNs)                         │
-  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
-  │  │ Identity │ │  Salary  │ │   ITR    │ │  Land    │   │
-  │  │  CNN     │ │  CNN     │ │  CNN     │ │  CNN     │   │
-  │  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘   │
-  │       └────────────┴────────────┴─────────────┘         │
-  │                       CONCAT                             │
-  │                         │                               │
-  │              Visual Fusion Dense (256)                   │
-  └────────────────────────┬─────────────────────────────────┘
-                           │
-  ┌────────────────────────┼─────────────────────────────────┐
-  │  Logic Branch (FNN)    │                                  │
-  │  Metadata Vector ──► Dense(64) ──► Dense(32)             │
-  └────────────────────────┬─────────────────────────────────┘
-                           │
-                    LATE FUSION CONCAT
-                           │
-                    Dense(128) ─► Dropout(0.4)
-                    Dense(64)  ─► Dropout(0.3)
-                    Dense(1, sigmoid)
-                           │
-                     RISK SCORE (0–1)
+    Input (12,)
+    ├── Dense(64, relu) → BatchNorm → Dropout(0.30)
+    ├── Dense(32, relu) → BatchNorm → Dropout(0.20)
+    └── Dense(16, relu) → Dense(1, sigmoid)  →  risk_score
+
+Feature vector (N_META_FEATS = 12) — zero leakage:
+  [0]  salary_gross         raw value from manifest
+  [1]  salary_net           raw value
+  [2]  itr_total_income     raw value
+  [3]  land_value           raw value
+  [4]  net_gross_ratio      net / gross
+  [5]  income_sal_ratio     itr / (gross × 12)
+  [6]  wealth_ratio         land / gross
+  [7]  is_gross_plausible   1 if gross > 5000
+  [8]  producer_flag        1 if PDF producer looks like image editor
+  [9]  net_gross_anomaly    1 if net/gross outside [0.40, 0.95]
+  [10] income_sal_anomaly   1 if itr/(gross×12) outside [0.60, 2.50]
+  [11] ela_sal_score        ELA normalised score on salary PDF image
 
 Usage:
-    python train_aegis_model.py --dataset ./dataset --epochs 30 --batch 16
+    python aegis_train_dataset.py
+    python aegis_train_dataset.py --epochs 40 --batch 32 --output ./aegis_output
 =============================================================================
 """
 
 import os
+import io
 import json
+import pickle
 import argparse
 import warnings
 import logging
@@ -43,7 +42,6 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 import seaborn as sns
 from pathlib import Path
 from datetime import datetime
@@ -53,307 +51,237 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 warnings.filterwarnings("ignore")
 logging.getLogger("tensorflow").setLevel(logging.ERROR)
 
-# ---- tensorflow ---------------------------------------------------------
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, Model, Input, callbacks
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
 
-# ---- image / pdf --------------------------------------------------------
 from PIL import Image
-from pdf2image import convert_from_path
+try:
+    import fitz as pymupdf
+    _USE_FITZ = True
+except ImportError:
+    from pdf2image import convert_from_path
+    _USE_FITZ = False
 
-# ---- scikit-learn -------------------------------------------------------
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing   import StandardScaler
 from sklearn.metrics         import (
     classification_report, confusion_matrix,
-    roc_curve, auc, precision_recall_curve
+    roc_auc_score, precision_recall_curve, roc_curve, auc,
 )
 
 # =========================================================================
 #  CONFIGURATION
 # =========================================================================
 
-IMG_SIZE      = 128          # px (per-side, square crop of first page)
-IMG_CHANNELS  = 3
-N_META_FEATS  = 12           # dimension of tabular metadata vector
-PDF_TYPES     = ["identity", "salary", "itr", "land_record"]
-RANDOM_SEED   = 42
+N_META_FEATS = 12
+RANDOM_SEED  = 42
+IMG_SIZE     = 128          # only used for ELA computation on salary PDF
+
 np.random.seed(RANDOM_SEED)
 tf.random.set_seed(RANDOM_SEED)
 
+
 # =========================================================================
-#  1. DATA LOADER
+#  1.  FEATURE EXTRACTION
 # =========================================================================
 
-def pdf_to_image(pdf_path: str, size: int = IMG_SIZE) -> np.ndarray:
+def _pdf_to_image(pdf_path: str, size: int = IMG_SIZE) -> np.ndarray:
+    """Render first page of a PDF → normalised float32 RGB array [0,1]."""
+    try:
+        if _USE_FITZ:
+            doc  = pymupdf.open(pdf_path)
+            page = doc[0]
+            pix  = page.get_pixmap(dpi=72)
+            img  = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+            doc.close()
+        else:
+            pages = convert_from_path(pdf_path, dpi=72, first_page=1, last_page=1)
+            img   = pages[0].convert("RGB")
+        img = img.resize((size, size), Image.LANCZOS)
+        return np.array(img, dtype=np.float32) / 255.0
+    except Exception:
+        return np.zeros((size, size, 3), dtype=np.float32)
+
+
+def compute_ela_score(img_array: np.ndarray, quality: int = 75) -> float:
     """
-    Convert first page of a PDF to a normalised RGB numpy array [0,1].
-    Falls back to a blank image if conversion fails (robustness).
+    Error Level Analysis on a [0,1] float32 RGB numpy array.
+    High score = more compression artefacts = evidence of prior editing.
+    Returns a normalised score in [0, 1].
     """
     try:
-        pages = convert_from_path(pdf_path, dpi=72, first_page=1, last_page=1)
-        img   = pages[0].convert("RGB").resize((size, size), Image.LANCZOS)
-        return np.array(img, dtype=np.float32) / 255.0
-    except Exception as e:
-        print(f"  [WARN] Could not render {pdf_path}: {e}")
-        return np.zeros((size, size, IMG_CHANNELS), dtype=np.float32)
+        pil_img     = Image.fromarray((img_array * 255).astype(np.uint8), "RGB")
+        buf         = io.BytesIO()
+        pil_img.save(buf, format="JPEG", quality=quality)
+        buf.seek(0)
+        recompressed = Image.open(buf).convert("RGB")
+        diff         = np.abs(
+            np.array(pil_img, dtype=np.float32) -
+            np.array(recompressed, dtype=np.float32)
+        )
+        return float(np.clip(diff.mean() / 30.0, 0.0, 1.0))
+    except Exception:
+        return 0.0
 
 
-def extract_meta_features(manifest: dict) -> np.ndarray:
+def extract_meta_features(manifest: dict,
+                           ela_sal_score: float = 0.0) -> np.ndarray:
     """
-    Extract a fixed-length numeric feature vector from manifest.json.
-    This is the 'Logical Intelligence' branch input.
+    Build the 12-dimensional leak-free feature vector from a manifest dict.
 
-    Features:
-      [0]  salary_gross (normalised)
-      [1]  salary_net
-      [2]  itr_total_income
-      [3]  land_value
-      [4]  net/gross ratio (logic check)
-      [5]  income/salary ratio (cross-doc consistency)
-      [6]  land_value / salary_gross (wealth ratio)
-      [7]  is_gross_plausible (1 if gross > 0)
-      [8]  producer_flag  (1 = Adobe/Photoshop, 0 = CoreSystem)
-      [9]  fraud_flag_count
-      [10] math_mismatch flag (binary)
-      [11] semantic_drift flag (binary)
+    IMPORTANT — none of these features read fraud_flags, math_mismatch, or
+    semantic_drift from the manifest.  All signals are computable from the
+    raw documents at inference time.
     """
-    sg  = float(manifest.get("salary_gross", 0))
-    sn  = float(manifest.get("salary_net",   0))
-    ii  = float(manifest.get("itr_total_income", 0))
-    lv  = float(manifest.get("land_value",   0))
+    sg  = float(manifest.get("salary_gross",      0))
+    sn  = float(manifest.get("salary_net",        0))
+    ii  = float(manifest.get("itr_total_income",  0))
+    lv  = float(manifest.get("land_value",        0))
 
-    net_gross_ratio     = sn  / sg  if sg  > 0 else 0.0
-    income_sal_ratio    = ii  / (sg * 12) if sg > 0 else 0.0
-    wealth_ratio        = lv  / sg  if sg  > 0 else 0.0
-    is_gross_plausible  = 1.0 if sg > 5000 else 0.0
+    net_gross_ratio  = sn / sg       if sg > 0 else 0.0
+    income_sal_ratio = ii / (sg * 12) if sg > 0 else 0.0
+    wealth_ratio     = lv / sg        if sg > 0 else 0.0
+    is_gross_plausible = 1.0 if sg > 5_000 else 0.0
 
     producer = manifest.get("pdf_producer", "").lower()
-    producer_flag = 1.0 if any(k in producer for k in
-                                ["photoshop", "illustrator", "acrobat", "gimp"]) else 0.0
+    producer_flag = 1.0 if any(
+        k in producer for k in ["photoshop", "illustrator", "acrobat", "gimp", "canva"]
+    ) else 0.0
 
-    flags       = manifest.get("fraud_flags", [])
-    flag_count  = float(len(flags))
-    math_flag   = 1.0 if "math_mismatch"  in flags else 0.0
-    drift_flag  = 1.0 if "semantic_drift" in flags else 0.0
+    # Rule-based anomaly signals
+    net_gross_anomaly  = 0.0
+    if sg > 0:
+        r = net_gross_ratio
+        net_gross_anomaly = 1.0 if (r < 0.40 or r > 0.95) else 0.0
 
-    raw = np.array([
+    income_sal_anomaly = 0.0
+    if sg > 0 and ii > 0:
+        r = income_sal_ratio
+        income_sal_anomaly = 1.0 if (r < 0.60 or r > 2.50) else 0.0
+
+    return np.array([
         sg, sn, ii, lv,
         net_gross_ratio, income_sal_ratio, wealth_ratio,
         is_gross_plausible, producer_flag,
-        flag_count, math_flag, drift_flag,
+        net_gross_anomaly, income_sal_anomaly,
+        float(ela_sal_score),
     ], dtype=np.float32)
 
-    return raw
 
+# =========================================================================
+#  2.  DATASET LOADER
+# =========================================================================
 
 def load_dataset(dataset_dir: str, verbose: bool = True):
     """
-    Walk dataset/safe/ and dataset/risked/, load 4 PDFs + manifest per
-    applicant, and return:
-      images_dict  : {pdf_type: np.ndarray shape (N, H, W, C)}
-      meta_matrix  : np.ndarray shape (N, N_META_FEATS)
-      labels       : np.ndarray shape (N,)   0=safe, 1=risked
-      paths        : list of folder paths (for debugging)
+    Walk dataset/safe/ and dataset/risked/, read manifest.json + compute
+    ELA on salary.pdf, and return:
+
+        meta_matrix : np.ndarray  (N, N_META_FEATS)
+        labels      : np.ndarray  (N,)   0=safe  1=risked
+
+    Images are NOT stored — this is a tabular-only FNN.
     """
     base = Path(dataset_dir)
     if not base.exists():
-        raise FileNotFoundError(f"Dataset directory not found: {base}")
+        raise FileNotFoundError(f"Dataset dir not found: {base}")
 
-    raw_images  = defaultdict(list)
-    raw_meta    = []
-    raw_labels  = []
-    raw_paths   = []
+    raw_meta   = []
+    raw_labels = []
+    skipped    = 0
 
     for cls, label in [("safe", 0), ("risked", 1)]:
         cls_dir = base / cls
         if not cls_dir.exists():
-            print(f"  [WARN] Class directory missing: {cls_dir}")
+            if verbose:
+                print(f"  [WARN] Missing class dir: {cls_dir}")
             continue
 
-        applicant_folders = sorted(cls_dir.iterdir())
-        n_total = len(applicant_folders)
+        folders = sorted([f for f in cls_dir.iterdir() if f.is_dir()])
         if verbose:
-            print(f"\n  Loading [{cls.upper()}] — {n_total} applicants ...")
+            print(f"\n  Loading [{cls.upper()}] — {len(folders)} applicants ...")
 
-        for i, folder in enumerate(applicant_folders):
-            if not folder.is_dir():
-                continue
-
+        for i, folder in enumerate(folders):
             manifest_path = folder / "manifest.json"
             if not manifest_path.exists():
+                skipped += 1
                 continue
 
             with open(manifest_path) as f:
                 manifest = json.load(f)
 
-            # ---- load 4 PDFs ----------------------------------------
-            ok = True
-            for pdf_type in PDF_TYPES:
-                pdf_path = folder / f"{pdf_type}.pdf"
-                if not pdf_path.exists():
-                    print(f"  [WARN] Missing {pdf_type}.pdf in {folder}")
-                    ok = False
-                    break
-                img = pdf_to_image(str(pdf_path))
-                raw_images[pdf_type].append(img)
+            # Compute ELA on salary PDF image (feature [11])
+            sal_path = folder / "salary.pdf"
+            ela_sal  = 0.0
+            if sal_path.exists():
+                img_arr = _pdf_to_image(str(sal_path))
+                ela_sal = compute_ela_score(img_arr)
 
-            if not ok:
-                # Pop partial entries
-                for pdf_type in PDF_TYPES:
-                    if raw_images[pdf_type]:
-                        raw_images[pdf_type].pop()
-                continue
+            raw_meta.append(extract_meta_features(manifest, ela_sal_score=ela_sal))
+            raw_labels.append(float(label))
 
-            # ---- metadata + label -----------------------------------
-            raw_meta.append(extract_meta_features(manifest))
-            raw_labels.append(label)
-            raw_paths.append(str(folder))
-
-            if verbose and (i + 1) % 50 == 0:
-                print(f"    {i+1}/{n_total} loaded ...")
+            if verbose and (i + 1) % 100 == 0:
+                print(f"    {i+1}/{len(folders)} loaded ...")
 
     if not raw_labels:
-        raise ValueError("No valid samples found! Check dataset path & structure.")
+        raise ValueError("No valid samples found!  Check dataset path & structure.")
 
-    # Stack to numpy arrays
-    images_dict = {
-        pt: np.stack(raw_images[pt], axis=0)
-        for pt in PDF_TYPES
-    }
-    meta_matrix = np.stack(raw_meta,   axis=0)
+    meta_matrix = np.stack(raw_meta, axis=0)
     labels      = np.array(raw_labels, dtype=np.float32)
 
     if verbose:
+        n_safe   = int(np.sum(labels == 0))
+        n_risked = int(np.sum(labels == 1))
         print(f"\n  Dataset loaded:")
-        print(f"    Total samples  : {len(labels)}")
-        print(f"    Safe  (0)      : {int(np.sum(labels == 0))}")
-        print(f"    Risked (1)     : {int(np.sum(labels == 1))}")
-        print(f"    Image shape    : {images_dict[PDF_TYPES[0]].shape}")
-        print(f"    Meta shape     : {meta_matrix.shape}")
+        print(f"    Total   : {len(labels)}")
+        print(f"    Safe    : {n_safe}")
+        print(f"    Risked  : {n_risked}")
+        if skipped:
+            print(f"    Skipped : {skipped} (missing manifest)")
 
-    return images_dict, meta_matrix, labels, raw_paths
+    return meta_matrix, labels
 
 
 # =========================================================================
-#  2. MODEL ARCHITECTURE
+#  3.  MODEL ARCHITECTURE  —  Tabular FNN (Logic Stream)
 # =========================================================================
 
-def build_cnn_branch(name: str, img_size: int = IMG_SIZE,
-                     channels: int = IMG_CHANNELS) -> tuple:
+def build_logic_fnn(n_features: int = N_META_FEATS,
+                    learning_rate: float = 1e-3) -> Model:
     """
-    Lightweight CNN branch for one document type.
-    Returns (Input tensor, feature vector tensor).
+    Fraud-detection FNN for tabular metadata (the Logic Intelligence stream).
 
-    Architecture per branch:
-      Conv2D(32,3) → BN → MaxPool
-      Conv2D(64,3) → BN → MaxPool
-      Conv2D(128,3) → BN → MaxPool
-      GlobalAvgPool → Dense(64)
+    Deliberately kept small:  ~8K parameters.  This ensures it cannot
+    overfit a 2000-sample dataset and gives interpretable weights.
+
+      Dense(64, relu) → BN → Dropout(0.30)
+      Dense(32, relu) → BN → Dropout(0.20)
+      Dense(16, relu)
+      Dense(1,  sigmoid)
     """
-    inp = Input(shape=(img_size, img_size, channels), name=f"input_{name}")
-
-    x = layers.Conv2D(32, (3, 3), padding="same", activation="relu",
-                      kernel_regularizer=l2(1e-4), name=f"{name}_conv1")(inp)
-    x = layers.BatchNormalization(name=f"{name}_bn1")(x)
-    x = layers.MaxPooling2D((2, 2), name=f"{name}_pool1")(x)
-
-    x = layers.Conv2D(64, (3, 3), padding="same", activation="relu",
-                      kernel_regularizer=l2(1e-4), name=f"{name}_conv2")(x)
-    x = layers.BatchNormalization(name=f"{name}_bn2")(x)
-    x = layers.MaxPooling2D((2, 2), name=f"{name}_pool2")(x)
-
-    x = layers.Conv2D(128, (3, 3), padding="same", activation="relu",
-                      kernel_regularizer=l2(1e-4), name=f"{name}_conv3")(x)
-    x = layers.BatchNormalization(name=f"{name}_bn3")(x)
-    x = layers.MaxPooling2D((2, 2), name=f"{name}_pool3")(x)
-
-    x = layers.Conv2D(128, (3, 3), padding="same", activation="relu",
-                      name=f"{name}_conv4")(x)
-    x = layers.GlobalAveragePooling2D(name=f"{name}_gap")(x)
-    x = layers.Dense(64, activation="relu", name=f"{name}_dense")(x)
-    x = layers.Dropout(0.25, name=f"{name}_drop")(x)
-
-    return inp, x
-
-
-def build_meta_branch(n_features: int = N_META_FEATS) -> tuple:
-    """
-    FNN branch for tabular metadata (Logical Intelligence).
-    Returns (Input tensor, feature vector tensor).
-    """
-    inp = Input(shape=(n_features,), name="input_meta")
+    inp = Input(shape=(n_features,), name="meta_input")
 
     x = layers.Dense(64, activation="relu",
-                     kernel_regularizer=l2(1e-4), name="meta_dense1")(inp)
-    x = layers.BatchNormalization(name="meta_bn1")(x)
-    x = layers.Dropout(0.3, name="meta_drop1")(x)
+                     kernel_regularizer=l2(1e-4), name="dense1")(inp)
+    x = layers.BatchNormalization(name="bn1")(x)
+    x = layers.Dropout(0.30, name="drop1")(x)
 
     x = layers.Dense(32, activation="relu",
-                     kernel_regularizer=l2(1e-4), name="meta_dense2")(x)
-    x = layers.BatchNormalization(name="meta_bn2")(x)
-    x = layers.Dropout(0.2, name="meta_drop2")(x)
+                     kernel_regularizer=l2(1e-4), name="dense2")(x)
+    x = layers.BatchNormalization(name="bn2")(x)
+    x = layers.Dropout(0.20, name="drop2")(x)
 
-    return inp, x
+    x = layers.Dense(16, activation="relu",
+                     kernel_regularizer=l2(1e-4), name="dense3")(x)
 
+    out = layers.Dense(1, activation="sigmoid", name="risk_score")(x)
 
-def build_aegis_model(img_size: int = IMG_SIZE,
-                      n_meta: int = N_META_FEATS,
-                      learning_rate: float = 1e-4) -> Model:
-    """
-    Build the full Multi-Modal Forensic Fusion Network (MMFFN).
-
-    Vision Branch: 4 parallel CNNs (one per document type)
-    Logic Branch : FNN on metadata vector
-    Fusion       : Late fusion concat → Dense → sigmoid
-    """
-    # ---- 4 CNN branches (one per doc type) --------------------------
-    cnn_inputs  = []
-    cnn_outputs = []
-    for pdf_type in PDF_TYPES:
-        inp, feat = build_cnn_branch(pdf_type, img_size)
-        cnn_inputs.append(inp)
-        cnn_outputs.append(feat)
-
-    # ---- Concatenate all 4 visual outputs ---------------------------
-    if len(cnn_outputs) > 1:
-        visual_concat = layers.Concatenate(name="visual_concat")(cnn_outputs)
-    else:
-        visual_concat = cnn_outputs[0]
-
-    visual_feat = layers.Dense(256, activation="relu",
-                               name="visual_fusion")(visual_concat)
-    visual_feat = layers.BatchNormalization(name="visual_bn")(visual_feat)
-    visual_feat = layers.Dropout(0.35, name="visual_drop")(visual_feat)
-
-    # ---- FNN logic branch -------------------------------------------
-    meta_input, meta_feat = build_meta_branch(n_meta)
-
-    # ---- Late Fusion ------------------------------------------------
-    fused = layers.Concatenate(name="late_fusion")([visual_feat, meta_feat])
-
-    x = layers.Dense(128, activation="relu",
-                     kernel_regularizer=l2(1e-4), name="fusion_dense1")(fused)
-    x = layers.BatchNormalization(name="fusion_bn1")(x)
-    x = layers.Dropout(0.40, name="fusion_drop1")(x)
-
-    x = layers.Dense(64, activation="relu",
-                     kernel_regularizer=l2(1e-4), name="fusion_dense2")(x)
-    x = layers.BatchNormalization(name="fusion_bn2")(x)
-    x = layers.Dropout(0.30, name="fusion_drop2")(x)
-
-    # ---- Output: fraud risk score -----------------------------------
-    output = layers.Dense(1, activation="sigmoid", name="risk_score")(x)
-
-    # ---- Assemble ---------------------------------------------------
-    all_inputs = cnn_inputs + [meta_input]
-    model = Model(inputs=all_inputs, outputs=output, name="AEGIS_MMFFN_v1")
-
+    model = Model(inputs=inp, outputs=out, name="AEGIS_LogicFNN_v2")
     model.compile(
-        optimizer=Adam(learning_rate=learning_rate, clipnorm=1.0),
+        optimizer=Adam(learning_rate=learning_rate),
         loss="binary_crossentropy",
         metrics=[
             "accuracy",
@@ -366,172 +294,94 @@ def build_aegis_model(img_size: int = IMG_SIZE,
 
 
 # =========================================================================
-#  3.  DATA AUGMENTATION (on-the-fly, images only)
-# =========================================================================
-
-def augment_images(images_dict: dict, labels: np.ndarray,
-                   augment_factor: int = 2) -> tuple:
-    """
-    Apply mild augmentations to training images:
-      - Random horizontal flip
-      - Random brightness ±15%
-      - Random contrast ±15%
-    Doubles (or triples) the dataset size.
-    """
-    aug_images = defaultdict(list)
-    aug_labels = []
-
-    for i in range(len(labels)):
-        # Keep original
-        for pt in PDF_TYPES:
-            aug_images[pt].append(images_dict[pt][i])
-        aug_labels.append(labels[i])
-
-        # Add augmented copies
-        for _ in range(augment_factor - 1):
-            for pt in PDF_TYPES:
-                img = images_dict[pt][i].copy()
-                # Random flip
-                if np.random.random() > 0.5:
-                    img = img[:, ::-1, :]
-                # Random brightness
-                delta = np.random.uniform(-0.15, 0.15)
-                img   = np.clip(img + delta, 0.0, 1.0)
-                # Random contrast
-                factor = np.random.uniform(0.85, 1.15)
-                mean   = img.mean(axis=(0, 1), keepdims=True)
-                img    = np.clip((img - mean) * factor + mean, 0.0, 1.0)
-                aug_images[pt].append(img.astype(np.float32))
-            aug_labels.append(labels[i])
-
-    result_images = {pt: np.stack(aug_images[pt], axis=0) for pt in PDF_TYPES}
-    result_labels = np.array(aug_labels, dtype=np.float32)
-    return result_images, result_labels
-
-
-# =========================================================================
 #  4.  TRAINING PIPELINE
 # =========================================================================
 
-def prepare_inputs(images_dict: dict, meta_matrix: np.ndarray) -> list:
-    """Package model inputs in the order expected by build_aegis_model."""
-    return [images_dict[pt] for pt in PDF_TYPES] + [meta_matrix]
-
-
-def train_model(dataset_dir: str, epochs: int = 30, batch_size: int = 16,
-                output_dir: str = ".", augment: bool = True,
-                val_split: float = 0.20, verbose: int = 1):
+def train_model(dataset_dir: str,
+                epochs:      int   = 40,
+                batch_size:  int   = 32,
+                output_dir:  str   = "./aegis_output",
+                val_split:   float = 0.15,
+                verbose:     int   = 1):
     """
     Full training pipeline:
-      1. Load data
-      2. Scale metadata
-      3. Train/val split
-      4. (Optional) augment training data
-      5. Build and train model with callbacks
-      6. Evaluate and save artefacts
+      1. Load tabular dataset
+      2. Normalise features (StandardScaler)
+      3. 70 / 15 / 15 stratified split
+      4. Train Logic FNN
+      5. Evaluate & save artefacts
     """
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     run_ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    print("\n" + "="*65)
-    print("  AEGIS INTELLIGENCE HEAD — Training Pipeline v1.0")
-    print("="*65)
+    print("\n" + "=" * 65)
+    print("  AEGIS LOGIC STREAM  —  Training Pipeline v2.0")
+    print("=" * 65)
 
-    # ---- Load ----------------------------------------------------------
-    images_dict, meta_matrix, labels, paths = load_dataset(dataset_dir, verbose=True)
+    # ---- Load -----------------------------------------------------------
+    meta_matrix, labels = load_dataset(dataset_dir, verbose=True)
     N = len(labels)
+    if N < 8:
+        raise ValueError(f"Need at least 8 samples to train; got {N}.")
 
-    if N < 4:
-        raise ValueError(f"Need at least 4 samples to train; got {N}.")
-
-    # ---- Scale metadata (fit on all data, re-split after) -----------
-    scaler = StandardScaler()
+    # ---- Scale ----------------------------------------------------------
+    scaler     = StandardScaler()
     meta_scaled = scaler.fit_transform(meta_matrix).astype(np.float32)
 
-    # ---- Train / Val / Test split 70/15/15 -------------------------
+    # ---- 70 / 15 / 15 split ---------------------------------------------
     idx = np.arange(N)
     idx_tv, idx_test = train_test_split(idx, test_size=0.15,
                                         stratify=labels, random_state=RANDOM_SEED)
     idx_train, idx_val = train_test_split(
         idx_tv, test_size=val_split / (1 - 0.15),
-        stratify=labels[idx_tv], random_state=RANDOM_SEED
+        stratify=labels[idx_tv], random_state=RANDOM_SEED,
     )
 
-    def subset(images_d, meta, lbl, idx_arr):
-        imgs = {pt: images_d[pt][idx_arr] for pt in PDF_TYPES}
-        return imgs, meta[idx_arr], lbl[idx_arr]
+    X_train, y_train = meta_scaled[idx_train], labels[idx_train]
+    X_val,   y_val   = meta_scaled[idx_val],   labels[idx_val]
+    X_test,  y_test  = meta_scaled[idx_test],  labels[idx_test]
 
-    train_imgs, train_meta, train_lbl = subset(images_dict, meta_scaled, labels, idx_train)
-    val_imgs,   val_meta,   val_lbl   = subset(images_dict, meta_scaled, labels, idx_val)
-    test_imgs,  test_meta,  test_lbl  = subset(images_dict, meta_scaled, labels, idx_test)
+    print(f"\n  Split:  Train={len(y_train)}  Val={len(y_val)}  Test={len(y_test)}")
 
-    print(f"\n  Split:  Train={len(train_lbl)}  Val={len(val_lbl)}  Test={len(test_lbl)}")
+    # ---- Class weights --------------------------------------------------
+    n_safe   = int(np.sum(y_train == 0))
+    n_risked = int(np.sum(y_train == 1))
+    total_t  = n_safe + n_risked
+    cw = {
+        0: total_t / (2 * max(n_safe,   1)),
+        1: total_t / (2 * max(n_risked, 1)),
+    }
+    print(f"  Class weights: safe={cw[0]:.3f}  risked={cw[1]:.3f}")
 
-    # ---- Augment training set --------------------------------------
-    if augment and len(train_lbl) < 500:
-        factor = max(2, min(5, 200 // max(len(train_lbl), 1)))
-        print(f"\n  Augmenting training data (factor={factor}) ...")
-        train_imgs, aug_lbl = augment_images(train_imgs, train_lbl, factor)
-        # meta: repeat to match augmented labels
-        train_meta = np.tile(train_meta, (factor, 1))[:len(aug_lbl)]
-        train_lbl  = aug_lbl
-        print(f"  Augmented train set: {len(train_lbl)} samples")
-
-    # ---- Build model -----------------------------------------------
-    print("\n  Building AEGIS Multi-Modal Forensic Fusion Network ...")
-    model = build_aegis_model()
-    model.summary(line_length=80, print_fn=lambda s: print("  " + s))
-
-    total_params = model.count_params()
-    print(f"\n  Total parameters: {total_params:,}")
-
-    # ---- Callbacks -------------------------------------------------
+    # ---- Model ----------------------------------------------------------
     ckpt_path = str(out_dir / "aegis_model_v1.keras")
-    cb_list   = [
+    model     = build_logic_fnn()
+
+    if verbose:
+        model.summary(line_length=70, print_fn=lambda s: print("  " + s))
+        print(f"\n  Parameters: {model.count_params():,}")
+
+    cb_list = [
         callbacks.ModelCheckpoint(
-            filepath=ckpt_path,
-            monitor="val_auc",
-            mode="max",
-            save_best_only=True,
-            verbose=1,
+            filepath=ckpt_path, monitor="val_auc", mode="max",
+            save_best_only=True, verbose=1,
         ),
         callbacks.EarlyStopping(
-            monitor="val_auc",
-            patience=8,
-            mode="max",
-            restore_best_weights=True,
-            verbose=1,
+            monitor="val_auc", patience=10, mode="max",
+            restore_best_weights=True, verbose=1,
         ),
         callbacks.ReduceLROnPlateau(
-            monitor="val_loss",
-            factor=0.5,
-            patience=4,
-            min_lr=1e-6,
-            verbose=1,
+            monitor="val_loss", factor=0.5, patience=5,
+            min_lr=1e-6, verbose=1,
         ),
         callbacks.CSVLogger(str(out_dir / f"training_log_{run_ts}.csv")),
     ]
 
-    # ---- Class weights (handle imbalance) -------------------------
-    n_safe   = int(np.sum(train_lbl == 0))
-    n_risked = int(np.sum(train_lbl == 1))
-    total_t  = n_safe + n_risked
-    cw = {
-        0: total_t / (2 * max(n_safe, 1)),
-        1: total_t / (2 * max(n_risked, 1)),
-    }
-    print(f"\n  Class weights: safe={cw[0]:.3f}  risked={cw[1]:.3f}")
-
-    # ---- Train -------------------------------------------------------
-    train_inputs = prepare_inputs(train_imgs, train_meta)
-    val_inputs   = prepare_inputs(val_imgs,   val_meta)
-
     print(f"\n  Training for up to {epochs} epochs (batch={batch_size}) ...\n")
     history = model.fit(
-        x=train_inputs,
-        y=train_lbl,
-        validation_data=(val_inputs, val_lbl),
+        X_train, y_train,
+        validation_data=(X_val, y_val),
         epochs=epochs,
         batch_size=batch_size,
         class_weight=cw,
@@ -539,318 +389,139 @@ def train_model(dataset_dir: str, epochs: int = 30, batch_size: int = 16,
         verbose=verbose,
     )
 
-    # ---- Evaluation ------------------------------------------------
-    print("\n" + "="*65)
+    # ---- Evaluate -------------------------------------------------------
+    print("\n" + "=" * 65)
     print("  EVALUATION ON HELD-OUT TEST SET")
-    print("="*65)
+    print("=" * 65)
 
-    test_inputs = prepare_inputs(test_imgs, test_meta)
     test_loss, test_acc, test_auc, test_prec, test_rec = model.evaluate(
-        test_inputs, test_lbl, verbose=0
+        X_test, y_test, verbose=0
     )
-    f1 = (2 * test_prec * test_rec / max(test_prec + test_rec, 1e-8))
+    f1 = 2 * test_prec * test_rec / max(test_prec + test_rec, 1e-8)
 
-    print(f"\n  Test Accuracy  : {test_acc:.4f}  ({test_acc*100:.2f}%)")
+    print(f"\n  Test Accuracy  : {test_acc:.4f}  ({test_acc * 100:.2f}%)")
     print(f"  Test AUC-ROC   : {test_auc:.4f}")
     print(f"  Test Precision : {test_prec:.4f}")
     print(f"  Test Recall    : {test_rec:.4f}")
     print(f"  Test F1 Score  : {f1:.4f}")
     print(f"  Test Loss      : {test_loss:.4f}")
 
-    # Classification report
-    y_pred_prob = model.predict(test_inputs, verbose=0).flatten()
+    y_pred_prob = model.predict(X_test, verbose=0).flatten()
     y_pred      = (y_pred_prob >= 0.5).astype(int)
     print("\n  Classification Report:")
-    print(classification_report(test_lbl.astype(int), y_pred,
+    print(classification_report(y_test.astype(int), y_pred,
                                  target_names=["Safe (0)", "Risked (1)"],
                                  digits=4))
 
-    # ---- Save scaler & results -------------------------------------
-    import pickle
+    # ---- Save artefacts -------------------------------------------------
     with open(out_dir / "meta_scaler.pkl", "wb") as f:
         pickle.dump(scaler, f)
+    print(f"\n  [SUCCESS] Scaler saved  -> {out_dir / 'meta_scaler.pkl'}")
+    print(f"  [SUCCESS] Best model    -> {ckpt_path}")
 
     results = {
-        "run_timestamp": run_ts,
+        "run_timestamp":  run_ts,
+        "n_train":        int(len(y_train)),
+        "n_val":          int(len(y_val)),
+        "n_test":         int(len(y_test)),
         "test_accuracy":  round(float(test_acc),  4),
         "test_auc_roc":   round(float(test_auc),  4),
         "test_precision": round(float(test_prec), 4),
         "test_recall":    round(float(test_rec),  4),
         "test_f1":        round(float(f1),        4),
         "test_loss":      round(float(test_loss), 4),
-        "total_params":   total_params,
         "epochs_trained": len(history.history["loss"]),
         "best_checkpoint": ckpt_path,
     }
-    with open(out_dir / f"eval_results_{run_ts}.json", "w") as f:
+
+    result_path = out_dir / f"eval_results_{run_ts}.json"
+    with open(result_path, "w") as f:
         json.dump(results, f, indent=2)
+    print(f"  [SUCCESS] Eval results  -> {result_path}")
 
-    print(f"\n  Best model saved: {ckpt_path}")
-    print(f"  Scaler saved    : {out_dir / 'meta_scaler.pkl'}")
-
-    # ---- Generate plots -------------------------------------------
-    print("\n  Generating diagnostic plots ...")
-    plot_all_diagnostics(history, test_lbl, y_pred_prob, y_pred,
-                         out_dir, run_ts)
-
-    print("\n" + "="*65)
-    print("  Training pipeline complete.")
-    print("="*65 + "\n")
+    _plot_training(history, y_test, y_pred_prob, out_dir, run_ts)
 
     return model, history, results
 
 
 # =========================================================================
-#  5.  VISUALISATIONS
+#  5.  PLOTTING
 # =========================================================================
 
-PALETTE = {
-    "blue":   "#003F87",
-    "gold":   "#B8860B",
-    "red":    "#C0392B",
-    "green":  "#1A8A4A",
-    "grey":   "#555555",
-    "bg":     "#FAFAFA",
-    "light":  "#E8F0F8",
-}
+def _plot_training(history, y_test, y_pred_prob, out_dir: Path, run_ts: str):
+    """Save training curves and ROC curve."""
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+    fig.suptitle("AEGIS Logic FNN — Training Report", fontsize=14)
 
-def _style_ax(ax, title="", xlabel="", ylabel=""):
-    ax.set_facecolor(PALETTE["bg"])
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.spines["left"].set_color("#CCCCCC")
-    ax.spines["bottom"].set_color("#CCCCCC")
-    ax.tick_params(colors=PALETTE["grey"], labelsize=9)
-    if title:   ax.set_title(title, fontsize=11, fontweight="bold",
-                              color=PALETTE["blue"], pad=8)
-    if xlabel:  ax.set_xlabel(xlabel, fontsize=9, color=PALETTE["grey"])
-    if ylabel:  ax.set_ylabel(ylabel, fontsize=9, color=PALETTE["grey"])
+    # Loss
+    axes[0].plot(history.history["loss"],     label="Train Loss")
+    axes[0].plot(history.history["val_loss"], label="Val Loss")
+    axes[0].set_title("Loss")
+    axes[0].set_xlabel("Epoch")
+    axes[0].legend()
+    axes[0].grid(True, alpha=0.3)
 
+    # AUC
+    axes[1].plot(history.history["auc"],     label="Train AUC")
+    axes[1].plot(history.history["val_auc"], label="Val AUC")
+    axes[1].set_title("AUC-ROC")
+    axes[1].set_xlabel("Epoch")
+    axes[1].set_ylim(0.4, 1.05)
+    axes[1].legend()
+    axes[1].grid(True, alpha=0.3)
 
-def plot_all_diagnostics(history, y_true, y_pred_prob, y_pred,
-                         out_dir: Path, run_ts: str):
-    """
-    Produce a single comprehensive A3-style diagnostic report figure:
-      Row 1: Training Accuracy | Training Loss | AUC curve history
-      Row 2: ROC Curve | Precision-Recall | Confusion Matrix
-    """
-    fig = plt.figure(figsize=(20, 12), facecolor="white")
-    fig.suptitle(
-        "AEGIS Multi-Modal Forensic Fusion Network – Training Diagnostics",
-        fontsize=16, fontweight="bold", color=PALETTE["blue"], y=0.98
-    )
+    # ROC curve on test set
+    fpr, tpr, _ = roc_curve(y_test, y_pred_prob)
+    auc_val      = auc(fpr, tpr)
+    axes[2].plot(fpr, tpr, color="darkorange", lw=2,
+                 label=f"ROC (AUC = {auc_val:.4f})")
+    axes[2].plot([0, 1], [0, 1], color="navy", linestyle="--")
+    axes[2].set_title("ROC Curve (Test Set)")
+    axes[2].set_xlabel("False Positive Rate")
+    axes[2].set_ylabel("True Positive Rate")
+    axes[2].legend()
+    axes[2].grid(True, alpha=0.3)
 
-    gs = gridspec.GridSpec(2, 3, figure=fig, hspace=0.42, wspace=0.38)
-    ep = range(1, len(history.history["loss"]) + 1)
-
-    # ----------------------------------------------------------------
-    # 1. Training & Validation Accuracy
-    # ----------------------------------------------------------------
-    ax1 = fig.add_subplot(gs[0, 0])
-    ax1.plot(ep, history.history["accuracy"],
-             color=PALETTE["blue"], lw=2.2, label="Train Accuracy")
-    ax1.plot(ep, history.history["val_accuracy"],
-             color=PALETTE["gold"], lw=2.2, linestyle="--", label="Val Accuracy")
-    ax1.fill_between(ep, history.history["accuracy"],
-                     history.history["val_accuracy"],
-                     alpha=0.08, color=PALETTE["blue"])
-    ax1.legend(fontsize=8, framealpha=0.7)
-    _style_ax(ax1, "Model Accuracy", "Epoch", "Accuracy")
-    ax1.set_ylim(0, 1.05)
-    best_val = max(history.history["val_accuracy"])
-    ax1.axhline(best_val, color=PALETTE["red"], lw=0.8, linestyle=":")
-    ax1.text(1, best_val + 0.01, f"Best: {best_val:.3f}",
-             color=PALETTE["red"], fontsize=8)
-
-    # ----------------------------------------------------------------
-    # 2. Training & Validation Loss
-    # ----------------------------------------------------------------
-    ax2 = fig.add_subplot(gs[0, 1])
-    ax2.plot(ep, history.history["loss"],
-             color=PALETTE["red"], lw=2.2, label="Train Loss")
-    ax2.plot(ep, history.history["val_loss"],
-             color=PALETTE["grey"], lw=2.2, linestyle="--", label="Val Loss")
-    ax2.fill_between(ep, history.history["loss"],
-                     history.history["val_loss"],
-                     alpha=0.08, color=PALETTE["red"])
-    ax2.legend(fontsize=8, framealpha=0.7)
-    _style_ax(ax2, "Binary Cross-Entropy Loss", "Epoch", "Loss")
-    best_vl = min(history.history["val_loss"])
-    ax2.axhline(best_vl, color=PALETTE["green"], lw=0.8, linestyle=":")
-    ax2.text(1, best_vl + 0.01, f"Best: {best_vl:.3f}",
-             color=PALETTE["green"], fontsize=8)
-
-    # ----------------------------------------------------------------
-    # 3. AUC history
-    # ----------------------------------------------------------------
-    ax3 = fig.add_subplot(gs[0, 2])
-    if "auc" in history.history:
-        ax3.plot(ep, history.history["auc"],
-                 color=PALETTE["blue"], lw=2.2, label="Train AUC")
-        ax3.plot(ep, history.history["val_auc"],
-                 color=PALETTE["gold"], lw=2.2, linestyle="--", label="Val AUC")
-        ax3.legend(fontsize=8, framealpha=0.7)
-        ax3.set_ylim(0, 1.05)
-    _style_ax(ax3, "AUC-ROC History", "Epoch", "AUC")
-
-    # ----------------------------------------------------------------
-    # 4. ROC Curve
-    # ----------------------------------------------------------------
-    ax4 = fig.add_subplot(gs[1, 0])
-    if len(np.unique(y_true)) > 1:
-        fpr, tpr, _ = roc_curve(y_true, y_pred_prob)
-        roc_auc     = auc(fpr, tpr)
-        ax4.plot(fpr, tpr, color=PALETTE["blue"], lw=2.5,
-                 label=f"ROC (AUC = {roc_auc:.4f})")
-        ax4.fill_between(fpr, tpr, alpha=0.10, color=PALETTE["blue"])
-        ax4.plot([0, 1], [0, 1], color="#BBBBBB", lw=1.2, linestyle="--",
-                 label="Random (AUC = 0.50)")
-        ax4.legend(fontsize=8, framealpha=0.7)
-    _style_ax(ax4, "ROC Curve (Test Set)", "False Positive Rate", "True Positive Rate")
-    ax4.set_xlim([-0.02, 1.02])
-    ax4.set_ylim([-0.02, 1.05])
-
-    # ----------------------------------------------------------------
-    # 5. Precision-Recall Curve
-    # ----------------------------------------------------------------
-    ax5 = fig.add_subplot(gs[1, 1])
-    if len(np.unique(y_true)) > 1:
-        prec_c, rec_c, _ = precision_recall_curve(y_true, y_pred_prob)
-        pr_auc = auc(rec_c, prec_c)
-        ax5.plot(rec_c, prec_c, color=PALETTE["gold"], lw=2.5,
-                 label=f"PR (AUC = {pr_auc:.4f})")
-        ax5.fill_between(rec_c, prec_c, alpha=0.10, color=PALETTE["gold"])
-        baseline = np.mean(y_true)
-        ax5.axhline(baseline, color="#BBBBBB", lw=1.2, linestyle="--",
-                    label=f"Baseline = {baseline:.2f}")
-        ax5.legend(fontsize=8, framealpha=0.7)
-    _style_ax(ax5, "Precision-Recall Curve", "Recall", "Precision")
-    ax5.set_xlim([-0.02, 1.02])
-    ax5.set_ylim([-0.02, 1.05])
-
-    # ----------------------------------------------------------------
-    # 6. Confusion Matrix
-    # ----------------------------------------------------------------
-    ax6 = fig.add_subplot(gs[1, 2])
-    if len(np.unique(y_true)) > 1:
-        cm = confusion_matrix(y_true.astype(int), y_pred)
-        sns.heatmap(
-            cm, annot=True, fmt="d", cmap="Blues",
-            xticklabels=["Safe (0)", "Risked (1)"],
-            yticklabels=["Safe (0)", "Risked (1)"],
-            ax=ax6, linewidths=0.5, linecolor="#CCCCCC",
-            annot_kws={"size": 13, "weight": "bold"},
-        )
-    _style_ax(ax6, "Confusion Matrix (Test Set)", "Predicted", "Actual")
-    ax6.tick_params(axis="x", rotation=0)
-
-    # ---- Watermark --------------------------------------------------
-    fig.text(0.5, 0.01,
-             "AEGIS MMFFN v1.0 — Canara Bank Fraud Detection Research   |   "
-             f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}   |   "
-             "STRICTLY CONFIDENTIAL",
-             ha="center", fontsize=7, color="#AAAAAA", style="italic")
-
-    # ---- Save -------------------------------------------------------
-    plot_path = out_dir / f"aegis_training_diagnostics_{run_ts}.png"
-    fig.savefig(str(plot_path), dpi=180, bbox_inches="tight",
-                facecolor="white", edgecolor="none")
-    plt.close(fig)
-    print(f"  Diagnostics plot saved: {plot_path}")
-
-    # ---- Second figure: prediction distribution --------------------
-    _plot_score_distribution(y_true, y_pred_prob, out_dir, run_ts)
-
-
-def _plot_score_distribution(y_true, y_pred_prob, out_dir, run_ts):
-    """Histogram of fraud risk scores by class."""
-    fig, ax = plt.subplots(figsize=(10, 5), facecolor="white")
-    ax.set_facecolor(PALETTE["bg"])
-
-    bins = np.linspace(0, 1, 40)
-    safe_scores   = y_pred_prob[y_true == 0]
-    risked_scores = y_pred_prob[y_true == 1]
-
-    ax.hist(safe_scores,   bins=bins, color=PALETTE["green"], alpha=0.65,
-            label=f"Safe   (n={len(safe_scores)})",   density=True, edgecolor="white")
-    ax.hist(risked_scores, bins=bins, color=PALETTE["red"],   alpha=0.65,
-            label=f"Risked (n={len(risked_scores)})", density=True, edgecolor="white")
-
-    ax.axvline(0.5, color=PALETTE["blue"], lw=2.0, linestyle="--",
-               label="Decision Threshold = 0.50")
-
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.set_title(
-        "AEGIS Risk Score Distribution by Class",
-        fontsize=13, fontweight="bold", color=PALETTE["blue"], pad=10
-    )
-    ax.set_xlabel("Fraud Risk Score  (0 = Safe → 1 = Fraudulent)",
-                  fontsize=10, color=PALETTE["grey"])
-    ax.set_ylabel("Density", fontsize=10, color=PALETTE["grey"])
-    ax.legend(fontsize=9, framealpha=0.7)
-
-    fig.text(0.5, 0.01,
-             "AEGIS MMFFN v1.0 — Score Distribution   |   STRICTLY CONFIDENTIAL",
-             ha="center", fontsize=7, color="#AAAAAA", style="italic")
-
-    plot_path = out_dir / f"aegis_score_distribution_{run_ts}.png"
-    fig.savefig(str(plot_path), dpi=180, bbox_inches="tight",
-                facecolor="white", edgecolor="none")
-    plt.close(fig)
-    print(f"  Score distribution plot saved: {plot_path}")
+    plt.tight_layout()
+    plot_path = out_dir / f"training_report_{run_ts}.png"
+    plt.savefig(plot_path, dpi=120)
+    plt.close()
+    print(f"  [SUCCESS] Training plot -> {plot_path}")
 
 
 # =========================================================================
-#  6.  INFERENCE UTILITY
+#  6.  INFERENCE HELPER (used by predict mode)
 # =========================================================================
 
-def predict_dossier(model_path: str, scaler_path: str,
-                    dossier_dir: str) -> dict:
+def predict_dossier(model_path: str, scaler_path: str, folder_path: str) -> dict:
     """
-    Run inference on a single applicant dossier folder.
-    Returns a dict with risk_score, verdict, and feature breakdown.
+    Run the logic stream on a single dossier folder.
+    Expects: manifest.json, salary.pdf, identity.pdf, itr.pdf, land_record.pdf
     """
-    import pickle
-    from tensorflow.keras.models import load_model
+    import pickle as _pickle
+    folder   = Path(folder_path)
+    manifest = json.load(open(folder / "manifest.json"))
 
-    dossier = Path(dossier_dir)
-    model   = load_model(model_path)
-    with open(scaler_path, "rb") as f:
-        scaler = pickle.load(f)
+    sal_path = folder / "salary.pdf"
+    ela_sal  = 0.0
+    if sal_path.exists():
+        img     = _pdf_to_image(str(sal_path))
+        ela_sal = compute_ela_score(img)
 
-    imgs = []
-    for pt in PDF_TYPES:
-        pdf_path = dossier / f"{pt}.pdf"
-        img      = pdf_to_image(str(pdf_path))
-        imgs.append(img[np.newaxis, ...])          # (1, H, W, C)
+    raw_meta = extract_meta_features(manifest, ela_sal_score=ela_sal)
 
-    manifest_path = dossier / "manifest.json"
-    manifest = {}
-    if manifest_path.exists():
-        with open(manifest_path) as f:
-            manifest = json.load(f)
+    mdl    = tf.keras.models.load_model(model_path)
+    scaler = _pickle.load(open(scaler_path, "rb"))
 
-    raw_meta    = extract_meta_features(manifest)
-    scaled_meta = scaler.transform(raw_meta[np.newaxis, :])
-
-    inputs       = imgs + [scaled_meta]
-    risk_score   = float(model.predict(inputs, verbose=0)[0][0])
-    verdict      = "RISKED (FRAUDULENT)" if risk_score >= 0.5 else "SAFE (GENUINE)"
+    scaled     = scaler.transform(raw_meta[np.newaxis, :])
+    risk_score = float(mdl.predict(scaled, verbose=0)[0][0])
+    verdict    = "RISKED (FRAUDULENT)" if risk_score >= 0.5 else "SAFE (GENUINE)"
 
     return {
         "applicant_id": manifest.get("applicant_id", "unknown"),
         "risk_score":   round(risk_score, 6),
         "verdict":      verdict,
         "confidence":   round(abs(risk_score - 0.5) * 2, 4),
-        "meta_features": {
-            "salary_gross":   manifest.get("salary_gross"),
-            "salary_net":     manifest.get("salary_net"),
-            "itr_income":     manifest.get("itr_total_income"),
-            "land_value":     manifest.get("land_value"),
-            "pdf_producer":   manifest.get("pdf_producer"),
-            "fraud_flags":    manifest.get("fraud_flags", []),
-        },
     }
 
 
@@ -860,25 +531,19 @@ def predict_dossier(model_path: str, scaler_path: str,
 
 def parse_args():
     p = argparse.ArgumentParser(
-        description="Train the AEGIS Multi-Modal Forensic Fusion Network",
+        description="Train the AEGIS Logic Stream FNN",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    p.add_argument("--dataset",   default="./dataset",
-                   help="Root dataset directory (must contain safe/ and risked/)")
-    p.add_argument("--epochs",    type=int,   default=30,
-                   help="Maximum training epochs")
-    p.add_argument("--batch",     type=int,   default=16,
-                   help="Training batch size")
-    p.add_argument("--lr",        type=float, default=1e-4,
-                   help="Initial learning rate")
-    p.add_argument("--output",    default="./aegis_output",
-                   help="Directory to save model, logs, and plots")
-    p.add_argument("--no-augment",action="store_true",
-                   help="Disable training data augmentation")
-    p.add_argument("--predict",   default=None,
-                   help="Path to a dossier folder to run inference (skip training)")
-    p.add_argument("--model",     default=None,
-                   help="Path to saved model for --predict mode")
+    p.add_argument("--dataset", default="./realistic document",
+                   help="Root dataset dir (must contain safe/ and risked/)")
+    p.add_argument("--epochs",  type=int,   default=40)
+    p.add_argument("--batch",   type=int,   default=32)
+    p.add_argument("--lr",      type=float, default=1e-3)
+    p.add_argument("--output",  default="./aegis_output")
+    p.add_argument("--predict", default=None,
+                   help="Dossier folder path — run inference, skip training")
+    p.add_argument("--model",   default=None,
+                   help="Model path for --predict mode")
     return p.parse_args()
 
 
@@ -886,31 +551,24 @@ if __name__ == "__main__":
     args = parse_args()
 
     if args.predict:
-        # ---- Inference mode -----------------------------------------
-        model_path  = args.model or f"{args.output}/aegis_model_v1.keras"
-        scaler_path = f"{args.output}/meta_scaler.pkl"
+        output = args.output or "./aegis_output"
+        model_path  = args.model or f"{output}/aegis_model_v1.keras"
+        scaler_path = f"{output}/meta_scaler.pkl"
         print(f"\n  Running inference on: {args.predict}")
         result = predict_dossier(model_path, scaler_path, args.predict)
-        print(f"\n  ── AEGIS VERDICT ──────────────────────────────────")
-        print(f"  Applicant ID  : {result['applicant_id']}")
-        print(f"  Risk Score    : {result['risk_score']:.6f}")
-        print(f"  Verdict       : {result['verdict']}")
-        print(f"  Confidence    : {result['confidence']*100:.1f}%")
-        print(f"  PDF Producer  : {result['meta_features']['pdf_producer']}")
-        print(f"  Fraud Flags   : {result['meta_features']['fraud_flags']}")
-        print(f"  ───────────────────────────────────────────────────\n")
-
+        print(f"\n  ── AEGIS LOGIC VERDICT ──────────────────")
+        print(f"  Applicant ID : {result['applicant_id']}")
+        print(f"  Risk Score   : {result['risk_score']:.6f}")
+        print(f"  Verdict      : {result['verdict']}")
+        print(f"  Confidence   : {result['confidence'] * 100:.1f}%")
+        print(f"  ─────────────────────────────────────────\n")
     else:
-        # ---- Training mode ------------------------------------------
         model, history, results = train_model(
             dataset_dir=args.dataset,
             epochs=args.epochs,
             batch_size=args.batch,
             output_dir=args.output,
-            augment=not args.no_augment,
-            verbose=1,
         )
-
         print("\n  Final Metrics Summary:")
         for k, v in results.items():
             if isinstance(v, float):

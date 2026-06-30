@@ -69,7 +69,7 @@ const LandingPage = ({ onUpload }) => {
             try {
                 const statRes = await axios.get('http://127.0.0.1:8000/stats');
                 setStats(statRes.data);
-                
+
                 const feedRes = await axios.get('http://127.0.0.1:8000/system/feed');
                 if (feedRes.data && feedRes.data.feed) {
                     setFeed(prev => {
@@ -93,11 +93,11 @@ const LandingPage = ({ onUpload }) => {
     const animatedRisked = useCounter(stats.risked_count);
     const animatedAvgRisk = useCounter(stats.avg_risk_score * 100);
 
-    const handleLocalUpload = async (files) => {
+    const handleLocalUpload = async (files, isBatch = false, isSingle = false) => {
         setUploadStatus('loading');
         // Let the animation play out for 2.5s before bubbling up
         setTimeout(() => {
-            onUpload(files);
+            onUpload(files, isBatch, isSingle);
         }, 2500);
     };
 
@@ -105,7 +105,7 @@ const LandingPage = ({ onUpload }) => {
         <div className="flex-1 flex flex-col w-full h-full overflow-hidden bg-[#ffffff]">
             {/* ROW 2 - Main 3 Columns */}
             <div className="flex-1 flex w-full h-full overflow-hidden">
-                
+
                 {/* LEFT COLUMN - System Feed */}
                 <div className="w-[260px] shrink-0 h-full bg-[#fafafa] border-r border-[#e5e7eb] flex flex-col overflow-hidden">
                     <div className="h-[36px] shrink-0 border-b border-[#e5e7eb] px-4 flex items-center justify-between">
@@ -119,13 +119,13 @@ const LandingPage = ({ onUpload }) => {
                             const isCritical = item.msg.includes("CRITICAL");
                             const isOldest = index === feed.length - 1 && feed.length === 20;
                             return (
-                                <div 
-                                    key={item.id} 
+                                <div
+                                    key={item.id}
                                     className="mb-1"
-                                    style={{ 
-                                        fontFamily: "'IBM Plex Mono', monospace", 
-                                        fontSize: '11px', 
-                                        lineHeight: 1.6, 
+                                    style={{
+                                        fontFamily: "'IBM Plex Mono', monospace",
+                                        fontSize: '11px',
+                                        lineHeight: 1.6,
                                         color: isCritical ? '#991b1b' : '#374151',
                                         opacity: isOldest ? 0 : 1,
                                         transition: 'opacity 0.2s ease',
@@ -141,7 +141,7 @@ const LandingPage = ({ onUpload }) => {
 
                 {/* CENTER COLUMN - Hero + Drop Zone */}
                 <div className="flex-1 h-full flex flex-col items-center justify-center bg-[#ffffff] ledger-bg relative">
-                    
+
                     {/* Zone A: Wordmark */}
                     <div className="flex flex-col items-center mb-2 z-10">
                         <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: '64px', color: '#111111', letterSpacing: '0.1em', lineHeight: 1 }}>
@@ -199,7 +199,7 @@ const LandingPage = ({ onUpload }) => {
                             SESSION STATS
                         </div>
                     </div>
-                    
+
                     <div className="flex-1 flex flex-col">
                         {[
                             { val: stats.folders_analyzed === 0 ? "0" : animatedFolders, label: "FOLDERS ANALYSED" },
@@ -231,11 +231,10 @@ const LandingPage = ({ onUpload }) => {
                                 MODEL
                             </div>
                             <div className="flex flex-col gap-1" style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: '#374151' }}>
-                                <div>AEGIS-MMFFN-v1.0</div>
-                                <div>4× CNN  +  FNN</div>
-                                <div>Binary cross-entropy</div>
-                                <div>Adam · lr 1e-4</div>
-                                <div>2,000 training dossiers</div>
+                                <div>AEGIS v1.0</div>
+                                <div>Fast and Precise Detection of Forgeries</div>
+                                <div>Efficient and Accurate</div>
+                                <div>Document Forgery Detection System</div>
                             </div>
                         </div>
                     </div>
@@ -246,9 +245,9 @@ const LandingPage = ({ onUpload }) => {
             {/* ROW 3 - Bottom Bar */}
             <div className="h-[80px] shrink-0 border-t border-[#111111] bg-[#ffffff] grid grid-cols-3">
                 <div className="border-r border-[#e5e7eb] px-6 flex flex-col justify-center">
-                    <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '11px', color: '#9ca3af', letterSpacing: '0.08em' }}>TRAINING DATASET</div>
-                    <div className="mt-0.5" style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, fontSize: '16px', color: '#111111' }}>2,000 DOSSIERS</div>
-                    <div className="mt-0.5" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: '11px', color: '#9ca3af' }}>1,000 safe  ·  1,000 risked  ·  8 fraud types</div>
+                    <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '11px', color: '#9ca3af', letterSpacing: '0.08em' }}>DETECTION ENGINE</div>
+                    <div className="mt-0.5" style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600, fontSize: '16px', color: '#111111' }}>MMFFN NEURAL NET</div>
+                    <div className="mt-0.5" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: '11px', color: '#9ca3af' }}>ELA · Benford · Semantic · Metadata</div>
                 </div>
                 <div className="border-r border-[#e5e7eb] px-6 flex flex-col justify-center">
                     <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: '11px', color: '#9ca3af', letterSpacing: '0.08em' }}>LAST ANALYSIS</div>
