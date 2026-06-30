@@ -1,28 +1,38 @@
 {
-  "applicant_id": "CBLP30838256",
+  "applicant_id": "CBLP42826849",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "pixel_artifact",
-    "math_mismatch",
-    "noise_stripe"
+    "tilted_amount",
+    "font_discrepancy",
+    "blurred_edge",
+    "math_mismatch"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, math_mismatch, noise_stripe",
-  "name": "Kashvi Kumar",
-  "pan": "BUQGQ8150A",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, tilted_amount, font_discrepancy, blurred_edge, math_mismatch",
+  "name": "Basappa Hegde",
+  "pan": "CWLGC0414B",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0002345",
-  "salary_gross": 103651,
-  "salary_net": 58897,
-  "itr_total_income": 711761,
-  "land_value": 80565199,
-  "pdf_producer": "Adobe Acrobat Pro DC",
+  "salary_gross": 58362,
+  "salary_net": 35499,
+  "itr_total_income": 346272,
+  "land_value": 430267605,
+  "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 80.82,
+  "gold_net_weight": 78.214,
+  "gold_karat": "18K",
+  "gold_rate_used": 10794.72,
+  "gold_declared_value": 635586.36,
+  "gold_loan_amount": 503323.03,
+  "gold_ltv_ratio": 0.7919,
+  "gold_forged": true,
+  "gold_forged_variant": "B"
 }

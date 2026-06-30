@@ -1,28 +1,37 @@
 {
-  "applicant_id": "CBLP70983581",
+  "applicant_id": "CBLP92452783",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
     "pixel_artifact",
-    "blurred_edge",
-    "noise_stripe"
+    "math_mismatch",
+    "font_discrepancy"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, blurred_edge, noise_stripe",
-  "name": "Vamakshi Mani",
-  "pan": "JHHHX4230P",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 84966,
-  "salary_net": 49244,
-  "itr_total_income": 533925,
-  "land_value": 445581197,
-  "pdf_producer": "Adobe Photoshop CC 2024",
+  "fraud_reason": "metadata_poisoning, pixel_artifact, math_mismatch, font_discrepancy",
+  "name": "Dinesh Gowda",
+  "pan": "EUPTF4126D",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 60386,
+  "salary_net": 36544,
+  "itr_total_income": 283880,
+  "land_value": 445175523,
+  "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 194.173,
+  "gold_net_weight": 189.931,
+  "gold_karat": "22K",
+  "gold_rate_used": 12245.28,
+  "gold_declared_value": 2142188.79,
+  "gold_loan_amount": 1777612.1,
+  "gold_ltv_ratio": 0.8298,
+  "gold_forged": true,
+  "gold_forged_variant": "B"
 }

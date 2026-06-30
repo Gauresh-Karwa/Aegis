@@ -1,27 +1,39 @@
 {
-  "applicant_id": "CBLP50615895",
+  "applicant_id": "CBLP53476423",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
     "pixel_artifact",
-    "tilted_amount"
+    "noise_stripe",
+    "semantic_drift",
+    "font_discrepancy",
+    "blurred_edge"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, tilted_amount",
-  "name": "Zansi Pall",
-  "pan": "DRDTX4929O",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 106335,
-  "salary_net": 60284,
-  "itr_total_income": 774205,
-  "land_value": 451564298,
+  "fraud_reason": "metadata_poisoning, pixel_artifact, noise_stripe, semantic_drift, font_discrepancy, blurred_edge",
+  "name": "Kavya Mehta",
+  "pan": "YLDGA0679M",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 51685,
+  "salary_net": 32048,
+  "itr_total_income": 275300,
+  "land_value": 299707971,
   "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 32.065,
+  "gold_net_weight": 30.75,
+  "gold_karat": "22K",
+  "gold_rate_used": 8002.4,
+  "gold_declared_value": 184918.57,
+  "gold_loan_amount": 135910.58,
+  "gold_ltv_ratio": 0.735,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }

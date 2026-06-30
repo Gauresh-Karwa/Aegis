@@ -1,27 +1,38 @@
 {
-  "applicant_id": "CBLP38194879",
+  "applicant_id": "CBLP45506994",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
     "tilted_amount",
+    "pixel_artifact",
+    "blurred_edge",
     "font_discrepancy"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, font_discrepancy",
-  "name": "Darpan Rajagopalan",
-  "pan": "JMMPX5875U",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 91346,
-  "salary_net": 52540,
-  "itr_total_income": 584592,
-  "land_value": 583837596,
-  "pdf_producer": "Adobe Photoshop CC 2024",
+  "fraud_reason": "metadata_poisoning, tilted_amount, pixel_artifact, blurred_edge, font_discrepancy",
+  "name": "Dinesh Singh",
+  "pan": "IRMLW1532F",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 49430,
+  "salary_net": 30883,
+  "itr_total_income": 251464,
+  "land_value": 515071017,
+  "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 165.966,
+  "gold_net_weight": 163.732,
+  "gold_karat": "24K",
+  "gold_rate_used": 13908.01,
+  "gold_declared_value": 2295711.96,
+  "gold_loan_amount": 1881532.37,
+  "gold_ltv_ratio": 0.8196,
+  "gold_forged": true,
+  "gold_forged_variant": "B"
 }

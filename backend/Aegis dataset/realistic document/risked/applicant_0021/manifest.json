@@ -1,29 +1,36 @@
 {
-  "applicant_id": "CBLP95576549",
+  "applicant_id": "CBLP74372501",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "tilted_amount",
-    "blurred_edge",
     "font_discrepancy",
-    "pixel_artifact"
+    "noise_stripe"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, blurred_edge, font_discrepancy, pixel_artifact",
-  "name": "Suhani Apte",
-  "pan": "XLWGV5995P",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 42566,
-  "salary_net": 39719,
-  "itr_total_income": 152999,
-  "land_value": 258710050,
+  "fraud_reason": "metadata_poisoning, font_discrepancy, noise_stripe",
+  "name": "Sudha Qureshi",
+  "pan": "KDJBS6748F",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 101224,
+  "salary_net": 57643,
+  "itr_total_income": 722748,
+  "land_value": 2446144196,
   "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 97.517,
+  "gold_net_weight": 93.487,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 677450.4,
+  "gold_loan_amount": 525259.08,
+  "gold_ltv_ratio": 0.7753,
+  "gold_forged": true,
+  "gold_forged_variant": "A"
 }

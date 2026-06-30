@@ -1,29 +1,39 @@
 {
-  "applicant_id": "CBLP69167156",
+  "applicant_id": "CBLP34453609",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "noise_stripe",
-    "blurred_edge",
     "tilted_amount",
-    "math_mismatch"
+    "pixel_artifact",
+    "math_mismatch",
+    "blurred_edge",
+    "semantic_drift"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, blurred_edge, tilted_amount, math_mismatch",
-  "name": "Daniel Bakshi",
-  "pan": "FVAHW6499R",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 103750,
-  "salary_net": 58949,
-  "itr_total_income": 719383,
-  "land_value": 373342336,
+  "fraud_reason": "metadata_poisoning, tilted_amount, pixel_artifact, math_mismatch, blurred_edge, semantic_drift",
+  "name": "Parvathi Das",
+  "pan": "MBUAT0005R",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 62490,
+  "salary_net": 37630,
+  "itr_total_income": 361320,
+  "land_value": 2390796567,
   "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 64.985,
+  "gold_net_weight": 62.255,
+  "gold_karat": "18K",
+  "gold_rate_used": 10120.92,
+  "gold_declared_value": 476660.35,
+  "gold_loan_amount": 392421.68,
+  "gold_ltv_ratio": 0.8233,
+  "gold_forged": true,
+  "gold_forged_variant": "B"
 }

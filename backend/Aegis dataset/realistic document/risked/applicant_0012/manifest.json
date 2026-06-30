@@ -1,29 +1,38 @@
 {
-  "applicant_id": "CBLP47345099",
+  "applicant_id": "CBLP33291308",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "math_mismatch",
+    "noise_stripe",
+    "font_discrepancy",
     "pixel_artifact",
-    "tilted_amount",
-    "font_discrepancy"
+    "semantic_drift"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, pixel_artifact, tilted_amount, font_discrepancy",
-  "name": "Gaurang Thaman",
-  "pan": "XMFPW4717A",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 95338,
-  "salary_net": 54602,
-  "itr_total_income": 670130,
-  "land_value": 521586882,
-  "pdf_producer": "GIMP 2.10",
+  "fraud_reason": "metadata_poisoning, noise_stripe, font_discrepancy, pixel_artifact, semantic_drift",
+  "name": "Vijayalakshmi Shinde",
+  "pan": "QMJFR7205G",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 110696,
+  "salary_net": 62538,
+  "itr_total_income": 804663,
+  "land_value": 71136354,
+  "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 162.317,
+  "gold_net_weight": 158.878,
+  "gold_karat": "22K",
+  "gold_rate_used": 10854.25,
+  "gold_declared_value": 1299019.03,
+  "gold_loan_amount": 1062834.75,
+  "gold_ltv_ratio": 0.8182,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }

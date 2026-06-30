@@ -1,27 +1,39 @@
 {
-  "applicant_id": "CBLP58534945",
+  "applicant_id": "CBLP60646538",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
+    "font_discrepancy",
+    "math_mismatch",
     "semantic_drift",
-    "noise_stripe",
-    "tilted_amount"
+    "blurred_edge",
+    "pixel_artifact"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, tilted_amount",
-  "name": "Janaki Dube",
-  "pan": "FIJHA9882F",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, font_discrepancy, math_mismatch, semantic_drift, blurred_edge, pixel_artifact",
+  "name": "Janaki Pai",
+  "pan": "OYTCC5500R",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0002345",
-  "salary_gross": 122643,
-  "salary_net": 68709,
-  "itr_total_income": 911310,
-  "land_value": 2023033973,
-  "pdf_producer": "Adobe Photoshop CS6",
+  "salary_gross": 39535,
+  "salary_net": 36890,
+  "itr_total_income": 119780,
+  "land_value": 173405106,
+  "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 123.687,
+  "gold_net_weight": 123.258,
+  "gold_karat": "22K",
+  "gold_rate_used": 9950.0,
+  "gold_declared_value": 911413.69,
+  "gold_loan_amount": 705821.07,
+  "gold_ltv_ratio": 0.7744,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }

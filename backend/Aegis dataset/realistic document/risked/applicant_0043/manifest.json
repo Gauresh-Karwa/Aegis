@@ -1,29 +1,37 @@
 {
-  "applicant_id": "CBLP65443805",
+  "applicant_id": "CBLP78227371",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
     "noise_stripe",
-    "font_discrepancy",
-    "tilted_amount",
-    "blurred_edge"
+    "semantic_drift",
+    "pixel_artifact"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, font_discrepancy, tilted_amount, blurred_edge",
-  "name": "Ijaya Peri",
-  "pan": "JRWPB9829R",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 106374,
-  "salary_net": 60304,
-  "itr_total_income": 803925,
-  "land_value": 290846336,
-  "pdf_producer": "GIMP 2.10",
+  "fraud_reason": "metadata_poisoning, noise_stripe, semantic_drift, pixel_artifact",
+  "name": "Shivalingaiah Hegde",
+  "pan": "ENNPA1650T",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 66998,
+  "salary_net": 39960,
+  "itr_total_income": 382546,
+  "land_value": 238910447,
+  "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 89.773,
+  "gold_net_weight": 89.078,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 540487.16,
+  "gold_loan_amount": 419544.67,
+  "gold_ltv_ratio": 0.7762,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

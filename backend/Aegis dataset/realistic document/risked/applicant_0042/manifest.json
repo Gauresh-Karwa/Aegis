@@ -1,27 +1,37 @@
 {
-  "applicant_id": "CBLP70335791",
+  "applicant_id": "CBLP65340359",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "blurred_edge",
-    "math_mismatch"
+    "tilted_amount",
+    "math_mismatch",
+    "semantic_drift"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, math_mismatch",
-  "name": "Sathvik Khurana",
-  "pan": "QMWPO1607C",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 63711,
-  "salary_net": 38262,
-  "itr_total_income": 387053,
-  "land_value": 695014752,
+  "fraud_reason": "metadata_poisoning, tilted_amount, math_mismatch, semantic_drift",
+  "name": "Sumathi Rao",
+  "pan": "GRABN4963W",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 59767,
+  "salary_net": 36224,
+  "itr_total_income": 343466,
+  "land_value": 412590786,
   "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 87.368,
+  "gold_net_weight": 85.144,
+  "gold_karat": "18K",
+  "gold_rate_used": 8002.4,
+  "gold_declared_value": 506613.99,
+  "gold_loan_amount": 398337.2,
+  "gold_ltv_ratio": 0.7863,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

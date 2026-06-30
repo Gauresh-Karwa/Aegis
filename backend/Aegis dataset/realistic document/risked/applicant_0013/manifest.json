@@ -1,27 +1,39 @@
 {
-  "applicant_id": "CBLP97423315",
+  "applicant_id": "CBLP66852828",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
+    "pixel_artifact",
+    "noise_stripe",
     "semantic_drift",
-    "math_mismatch",
-    "tilted_amount"
+    "font_discrepancy",
+    "math_mismatch"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, tilted_amount",
-  "name": "David Sunder",
-  "pan": "LSFCO3582P",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, pixel_artifact, noise_stripe, semantic_drift, font_discrepancy, math_mismatch",
+  "name": "Janaki Iyer",
+  "pan": "RJMTY9100R",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0002345",
-  "salary_gross": 87569,
-  "salary_net": 50588,
-  "itr_total_income": 624259,
-  "land_value": 1028722682,
+  "salary_gross": 117010,
+  "salary_net": 65800,
+  "itr_total_income": 860339,
+  "land_value": 451252863,
   "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 111.614,
+  "gold_net_weight": 108.819,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 1172012.51,
+  "gold_loan_amount": 909753.37,
+  "gold_ltv_ratio": 0.7762,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

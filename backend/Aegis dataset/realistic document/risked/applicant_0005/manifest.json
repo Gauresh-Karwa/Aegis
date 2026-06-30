@@ -1,27 +1,38 @@
 {
-  "applicant_id": "CBLP87787880",
+  "applicant_id": "CBLP55066032",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
+    "math_mismatch",
     "semantic_drift",
     "tilted_amount",
-    "math_mismatch"
+    "font_discrepancy"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, math_mismatch",
-  "name": "Timothy Saha",
-  "pan": "DILFW6194B",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 56278,
-  "salary_net": 34421,
-  "itr_total_income": 299471,
-  "land_value": 955814539,
-  "pdf_producer": "Adobe Photoshop CS6",
+  "fraud_reason": "metadata_poisoning, math_mismatch, semantic_drift, tilted_amount, font_discrepancy",
+  "name": "Isha Khan",
+  "pan": "XZDHX1589L",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 80279,
+  "salary_net": 46821,
+  "itr_total_income": 492639,
+  "land_value": 3449784894,
+  "pdf_producer": "Adobe Photoshop CC 2024",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 176.47,
+  "gold_net_weight": 174.959,
+  "gold_karat": "24K",
+  "gold_rate_used": 10854.25,
+  "gold_declared_value": 2489050.56,
+  "gold_loan_amount": 1925365.72,
+  "gold_ltv_ratio": 0.7735,
+  "gold_forged": true,
+  "gold_forged_variant": "A"
 }

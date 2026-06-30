@@ -1,28 +1,36 @@
 {
-  "applicant_id": "CBLP81588209",
+  "applicant_id": "CBLP54700025",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "blurred_edge",
     "font_discrepancy",
-    "noise_stripe"
+    "tilted_amount"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, noise_stripe",
-  "name": "Rushil Hegde",
-  "pan": "TWUTI1195N",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, font_discrepancy, tilted_amount",
+  "name": "Anuradha Shah",
+  "pan": "IRSCK7186D",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0005678",
-  "salary_gross": 74863,
-  "salary_net": 44024,
-  "itr_total_income": 468759,
-  "land_value": 1052210998,
-  "pdf_producer": "Adobe Acrobat Pro DC",
+  "salary_gross": 34012,
+  "salary_net": 31735,
+  "itr_total_income": 163767,
+  "land_value": 308247564,
+  "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 99.997,
+  "gold_net_weight": 99.91,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 606621.38,
+  "gold_loan_amount": 464128.35,
+  "gold_ltv_ratio": 0.7651,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

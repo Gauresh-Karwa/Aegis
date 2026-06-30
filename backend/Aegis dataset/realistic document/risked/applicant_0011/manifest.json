@@ -1,28 +1,36 @@
 {
-  "applicant_id": "CBLP51622728",
+  "applicant_id": "CBLP78483221",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
     "semantic_drift",
-    "blurred_edge",
-    "noise_stripe",
-    "pixel_artifact"
+    "font_discrepancy"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, noise_stripe, pixel_artifact",
-  "name": "Vaishnavi Comar",
-  "pan": "TXSFV7773A",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 109249,
-  "salary_net": 61790,
-  "itr_total_income": 760664,
-  "land_value": 404255167,
+  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy",
+  "name": "Mahesh Khan",
+  "pan": "QSPGY7597E",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 30105,
+  "salary_net": 28088,
+  "itr_total_income": 67654,
+  "land_value": 1638780344,
   "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 156.632,
+  "gold_net_weight": 154.008,
+  "gold_karat": "18K",
+  "gold_rate_used": 8002.4,
+  "gold_declared_value": 919988.27,
+  "gold_loan_amount": 752446.55,
+  "gold_ltv_ratio": 0.8179,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

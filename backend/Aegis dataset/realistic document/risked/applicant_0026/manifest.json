@@ -1,29 +1,37 @@
 {
-  "applicant_id": "CBLP64364033",
+  "applicant_id": "CBLP71552089",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
+    "pixel_artifact",
     "semantic_drift",
-    "font_discrepancy",
-    "math_mismatch",
-    "noise_stripe",
-    "blurred_edge"
+    "font_discrepancy"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, math_mismatch, noise_stripe, blurred_edge",
-  "name": "Nachiket Chopra",
-  "pan": "JOSLU5796P",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 110194,
-  "salary_net": 62278,
-  "itr_total_income": 765816,
-  "land_value": 1004449671,
-  "pdf_producer": "Adobe Photoshop CS6",
+  "fraud_reason": "metadata_poisoning, pixel_artifact, semantic_drift, font_discrepancy",
+  "name": "Vanitha Naidu",
+  "pan": "YXIBD6288D",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 128735,
+  "salary_net": 71857,
+  "itr_total_income": 927362,
+  "land_value": 1009495183,
+  "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 141.303,
+  "gold_net_weight": 136.873,
+  "gold_karat": "22K",
+  "gold_rate_used": 12829.76,
+  "gold_declared_value": 1604161.2,
+  "gold_loan_amount": 1287547.59,
+  "gold_ltv_ratio": 0.8026,
+  "gold_forged": true,
+  "gold_forged_variant": "B"
 }

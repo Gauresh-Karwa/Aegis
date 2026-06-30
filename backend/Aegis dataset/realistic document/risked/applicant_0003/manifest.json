@@ -1,29 +1,36 @@
 {
-  "applicant_id": "CBLP70777292",
+  "applicant_id": "CBLP44992704",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "math_mismatch",
-    "tilted_amount",
-    "blurred_edge",
-    "pixel_artifact"
+    "noise_stripe",
+    "blurred_edge"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, math_mismatch, tilted_amount, blurred_edge, pixel_artifact",
-  "name": "Ganga Hans",
-  "pan": "MWKAJ3450F",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, noise_stripe, blurred_edge",
+  "name": "Risha Mukherjee",
+  "pan": "WYQTN8819E",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0004567",
-  "salary_gross": 67553,
-  "salary_net": 40247,
-  "itr_total_income": 352488,
-  "land_value": 608628235,
-  "pdf_producer": "Adobe Photoshop CC 2024",
+  "salary_gross": 84736,
+  "salary_net": 49124,
+  "itr_total_income": 514971,
+  "land_value": 481590045,
+  "pdf_producer": "GIMP 2.10",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 88.506,
+  "gold_net_weight": 87.753,
+  "gold_karat": "22K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 407176.94,
+  "gold_loan_amount": 302187.53,
+  "gold_ltv_ratio": 0.7422,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }

@@ -1,27 +1,37 @@
 {
-  "applicant_id": "CBLP23113349",
+  "applicant_id": "CBLP77902772",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "font_discrepancy",
-    "pixel_artifact"
+    "tilted_amount",
+    "blurred_edge",
+    "math_mismatch"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, font_discrepancy, pixel_artifact",
-  "name": "Maya Korpal",
-  "pan": "MMLBN3497D",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 57211,
-  "salary_net": 34903,
-  "itr_total_income": 320698,
-  "land_value": 2054324732,
-  "pdf_producer": "Adobe Photoshop CC 2024",
+  "fraud_reason": "metadata_poisoning, tilted_amount, blurred_edge, math_mismatch",
+  "name": "Deepak Shah",
+  "pan": "TBUBI1546L",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 61073,
+  "salary_net": 36899,
+  "itr_total_income": 355543,
+  "land_value": 1375314386,
+  "pdf_producer": "Adobe Photoshop CS6",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 12.226,
+  "gold_net_weight": 11.999,
+  "gold_karat": "22K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 96416.37,
+  "gold_loan_amount": 79543.54,
+  "gold_ltv_ratio": 0.825,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }

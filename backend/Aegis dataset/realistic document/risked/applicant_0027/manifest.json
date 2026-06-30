@@ -1,27 +1,38 @@
 {
-  "applicant_id": "CBLP37439414",
+  "applicant_id": "CBLP68144454",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "pixel_artifact",
-    "tilted_amount"
+    "font_discrepancy",
+    "tilted_amount",
+    "noise_stripe",
+    "semantic_drift"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, pixel_artifact, tilted_amount",
-  "name": "Vansha Ghosh",
-  "pan": "NQKAO6183W",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 57790,
-  "salary_net": 35202,
-  "itr_total_income": 327276,
-  "land_value": 1300104959,
-  "pdf_producer": "Adobe Photoshop CC 2024",
+  "fraud_reason": "metadata_poisoning, font_discrepancy, tilted_amount, noise_stripe, semantic_drift",
+  "name": "Anuradha Gupta",
+  "pan": "SFDHI8150L",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 57974,
+  "salary_net": 35297,
+  "itr_total_income": 372208,
+  "land_value": 204603767,
+  "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 158.31,
+  "gold_net_weight": 156.365,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 2392928.32,
+  "gold_loan_amount": 1916483.52,
+  "gold_ltv_ratio": 0.8009,
+  "gold_forged": true,
+  "gold_forged_variant": "A"
 }

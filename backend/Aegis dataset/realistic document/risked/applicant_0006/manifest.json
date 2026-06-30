@@ -1,28 +1,38 @@
 {
-  "applicant_id": "CBLP55248122",
+  "applicant_id": "CBLP27874275",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "blurred_edge",
     "tilted_amount",
-    "math_mismatch"
+    "blurred_edge",
+    "math_mismatch",
+    "noise_stripe"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, tilted_amount, math_mismatch",
-  "name": "Isha Dash",
-  "pan": "RZNAY1333B",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 56656,
-  "salary_net": 34616,
-  "itr_total_income": 276861,
-  "land_value": 3192502957,
+  "fraud_reason": "metadata_poisoning, tilted_amount, blurred_edge, math_mismatch, noise_stripe",
+  "name": "Malini Desai",
+  "pan": "NJRCL5743G",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 55658,
+  "salary_net": 34100,
+  "itr_total_income": 237963,
+  "land_value": 850618963,
   "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 127.771,
+  "gold_net_weight": 125.876,
+  "gold_karat": "14K",
+  "gold_rate_used": 6331.92,
+  "gold_declared_value": 463981.58,
+  "gold_loan_amount": 357713.5,
+  "gold_ltv_ratio": 0.771,
+  "gold_forged": true,
+  "gold_forged_variant": "C"
 }

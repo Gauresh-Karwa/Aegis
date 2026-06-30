@@ -1,28 +1,37 @@
 {
-  "applicant_id": "CBLP72115242",
+  "applicant_id": "CBLP97717646",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
-    "semantic_drift",
-    "noise_stripe",
-    "math_mismatch",
-    "font_discrepancy"
+    "pixel_artifact",
+    "font_discrepancy",
+    "tilted_amount"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, noise_stripe, math_mismatch, font_discrepancy",
-  "name": "Warhi Tandon",
-  "pan": "OEVPR0225O",
-  "doc_date": "02/06/2026",
+  "fraud_reason": "metadata_poisoning, pixel_artifact, font_discrepancy, tilted_amount",
+  "name": "Santosh Mane",
+  "pan": "KKVHW3942X",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0003456",
-  "salary_gross": 93025,
-  "salary_net": 53407,
-  "itr_total_income": 636588,
-  "land_value": 515057932,
+  "salary_gross": 121654,
+  "salary_net": 68199,
+  "itr_total_income": 873554,
+  "land_value": 2043292120,
   "pdf_producer": "Adobe Photoshop CC 2024",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 40.086,
+  "gold_net_weight": 39.008,
+  "gold_karat": "22K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 181613.25,
+  "gold_loan_amount": 148696.82,
+  "gold_ltv_ratio": 0.8188,
+  "gold_forged": true,
+  "gold_forged_variant": "D"
 }
