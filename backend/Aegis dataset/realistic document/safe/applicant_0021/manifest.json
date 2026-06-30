@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP68755797",
+  "applicant_id": "CBLP78074978",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Megha Char",
-  "pan": "JPYTW4717B",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 75484,
-  "salary_net": 44344,
-  "itr_total_income": 430271,
-  "land_value": 575511210,
+  "name": "Geeta Iyengar",
+  "pan": "RQOLL1208C",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 58426,
+  "salary_net": 35531,
+  "itr_total_income": 295051,
+  "land_value": 197751781,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 117.322,
+  "gold_net_weight": 117.001,
+  "gold_karat": "22K",
+  "gold_rate_used": 9780.0,
+  "gold_declared_value": 1040404.17,
+  "gold_loan_amount": 766897.51,
+  "gold_ltv_ratio": 0.7371,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

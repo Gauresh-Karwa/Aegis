@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP63533083",
+  "applicant_id": "CBLP57722278",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Vanya Nagarajan",
-  "pan": "FQXHT9424F",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 114238,
-  "salary_net": 64367,
-  "itr_total_income": 781691,
-  "land_value": 630306391,
+  "name": "Leena Dwivedi",
+  "pan": "GGMPB3629M",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 124693,
+  "salary_net": 69770,
+  "itr_total_income": 956259,
+  "land_value": 442236770,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 64.182,
+  "gold_net_weight": 63.367,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 681340.92,
+  "gold_loan_amount": 450895.75,
+  "gold_ltv_ratio": 0.6618,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

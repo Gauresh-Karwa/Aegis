@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP26946778",
+  "applicant_id": "CBLP92478417",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Dalbir Tank",
-  "pan": "HVCPT5723B",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 91816,
-  "salary_net": 52783,
-  "itr_total_income": 637279,
-  "land_value": 694659490,
+  "name": "Harish Kamath",
+  "pan": "XRKAU2981C",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 67120,
+  "salary_net": 40023,
+  "itr_total_income": 401377,
+  "land_value": 605812303,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 70.37,
+  "gold_net_weight": 68.662,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 423324.84,
+  "gold_loan_amount": 288575.22,
+  "gold_ltv_ratio": 0.6817,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

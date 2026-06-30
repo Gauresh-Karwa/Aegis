@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP25291297",
+  "applicant_id": "CBLP76619452",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Hiral Toor",
-  "pan": "WPSBQ7887H",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 55058,
-  "salary_net": 33791,
-  "itr_total_income": 323237,
-  "land_value": 745799542,
+  "name": "Kema Patel",
+  "pan": "GWWPN4761V",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 93030,
+  "salary_net": 53410,
+  "itr_total_income": 620790,
+  "land_value": 658619860,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 134.181,
+  "gold_net_weight": 131.87,
+  "gold_karat": "14K",
+  "gold_rate_used": 6331.92,
+  "gold_declared_value": 491436.14,
+  "gold_loan_amount": 297405.94,
+  "gold_ltv_ratio": 0.6052,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

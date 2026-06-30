@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP35318014",
+  "applicant_id": "CBLP71979594",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Timothy Srivastava",
-  "pan": "OFQBS6418U",
-  "doc_date": "02/06/2026",
+  "name": "Lakshmi Bhosale",
+  "pan": "BEZLS2777O",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0001234",
-  "salary_gross": 40285,
-  "salary_net": 37590,
-  "itr_total_income": 159433,
-  "land_value": 838514624,
+  "salary_gross": 117802,
+  "salary_net": 66209,
+  "itr_total_income": 866504,
+  "land_value": 239735405,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 110.169,
+  "gold_net_weight": 109.472,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 1171894.63,
+  "gold_loan_amount": 863680.62,
+  "gold_ltv_ratio": 0.737,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

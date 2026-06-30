@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP65687319",
+  "applicant_id": "CBLP97232230",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Devansh Bansal",
-  "pan": "CVPHB7991N",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 53958,
-  "salary_net": 33222,
-  "itr_total_income": 213555,
-  "land_value": 340471023,
+  "name": "Meena Dey",
+  "pan": "TTNGH2406H",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 72330,
+  "salary_net": 42715.0,
+  "itr_total_income": 487564,
+  "land_value": 153370645,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 52.282,
+  "gold_net_weight": 51.712,
+  "gold_karat": "22K",
+  "gold_rate_used": 9780.0,
+  "gold_declared_value": 463796.69,
+  "gold_loan_amount": 291473.98,
+  "gold_ltv_ratio": 0.6285,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

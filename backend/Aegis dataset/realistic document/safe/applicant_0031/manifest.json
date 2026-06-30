@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP14827162",
+  "applicant_id": "CBLP11334822",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Chameli Chaudry",
-  "pan": "AKBJX8908R",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 44512,
-  "salary_net": 41535,
-  "itr_total_income": 182750,
-  "land_value": 2153692596,
+  "name": "Urvashi Naidu",
+  "pan": "TOMHH9538Z",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 76620,
+  "salary_net": 44931,
+  "itr_total_income": 513059,
+  "land_value": 111475524,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 13.255,
+  "gold_net_weight": 13.031,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 137733.77,
+  "gold_loan_amount": 93370.45,
+  "gold_ltv_ratio": 0.6779,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP22438107",
+  "applicant_id": "CBLP40147849",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Elijah Chawla",
-  "pan": "GNMFF6132C",
-  "doc_date": "02/06/2026",
+  "name": "Anita Deshpande",
+  "pan": "VYUBR9939A",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0004567",
-  "salary_gross": 101799,
-  "salary_net": 57941,
-  "itr_total_income": 646415,
-  "land_value": 436896786,
+  "salary_gross": 82594,
+  "salary_net": 48018,
+  "itr_total_income": 484026,
+  "land_value": 785075348,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 181.968,
+  "gold_net_weight": 180.486,
+  "gold_karat": "18K",
+  "gold_rate_used": 8002.4,
+  "gold_declared_value": 1084866.29,
+  "gold_loan_amount": 775405.81,
+  "gold_ltv_ratio": 0.7147,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

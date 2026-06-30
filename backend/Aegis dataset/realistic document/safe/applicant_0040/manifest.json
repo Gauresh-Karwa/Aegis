@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP40095517",
+  "applicant_id": "CBLP38168215",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Onkar Srinivasan",
-  "pan": "QAAPL7133L",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 80556,
-  "salary_net": 46965,
-  "itr_total_income": 489311,
-  "land_value": 139097001,
+  "name": "Anand Chakraborty",
+  "pan": "IGYGQ2816V",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 70954,
+  "salary_net": 42003,
+  "itr_total_income": 356445,
+  "land_value": 324238583,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 158.204,
+  "gold_net_weight": 156.633,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 1675199.27,
+  "gold_loan_amount": 1137675.17,
+  "gold_ltv_ratio": 0.6791,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

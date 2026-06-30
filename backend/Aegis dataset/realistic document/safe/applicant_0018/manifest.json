@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP61740923",
+  "applicant_id": "CBLP48381087",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Bhavya Halder",
-  "pan": "YAJCY4997N",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 65930,
-  "salary_net": 39408,
-  "itr_total_income": 437389,
-  "land_value": 919632838,
+  "name": "Kema Pillai",
+  "pan": "EEILD3244E",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 97425,
+  "salary_net": 55680,
+  "itr_total_income": 727758,
+  "land_value": 516911781,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 152.885,
+  "gold_net_weight": 152.384,
+  "gold_karat": "22K",
+  "gold_rate_used": 9950.0,
+  "gold_declared_value": 1390725.98,
+  "gold_loan_amount": 896145.75,
+  "gold_ltv_ratio": 0.6444,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

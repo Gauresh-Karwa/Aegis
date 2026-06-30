@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP26381128",
+  "applicant_id": "CBLP45041747",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Lohit Char",
-  "pan": "YAPBH0382G",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 33055,
-  "salary_net": 30842,
-  "itr_total_income": 125117,
-  "land_value": 564947397,
+  "name": "Dinesh Iyengar",
+  "pan": "SAWLR3929Z",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0005678",
+  "salary_gross": 70944,
+  "salary_net": 41999,
+  "itr_total_income": 448756,
+  "land_value": 495791838,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 46.08,
+  "gold_net_weight": 44.409,
+  "gold_karat": "14K",
+  "gold_rate_used": 6331.92,
+  "gold_declared_value": 163960.58,
+  "gold_loan_amount": 98562.31,
+  "gold_ltv_ratio": 0.6011,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

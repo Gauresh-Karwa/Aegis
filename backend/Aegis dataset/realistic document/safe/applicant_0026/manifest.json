@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP36158669",
+  "applicant_id": "CBLP41295440",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Banjeet Anand",
-  "pan": "XGJCO9594L",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 75120,
-  "salary_net": 44156,
-  "itr_total_income": 424823,
-  "land_value": 674778889,
+  "name": "Suchitra Ghosh",
+  "pan": "SEUJT3396U",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 30544,
+  "salary_net": 28498,
+  "itr_total_income": 39087,
+  "land_value": 2169310602,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 69.568,
+  "gold_net_weight": 69.277,
+  "gold_karat": "24K",
+  "gold_rate_used": 10668.8,
+  "gold_declared_value": 742733.94,
+  "gold_loan_amount": 455818.64,
+  "gold_ltv_ratio": 0.6137,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

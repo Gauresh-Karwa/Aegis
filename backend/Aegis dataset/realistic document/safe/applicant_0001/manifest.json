@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP97642873",
+  "applicant_id": "CBLP89636675",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Xavier Dhawan",
-  "pan": "XPITR1069U",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 128356,
-  "salary_net": 71661,
-  "itr_total_income": 933355,
-  "land_value": 213699436,
+  "name": "Tarun Sheikh",
+  "pan": "MNWCF8806R",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 97004,
+  "salary_net": 55462,
+  "itr_total_income": 677413,
+  "land_value": 964148271,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 121.716,
+  "gold_net_weight": 119.021,
+  "gold_karat": "24K",
+  "gold_rate_used": 10854.25,
+  "gold_declared_value": 1289962.95,
+  "gold_loan_amount": 811298.9,
+  "gold_ltv_ratio": 0.6289,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

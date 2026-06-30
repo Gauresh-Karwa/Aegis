@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP53814207",
+  "applicant_id": "CBLP11651930",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Elijah Borde",
-  "pan": "XWUGH5707Q",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 108333,
-  "salary_net": 61316,
-  "itr_total_income": 750536,
-  "land_value": 551346520,
+  "name": "Nagesh Kamath",
+  "pan": "DZRTZ6871G",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 107314,
+  "salary_net": 60790,
+  "itr_total_income": 763699,
+  "land_value": 1566601491,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 6.262,
+  "gold_net_weight": 5.958,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 21433.16,
+  "gold_loan_amount": 15359.59,
+  "gold_ltv_ratio": 0.7166,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

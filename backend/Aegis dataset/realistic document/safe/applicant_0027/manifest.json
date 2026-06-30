@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP18237779",
+  "applicant_id": "CBLP43202163",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Yuvraj Patla",
-  "pan": "NIJLE8975M",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 57005,
-  "salary_net": 34796,
-  "itr_total_income": 275419,
-  "land_value": 194349512,
+  "name": "Kamala Mehta",
+  "pan": "WOKTQ9553I",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 36698,
+  "salary_net": 34242,
+  "itr_total_income": 169743,
+  "land_value": 2434715800,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 129.358,
+  "gold_net_weight": 127.63,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 463344.02,
+  "gold_loan_amount": 306261.08,
+  "gold_ltv_ratio": 0.661,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP68837404",
+  "applicant_id": "CBLP16680522",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Quincy Taneja",
-  "pan": "UCUTJ6136M",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 127608,
-  "salary_net": 71275,
-  "itr_total_income": 974770,
-  "land_value": 338986586,
+  "name": "Sarojini Bose",
+  "pan": "MSOCV2680Y",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 104705,
+  "salary_net": 59442,
+  "itr_total_income": 734824,
+  "land_value": 746082825,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 97.303,
+  "gold_net_weight": 96.732,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 353495.15,
+  "gold_loan_amount": 254485.16,
+  "gold_ltv_ratio": 0.7199,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

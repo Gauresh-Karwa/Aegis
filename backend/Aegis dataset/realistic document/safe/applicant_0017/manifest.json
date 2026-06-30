@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP59362928",
+  "applicant_id": "CBLP24379279",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Oscar Muni",
-  "pan": "HBTPA6765I",
-  "doc_date": "02/06/2026",
+  "name": "Seema Menon",
+  "pan": "SPBGT2398B",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0005678",
-  "salary_gross": 59119,
-  "salary_net": 35889,
-  "itr_total_income": 361169,
-  "land_value": 247910591,
+  "salary_gross": 71868,
+  "salary_net": 42476,
+  "itr_total_income": 479240,
+  "land_value": 3504277547,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 195.318,
+  "gold_net_weight": 193.319,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 1184354.64,
+  "gold_loan_amount": 730823.22,
+  "gold_ltv_ratio": 0.6171,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

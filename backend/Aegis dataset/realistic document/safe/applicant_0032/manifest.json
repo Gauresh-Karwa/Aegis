@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP57878608",
+  "applicant_id": "CBLP13825487",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Gaurika Srinivasan",
-  "pan": "GBPCA2575E",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 53582,
-  "salary_net": 33028,
-  "itr_total_income": 233932,
-  "land_value": 760523279,
+  "name": "Aparna Mukherjee",
+  "pan": "LDATE3190B",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 90542,
+  "salary_net": 52124,
+  "itr_total_income": 619651,
+  "land_value": 1627971872,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 126.313,
+  "gold_net_weight": 121.322,
+  "gold_karat": "24K",
+  "gold_rate_used": 10854.25,
+  "gold_declared_value": 1327890.22,
+  "gold_loan_amount": 837529.23,
+  "gold_ltv_ratio": 0.6307,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

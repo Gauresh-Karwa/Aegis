@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP41993674",
+  "applicant_id": "CBLP39864303",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Ekta Mody",
-  "pan": "BDWTR7835T",
-  "doc_date": "02/06/2026",
+  "name": "Anita Chatterjee",
+  "pan": "QTTCZ6868J",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0002345",
-  "salary_gross": 42586,
-  "salary_net": 39737,
-  "itr_total_income": 129645,
-  "land_value": 402654525,
+  "salary_gross": 106824,
+  "salary_net": 60537,
+  "itr_total_income": 744989,
+  "land_value": 2178688426,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 36.828,
+  "gold_net_weight": 36.65,
+  "gold_karat": "22K",
+  "gold_rate_used": 9780.0,
+  "gold_declared_value": 326441.35,
+  "gold_loan_amount": 240851.91,
+  "gold_ltv_ratio": 0.7378,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

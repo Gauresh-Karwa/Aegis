@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP57437531",
+  "applicant_id": "CBLP65718179",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Yuvraj Kurian",
-  "pan": "NIOFQ4890S",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 57493,
-  "salary_net": 35049,
-  "itr_total_income": 263779,
-  "land_value": 775023301,
+  "name": "Sunil Shukla",
+  "pan": "HTQFT1894Q",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 97207,
+  "salary_net": 55568,
+  "itr_total_income": 678022,
+  "land_value": 862230304,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 120.144,
+  "gold_net_weight": 116.654,
+  "gold_karat": "22K",
+  "gold_rate_used": 9780.0,
+  "gold_declared_value": 1047265.14,
+  "gold_loan_amount": 760286.09,
+  "gold_ltv_ratio": 0.726,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

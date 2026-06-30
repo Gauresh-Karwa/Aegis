@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP12318724",
+  "applicant_id": "CBLP17888079",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Michael Kant",
-  "pan": "GGACH6708F",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 28616,
-  "salary_net": 26699,
-  "itr_total_income": 118911,
-  "land_value": 860889428,
+  "name": "Ashok Mitra",
+  "pan": "AKKFW6414X",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 89461,
+  "salary_net": 51566,
+  "itr_total_income": 614745,
+  "land_value": 727816118,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 119.778,
+  "gold_net_weight": 118.41,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 431984.35,
+  "gold_loan_amount": 309560.87,
+  "gold_ltv_ratio": 0.7166,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP29477786",
+  "applicant_id": "CBLP70060685",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Anirudh Salvi",
-  "pan": "EDUAI4865C",
-  "doc_date": "02/06/2026",
+  "name": "Naresh Bhosale",
+  "pan": "DXPTU1170E",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0003456",
-  "salary_gross": 46704,
-  "salary_net": 29475,
-  "itr_total_income": 242310,
-  "land_value": 620228796,
+  "salary_gross": 66789,
+  "salary_net": 39853,
+  "itr_total_income": 395649,
+  "land_value": 513172649,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 62.637,
+  "gold_net_weight": 59.907,
+  "gold_karat": "18K",
+  "gold_rate_used": 8002.4,
+  "gold_declared_value": 357764.61,
+  "gold_loan_amount": 253370.43,
+  "gold_ltv_ratio": 0.7082,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

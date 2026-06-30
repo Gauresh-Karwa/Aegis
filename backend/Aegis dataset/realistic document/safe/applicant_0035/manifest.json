@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP48175833",
+  "applicant_id": "CBLP79088699",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Tristan Nair",
-  "pan": "BVMLH2031V",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 64010,
-  "salary_net": 38415,
-  "itr_total_income": 324743,
-  "land_value": 163535860,
+  "name": "Basappa Bose",
+  "pan": "WLHGB6354Z",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 56788,
+  "salary_net": 34685,
+  "itr_total_income": 352821,
+  "land_value": 558238586,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 167.237,
+  "gold_net_weight": 166.509,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 609937.43,
+  "gold_loan_amount": 411368.75,
+  "gold_ltv_ratio": 0.6744,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

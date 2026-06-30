@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP60408187",
+  "applicant_id": "CBLP56076615",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Aarav Bhakta",
-  "pan": "UZLBD3868E",
-  "doc_date": "02/06/2026",
+  "name": "Savitha Thakur",
+  "pan": "DQNAX6466L",
+  "doc_date": "21/06/2026",
   "branch_ifsc": "CNRB0002345",
-  "salary_gross": 52525,
-  "salary_net": 32482,
-  "itr_total_income": 265851,
-  "land_value": 384825705,
+  "salary_gross": 113810,
+  "salary_net": 64146,
+  "itr_total_income": 874452,
+  "land_value": 1995326670,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 14.491,
+  "gold_net_weight": 14.31,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 87119.67,
+  "gold_loan_amount": 57157.21,
+  "gold_ltv_ratio": 0.6561,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

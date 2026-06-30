@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP84542629",
+  "applicant_id": "CBLP74492220",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Radha Mand",
-  "pan": "UHDCG7100N",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0005678",
-  "salary_gross": 100342,
-  "salary_net": 57188,
-  "itr_total_income": 719359,
-  "land_value": 427059224,
+  "name": "Radha Shah",
+  "pan": "OOVLJ1545X",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 131857,
+  "salary_net": 73470,
+  "itr_total_income": 964829,
+  "land_value": 1106501999,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 146.26,
+  "gold_net_weight": 143.785,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 522070.3,
+  "gold_loan_amount": 351487.07,
+  "gold_ltv_ratio": 0.6733,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP36358644",
+  "applicant_id": "CBLP18199790",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Ishani Suresh",
-  "pan": "AVYPG3751Z",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 32941,
-  "salary_net": 30735,
-  "itr_total_income": 88066,
-  "land_value": 2029297506,
+  "name": "Revathi Bhat",
+  "pan": "DBKJA7964Z",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 95104,
+  "salary_net": 54481,
+  "itr_total_income": 696887,
+  "land_value": 215413361,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 113.319,
+  "gold_net_weight": 111.869,
+  "gold_karat": "14K",
+  "gold_rate_used": 6223.73,
+  "gold_declared_value": 408717.35,
+  "gold_loan_amount": 283901.74,
+  "gold_ltv_ratio": 0.6946,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP28950926",
+  "applicant_id": "CBLP69872335",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Chandresh Palan",
-  "pan": "KJHBG9086M",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 27732,
-  "salary_net": 25874,
-  "itr_total_income": 72465,
-  "land_value": 981653796,
+  "name": "Manjunath Sharma",
+  "pan": "PTWAZ0773I",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 29158,
+  "salary_net": 27205,
+  "itr_total_income": 91176,
+  "land_value": 1376009279,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 57.641,
+  "gold_net_weight": 56.72,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 348535.83,
+  "gold_loan_amount": 213294.19,
+  "gold_ltv_ratio": 0.612,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

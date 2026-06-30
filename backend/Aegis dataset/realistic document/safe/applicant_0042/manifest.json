@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP79064304",
+  "applicant_id": "CBLP45677718",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Ethan Borra",
-  "pan": "AIJTM9557Z",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0001234",
-  "salary_gross": 84113,
-  "salary_net": 48803,
-  "itr_total_income": 510298,
-  "land_value": 1462047875,
+  "name": "Sarojini Subramanian",
+  "pan": "XURTB9351U",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0002345",
+  "salary_gross": 76939,
+  "salary_net": 45096,
+  "itr_total_income": 456511,
+  "land_value": 2942625277,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 20.083,
+  "gold_net_weight": 19.442,
+  "gold_karat": "14K",
+  "gold_rate_used": 6331.92,
+  "gold_declared_value": 72504.71,
+  "gold_loan_amount": 45369.14,
+  "gold_ltv_ratio": 0.6257,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

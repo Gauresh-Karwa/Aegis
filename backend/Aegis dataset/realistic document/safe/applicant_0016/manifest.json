@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP21280112",
+  "applicant_id": "CBLP34099166",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Yashodhara Goel",
-  "pan": "UOUGT0889R",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 79008,
-  "salary_net": 46166,
-  "itr_total_income": 498428,
-  "land_value": 2839782280,
+  "name": "Ravi Mukherjee",
+  "pan": "ITRPW9202B",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0004567",
+  "salary_gross": 94237,
+  "salary_net": 54033,
+  "itr_total_income": 637653,
+  "land_value": 432674078,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 45.368,
+  "gold_net_weight": 45.131,
+  "gold_karat": "18K",
+  "gold_rate_used": 8141.5,
+  "gold_declared_value": 274094.82,
+  "gold_loan_amount": 173369.64,
+  "gold_ltv_ratio": 0.6325,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }

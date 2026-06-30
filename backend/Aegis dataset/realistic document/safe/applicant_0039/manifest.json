@@ -1,22 +1,32 @@
 {
-  "applicant_id": "CBLP17702132",
+  "applicant_id": "CBLP84879222",
   "class": "safe",
   "is_risked": false,
   "fraud_flags": [],
   "fraud_reason": "none",
-  "name": "Vaishnavi Sachdev",
-  "pan": "WXEHY8816U",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0004567",
-  "salary_gross": 93782,
-  "salary_net": 53798,
-  "itr_total_income": 666905,
-  "land_value": 1882617427,
+  "name": "Mohan Mishra",
+  "pan": "JTMBD1420B",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 118845,
+  "salary_net": 66747,
+  "itr_total_income": 818669,
+  "land_value": 332837098,
   "pdf_producer": "Canara-Core-System v4.1.2",
   "files": {
     "identity": "identity.pdf",
     "salary": "salary.pdf",
     "itr": "itr.pdf",
-    "land_record": "land_record.pdf"
-  }
+    "land_record": "land_record.pdf",
+    "gold_appraisal": "gold_appraisal.pdf"
+  },
+  "gold_gross_weight": 69.472,
+  "gold_net_weight": 68.025,
+  "gold_karat": "22K",
+  "gold_rate_used": 9780.0,
+  "gold_declared_value": 615561.84,
+  "gold_loan_amount": 447161.55,
+  "gold_ltv_ratio": 0.7264,
+  "gold_forged": false,
+  "gold_forged_variant": null
 }
