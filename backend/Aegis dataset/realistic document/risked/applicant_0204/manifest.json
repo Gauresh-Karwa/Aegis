@@ -1,5 +1,5 @@
 {
-  "applicant_id": "CBLP88933229",
+  "applicant_id": "CBLP24657302",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
@@ -7,18 +7,17 @@
     "semantic_drift",
     "blurred_edge",
     "font_discrepancy",
-    "noise_stripe",
-    "math_mismatch"
+    "tilted_amount"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, noise_stripe, math_mismatch",
-  "name": "Siddharth Luthra",
-  "pan": "VFRJJ5176G",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0002345",
-  "salary_gross": 110854,
-  "salary_net": 62618,
-  "itr_total_income": 754671,
-  "land_value": 1234299256,
+  "fraud_reason": "metadata_poisoning, semantic_drift, blurred_edge, font_discrepancy, tilted_amount",
+  "name": "Umesh Verma",
+  "pan": "PYMGN4530V",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0003456",
+  "salary_gross": 49534,
+  "salary_net": 30937,
+  "itr_total_income": 209228,
+  "land_value": 131859062,
   "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
