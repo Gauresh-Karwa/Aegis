@@ -1,22 +1,21 @@
 {
-  "applicant_id": "CBLP83238875",
+  "applicant_id": "CBLP53234426",
   "class": "risked",
   "is_risked": true,
   "fraud_flags": [
     "metadata_poisoning",
     "semantic_drift",
-    "tilted_amount",
-    "noise_stripe"
+    "tilted_amount"
   ],
-  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount, noise_stripe",
-  "name": "Jalsa Deep",
-  "pan": "ECTGN4766M",
-  "doc_date": "02/06/2026",
-  "branch_ifsc": "CNRB0003456",
-  "salary_gross": 43003,
-  "salary_net": 40127,
-  "itr_total_income": 200160,
-  "land_value": 1149056264,
+  "fraud_reason": "metadata_poisoning, semantic_drift, tilted_amount",
+  "name": "Suchitra Singh",
+  "pan": "EVKBR6845E",
+  "doc_date": "21/06/2026",
+  "branch_ifsc": "CNRB0001234",
+  "salary_gross": 27336,
+  "salary_net": 25504,
+  "itr_total_income": 0,
+  "land_value": 2776394867,
   "pdf_producer": "Adobe Acrobat Pro DC",
   "files": {
     "identity": "identity.pdf",
